@@ -3,7 +3,7 @@ clf
 
 %concentration start values
 ca=[1; 0; 0];
-[t,C]=ode45(@attempt1s,[0 4], ca);
+[t,C]=ode45(@complete_michaelis_menten_ss,[0 4], ca);
 
 plot(t,C(:,1),'-r');
 hold on
@@ -19,12 +19,18 @@ ylabel('Concentration (M)')
 legend('PET','MHET','EG')
 title('Soft segment attempt 1')
 
-%% Soft segment attempt 2
+%% Soft segment attempt 2 & complete michaelis menten
 clf
 
 %concentration start values
-ca=[1; 0; 0; 1];
-[t,C]=ode45(@attempt2s,[0 1.5], ca);
+pet0 = 5; %mM initial concentration of PET
+peg0 = 1; %mM initial concentration of PEG
+mhet0 = 0; %mM initial concentration of MHET
+eg0 = 0; %mM initial concentration of EG
+
+
+initial_concentrations=[pet0; mhet0; eg0; peg0];
+[t,C]=ode45(@complete_michaelis_menten_ss,[0 10], initial_concentrations);
 
 plot(t,C(:,1),'-r');
 hold on
@@ -41,5 +47,5 @@ hold on
 xlabel('Time (s)')
 ylabel('Concentration (M)')
 legend('PET','MHET','EG','PEG')
-title('Soft segment attempt 2')
+title('Degradation of the soft segment with flux of EG diverted to the cellular metabolism')
 
