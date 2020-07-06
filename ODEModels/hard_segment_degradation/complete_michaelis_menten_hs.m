@@ -17,8 +17,8 @@ kmbphd=0.0046;
 %enzyme total value
 enzyme_concentration=0.2; %random value
 
-y=[(-kcatpuea.*enzyme_concentration.*c(1))./(kmpuea.*c(1))
-    ((kcatpuea.*enzyme_concentration.*c(1))./(kmpuea.*c(1)))-((kcatbpha1.*enzyme_concentration.*c(2))./(kmbpha1+c(2)))
+y=[(-kcatpuea.*enzyme_concentration.*c(1))./(kmpuea+c(1))
+    ((kcatpuea.*enzyme_concentration.*c(1))./(kmpuea+c(1)))-((kcatbpha1.*enzyme_concentration.*c(2))./(kmbpha1+c(2)))
     ((kcatbpha1.*enzyme_concentration.*c(2))./(kmbpha1+c(2)))-((kcatbphb.*enzyme_concentration.*c(3))./(kmbphb+c(3)))
     ((kcatbphb.*enzyme_concentration.*c(3))./(kmbphb+c(3)))-((kcatbphc.*enzyme_concentration.*c(4))./(kmbphc+c(4)))
     ((kcatbphc.*enzyme_concentration.*c(4))./(kmbphc+c(4)))-((kcatbphd.*enzyme_concentration.*c(5))./(kmbphd+c(5)))
