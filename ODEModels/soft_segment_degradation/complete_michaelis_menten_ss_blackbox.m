@@ -16,11 +16,11 @@ kmOxidorreductase = 0.007; %degradation of ethylene glycol
 kcatPet=5.9;
 kcatMhet=26.8;
 kcatPegdh=10; %check for correct value, this one is random
-kcatOxidorreductase = ((kmOxidorreductase + c(3))/(enzyme_concentration*c(3)))*vmaxOxidorreductase; %calculated from km and vmax
+kcatOxidorreductase = ((kmOxidorreductase + c(3))/(enzyme_concentration*c(3)))*vmaxOxidorreductase; %calculated from km and vmax (for cell metabolism)
 
 
-y=[(-kcatPet.*c(1).*enzyme_concentration)./(kmPet+c(1))
-    (kcatPet.*c(1).*enzyme_concentration)./(kmPet+c(1))- (kcatMhet.*c(2).*enzyme_concentration)./(kmMhet+c(2))
-    (kcatMhet.*c(2).*enzyme_concentration)./(kmMhet+c(2))+ (kcatPegdh.*c(4).*enzyme_concentration)./(kmPegdh+c(4)) - (kcatOxidorreductase.*c(3).*enzyme_concentration)./(kmOxidorreductase+c(3))
-   -(kcatPegdh.*c(4).*enzyme_concentration)./(kmPegdh+c(4))
+y=[(-kcatPet.*c(1).*enzyme_concentration)./(kmPet+c(1)) %PET consumption
+    (kcatPet.*c(1).*enzyme_concentration)./(kmPet+c(1))- (kcatMhet.*c(2).*enzyme_concentration)./(kmMhet+c(2)) %MHET 
+    (kcatMhet.*c(2).*enzyme_concentration)./(kmMhet+c(2))+ (kcatPegdh.*c(4).*enzyme_concentration)./(kmPegdh+c(4)) - (kcatOxidorreductase.*c(3).*enzyme_concentration)./(kmOxidorreductase+c(3)) %EG 
+   -(kcatPegdh.*c(4).*enzyme_concentration)./(kmPegdh+c(4)) %PEG consumption
    ];
