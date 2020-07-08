@@ -3,7 +3,7 @@ clf
 
 %concentration start values
 ca=[1; 0; 0];
-[t,C]=ode45(@complete_michaelis_menten_ss,[0 4], ca);
+[t,C]=ode45(@complete_michaelis_menten_ss_blackbox,[0 4], ca);
 
 plot(t,C(:,1),'-r');
 hold on
@@ -30,7 +30,7 @@ eg0 = 0; %mM initial concentration of EG
 
 
 initial_concentrations=[pet0; mhet0; eg0; peg0];
-[t,C]=ode45(@complete_michaelis_menten_ss,[0 10], initial_concentrations);
+[t,C]=ode45(@complete_michaelis_menten_ss_blackbox,[0 10], initial_concentrations);
 
 plot(t,C(:,1),'-r');
 hold on
