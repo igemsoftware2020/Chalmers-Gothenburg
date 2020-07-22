@@ -74,5 +74,9 @@ modelEco = addRxns(modelEco, rxnsToAdd, 3, '', true, true);
  
 clear rxnsToAdd;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0529d49a63b32bff3b01295ee9e9718f8ec6869b
  
 
