@@ -6,9 +6,6 @@ clc
 cd ..
 root = pwd;
 cd scripts
-% CHECK COBRA & RAVEN INSTALATION
-% Check COBRA installation & initiate COBRA
-initCobraToolbox(false)
 % Check that RAVEN is installed & that you have a compatible solver (i.e.
 % Gurobi)
 checkInstallation
@@ -16,9 +13,7 @@ checkInstallation
 %load E.coli iML1515 model using CbMode (iML1515 has been written for
 %COBRA)
 %source http://bigg.ucsd.edu/models/iML1515
-model_cobra= readCbModel('../Data/templateModel/iML1515.xml'); 
-modelEco = ravenCobraWrapper(model_cobra); %convert into RAVEN structure
-clear model_cobra;
+modelEco = importModel('../Data/templateModel/iML1515.xml'); 
 %create an excel sheet for the model. Since we do not really need this for
 %the addition of reactions or analysis, create a scrap folder to keep these
 %kind of documents
