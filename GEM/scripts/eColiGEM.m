@@ -1,4 +1,4 @@
-%% E. COLI iML1515 GENOME SCALE MODEL USING RAVEN TOOLBOX TO ADD PET AND ELASTANE DEGRADING REACTIONS
+% E. COLI iML1515 GENOME SCALE MODEL USING RAVEN TOOLBOX TO ADD PET AND ELASTANE DEGRADING REACTIONS
 % AUTHORS: Ellen Arnholm, Niklas Bengtsson & Leticia Castillón
 
 clear; clc;
@@ -7,14 +7,14 @@ cd ../;  root = [pwd() '/'];
 data    = [root 'Data/'];
 scripts = [root 'Scripts/'];
 cd(scripts)
-%% CHECK COBRA & RAVEN INSTALATION
+% CHECK COBRA & RAVEN INSTALATION
 % Check COBRA installation & initiate COBRA
 initCobraToolbox(false)
 % Check that RAVEN is installed & that you have a compatible solver (i.e.
 % Gurobi)
 checkInstallation
 
-%% IMPORT TEMPLATE 
+% IMPORT TEMPLATE 
 %load E.coli iML1515 model using CbMode (iML1515 has been written for
 %Cobra)
 %source http://bigg.ucsd.edu/models/iML1515
@@ -32,11 +32,11 @@ exportToExcelFormat(modelEco, [root 'scrap/modelEco.xlsx']);
 % Store original model in scrap folder. 
 save([root 'scrap/importModels.mat'])
 
-%%
+%
 % Uncomment this to load the model. 
 %load([root 'scrap/importModels.mat'])
 
-%% ADD REACTIONS & METABOLITES
+% ADD REACTIONS & METABOLITES
 % We want to add the reactions that we are including in our lab strain.
 % This means we are going to include 9 genes & enzymes in our model. 
 
@@ -53,7 +53,7 @@ modelEco = addMets(modelEco, metsToAdd);
 modelEco = addExchangeRxns(modelEco, 'in', {'eg'});
 
 clear metsToAdd;
-%%
+%
 %Add rxns for degradation of PET
 rxnsToAdd.rxns      = {'RXN-17825', 'RXN-17826', 'GLYCOALDREDUCT', 'ALD-CPLX'};
 rxnsToAdd.equations = {'ethylene terephtalate(n)[e] + H2O[e] => 4-[(2-hydroxyethoxy)-carbonyl]benzoate[e]',...
@@ -74,9 +74,5 @@ modelEco = addRxns(modelEco, rxnsToAdd, 3, '', true, true);
  
 clear rxnsToAdd;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 0529d49a63b32bff3b01295ee9e9718f8ec6869b
  
 
