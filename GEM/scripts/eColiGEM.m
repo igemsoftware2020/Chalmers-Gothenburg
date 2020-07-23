@@ -14,6 +14,8 @@ checkInstallation
 %COBRA)
 %source http://bigg.ucsd.edu/models/iML1515
 modelEco = importModel('../Data/templateModel/iML1515.xml'); 
+%standardize met ids and correct some metNames
+modelEco = correctMets_iml1515(modelEco);
 %create an excel sheet for the model. Since we do not really need this for
 %the addition of reactions or analysis, create a scrap folder to keep these
 %kind of documents
