@@ -1,40 +1,31 @@
 % E. COLI iML1515 GENOME SCALE MODEL USING RAVEN TOOLBOX TO ADD PET AND ELASTANE DEGRADING REACTIONS
 % AUTHORS: Ellen Arnholm, Niklas Bengtsson & Leticia Castillón
 
-clear; clc;
-cd '~/Desktop/iGEM/modelling/repository/iGEMChalmers2020/GEM/scripts'
-cd ../;  root = [pwd() '/'];
-data    = [root 'Data/'];
-scripts = [root 'Scripts/'];
-cd(scripts)
+clear
+clc
+cd ..
+root = pwd;
+cd scripts
 % CHECK COBRA & RAVEN INSTALATION
 % Check COBRA installation & initiate COBRA
 initCobraToolbox(false)
 % Check that RAVEN is installed & that you have a compatible solver (i.e.
 % Gurobi)
 checkInstallation
-
 % IMPORT TEMPLATE 
 %load E.coli iML1515 model using CbMode (iML1515 has been written for
-%Cobra)
+%COBRA)
 %source http://bigg.ucsd.edu/models/iML1515
-%modelEco_cobra = importModel('../Data/templateModel/iML1515.xml');
 model_cobra= readCbModel('../Data/templateModel/iML1515.xml'); 
-
 modelEco = ravenCobraWrapper(model_cobra); %convert into RAVEN structure
 clear model_cobra;
 %create an excel sheet for the model. Since we do not really need this for
 %the addition of reactions or analysis, create a scrap folder to keep these
 %kind of documents
-mkdir([root 'scrap'])
+mkdir([root '/scrap'])
 exportToExcelFormat(modelEco, [root 'scrap/modelEco.xlsx']);
-
 % Store original model in scrap folder. 
-save([root 'scrap/importModels.mat'])
-
-%
-% Uncomment this to load the model. 
-%load([root 'scrap/importModels.mat'])
+save([root '/scrap/importModels.mat'])
 
 % ADD REACTIONS & METABOLITES
 % We want to add the reactions that we are including in our lab strain.
