@@ -22,26 +22,18 @@ modelEco = correctMets_iml1515(modelEco);
 mkdir([root '/scrap'])
 exportToExcelFormat(modelEco, [root 'scrap/modelEco.xlsx']);
 % Store original model in scrap folder. 
-save([root '/scrap/importModels.mat'])
-
+save([root '/scrap/importModels.mat'],'modelEco')
 % ADD REACTIONS & METABOLITES
 % We want to add the reactions that we are including in our lab strain.
 % This means we are going to include 9 genes & enzymes in our model. 
-
 %Add PET metabolites (obs we are ignoring terephtalate for now)
 metsToAdd.mets = {'pet', 'mhet', 'eg'};
 metsToAdd.metNames = {'polyethylene terephtalate', '4-[(2-hydroxyethoxy)-carbonyl]benzoate', 'ethylene glycol'};
 metsToAdd.compartments = {'e','e','e'};
-metsToAdd.lb = [0,0,0,0];
-metsToAdd.ub = [1000,1000,1000,1000];
-
 modelEco = addMets(modelEco, metsToAdd);
-
-%Add exchange reaction for ethylene glycol and water
+%Add exchange reaction for ethylene glycol
 modelEco = addExchangeRxns(modelEco, 'in', {'eg'});
-
 clear metsToAdd;
-%
 %Add rxns for degradation of PET
 rxnsToAdd.rxns      = {'RXN-17825', 'RXN-17826', 'GLYCOALDREDUCT', 'ALD-CPLX'};
 rxnsToAdd.equations = {'ethylene terephtalate(n)[e] + H2O[e] => 4-[(2-hydroxyethoxy)-carbonyl]benzoate[e]',...
@@ -57,9 +49,7 @@ rxnsToAdd.rxnNotes = {'PET degradation reaction added by manual curation',...
     'MET degradation reaction added by manual curation',...
 'Ethylene glycol metabolism reaction added by manual curation',...
 'Ethylene glycol metabolism reaction added by manual curation'};
-
 modelEco = addRxns(modelEco, rxnsToAdd, 3, '', true, true);
- 
 clear rxnsToAdd;
 
  
