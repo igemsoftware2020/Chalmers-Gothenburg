@@ -1,65 +1,45 @@
-%% E. COLI iML1515 GENOME SCALE MODEL USING RAVEN TOOLBOX TO ADD PET AND ELASTANE DEGRADING REACTIONS
+% E. COLI iML1515 GENOME SCALE MODEL USING RAVEN TOOLBOX TO ADD PET AND ELASTANE DEGRADING REACTIONS
 % AUTHORS: Ellen Arnholm, Niklas Bengtsson & Leticia Castillón
 
-clear; clc;
-cd '~/Desktop/iGEM/modelling/repository/iGEMChalmers2020/GEM/scripts'
-cd ../;  root = [pwd() '/'];
-data    = [root 'Data/'];
-scripts = [root 'Scripts/'];
-cd(scripts)
-%% CHECK COBRA & RAVEN INSTALATION
-% Check COBRA installation & initiate COBRA
-initCobraToolbox(false)
+clear
+clc
+cd ..
+root = pwd;
+cd scripts
 % Check that RAVEN is installed & that you have a compatible solver (i.e.
 % Gurobi)
 checkInstallation
-
-%% IMPORT TEMPLATE 
+% IMPORT TEMPLATE 
 %load E.coli iML1515 model using CbMode (iML1515 has been written for
-%Cobra)
+%COBRA)
 %source http://bigg.ucsd.edu/models/iML1515
-%modelEco_cobra = importModel('../Data/templateModel/iML1515.xml');
-model_cobra= readCbModel('../Data/templateModel/iML1515.xml'); 
-
-modelEco = ravenCobraWrapper(model_cobra); %convert into RAVEN structure
-clear model_cobra;
+modelEco = importModel('../Data/templateModel/iML1515.xml'); 
+%standardize met ids and correct some metNames
+modelEco = correctMets_iml1515(modelEco);
 %create an excel sheet for the model. Since we do not really need this for
 %the addition of reactions or analysis, create a scrap folder to keep these
 %kind of documents
-mkdir([root 'scrap'])
+mkdir([root '/scrap'])
 exportToExcelFormat(modelEco, [root 'scrap/modelEco.xlsx']);
-
 % Store original model in scrap folder. 
-save([root 'scrap/importModels.mat'])
-
-%%
-% Uncomment this to load the model. 
-%load([root 'scrap/importModels.mat'])
-
-%% ADD REACTIONS & METABOLITES
+save([root '/scrap/importModels.mat'],'modelEco')
+% ADD REACTIONS & METABOLITES
 % We want to add the reactions that we are including in our lab strain.
 % This means we are going to include 9 genes & enzymes in our model. 
-
 %Add PET metabolites (obs we are ignoring terephtalate for now)
 metsToAdd.mets = {'pet', 'mhet', 'eg'};
 metsToAdd.metNames = {'polyethylene terephtalate', '4-[(2-hydroxyethoxy)-carbonyl]benzoate', 'ethylene glycol'};
 metsToAdd.compartments = {'e','e','e'};
-metsToAdd.lb = [0,0,0,0];
-metsToAdd.ub = [1000,1000,1000,1000];
-
 modelEco = addMets(modelEco, metsToAdd);
-
-%Add exchange reaction for ethylene glycol and water
+%Add exchange reaction for ethylene glycol
 modelEco = addExchangeRxns(modelEco, 'in', {'eg'});
-
 clear metsToAdd;
-%%
 %Add rxns for degradation of PET
 rxnsToAdd.rxns      = {'RXN-17825', 'RXN-17826', 'GLYCOALDREDUCT', 'ALD-CPLX'};
 rxnsToAdd.equations = {'ethylene terephtalate(n)[e] + H2O[e] => 4-[(2-hydroxyethoxy)-carbonyl]benzoate[e]',...
 '4-[(2-hydroxyethoxy)-carbonyl]benzoate[e] + H2O[e] => terephtalate[e] + ethylene gycol[e]',...
 'ethylene glycol[c] + NAD+[c] <=> glycolaldehyde[c] + NADH[c] + H+[c]',...
-'glycolaldehyde[c] + NAD+[c] + H2O[c]  => glycolate[c] + NAD+[c] + 2H+[c]'};
+'glycolaldehyde[c] + NAD+[c] + H2O[c] => glycolate[c] + NAD+[c] + 2H+[c]'};
 rxnsToAdd.rxnNames  = {'polyethylene terephtalate hydrolase ','mono(ethyleneterephtalate) hydrolase', 'L-1,2-propanediol oxidoreductase', 'aldehyde dehydrogenase A'};
 rxnsToAdd.lb = [0,0,-1000,0];
 rxnsToAdd.ub = [1000,1000,1000,1000];
@@ -69,14 +49,8 @@ rxnsToAdd.rxnNotes = {'PET degradation reaction added by manual curation',...
     'MET degradation reaction added by manual curation',...
 'Ethylene glycol metabolism reaction added by manual curation',...
 'Ethylene glycol metabolism reaction added by manual curation'};
-
 modelEco = addRxns(modelEco, rxnsToAdd, 3, '', true, true);
- 
 clear rxnsToAdd;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 0529d49a63b32bff3b01295ee9e9718f8ec6869b
  
 
