@@ -1,0 +1,6 @@
+!!SBtab TableName=Parameter TableType=Quantity Document=S. cervisiae central carbon metabolism SBtabVersion=1.0
+!QuantityType	!Reaction	!Compound	!Value	!Unit	!Reaction:Identifiers:kegg.reaction	!Compound:Identifiers:kegg.compound	!ID
+equilibrium constant	new_r_0006	 	4.797174554640046e+52	dimensionless	R05263	 	kEQ_new_r_0006
+equilibrium constant	new_r_0007	 	3.270988623419444e+18	dimensionless	R05239	 	kEQ_new_r_0007
+equilibrium constant	new_r_0008	 	2.0278633000250036e+42	dimensionless	R03462	 	kEQ_new_r_0008
+equilibrium constant	new_r_0009	 	6191334934.398192	dimensionless	R02606	 	kEQ_new_r_0009
