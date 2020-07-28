@@ -1,4 +1,4 @@
-function path_data = getPathwayData(pathFile)
+function [path_data, model,KEGGmodel] = getPathwayData(pathFile)
 %getPathwayData
 %
 % Get a file with description of a pathway in a reaction-formulas fashion
@@ -6,13 +6,17 @@ function path_data = getPathwayData(pathFile)
 % rxn. This structure is needed by the ECM pipeline in order to obtain
 % kinetic parameters for the given pathway (Kcats and KMs).
 %
-%   pathFile  string indicating the name of the text (tab-separated) file
+%   pathFile  (string) indicating the name of the text (tab-separated) file
 %             in which the pathway is defined. The file should be stored in
 %             root/GEM/Data
 %
-%   path_data structure with fields substrates, products and ECnumbers,
-%             which contain rows for each reaction in the model.
-%
+%   path_data (structure) with fields substrates, products and ECnumbers,
+%             which contain rows for each reaction in the pathway. 
+%   model     (structure) with a stoichiometric representation of the pathway 
+%             in a RAVEN format.
+%   KEGGmodel (table) Table with a KEGG format model for the provided
+%              pathway, compatible with the "ECM" and "equilibrator" pipelines
+% 
 % Usage: path_data = getPathwayData
 %
 % Last modified: Ivan Domenzain 2020-07-25
@@ -43,7 +47,7 @@ for i=1:height(pathway_table)
         delim = '=>';
     end
     %Split reactants and products
-    formula = strsplit(formula,delim);
+    formula  = strsplit(formula,delim);
     rxnSubs  = formula{1};
     rxnProds = formula{2};
     rxnSubs  = strsplit(rxnSubs,' + ');
@@ -110,5 +114,6 @@ model.rxnNames  = strtrim(rxnNames);
 model.rxns      = strtrim(rxns);
 model.grRules   = strtrim(grRules);
 model.S         = S;
-path_data.model = model;
+keggVariables   = {'ID','Name','ReactionFormula','KEGGIDs'};
+KEGGmodel       = table(strtrim(rxns),strtrim(rxnNames),pathway_table.KEGG_formula,pathway_table.KEGG_id,'VariableNames',keggVariables);
 end
