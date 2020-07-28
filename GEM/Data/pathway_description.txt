@@ -1,5 +1,5 @@
 rxnID	rxnNames	KEGG_id	rxnFormula	grRules	Ecnumbers	KEGG_formula
-new_r_0001	poly(ethylene terephthalate) hydrolase	R11540	(ethylene terephthalate)n[e] + H2O[e] => (ethylene terephthalate)n-1[e] + 4-[(2-hydroxyethoxy)-carbonyl]benzoate[e]	ISF6_4831	EC3.1.1.101	C21451(n) + C00001 <=> C21451(n-1) + C21450
+new_r_0001	poly(ethylene terephthalate) hydrolase	R11540	(ethylene terephthalate)n[e] + H2O[e] => (ethylene terephthalate)n-1[e] + 4-[(2-hydroxyethoxy)-carbonyl]benzoate[e]	ISF6_4831	EC3.1.1.101	C21451 + C00001 <=> C21451 + C21450
 new_r_0002	mono(ethylene terephthalate) hydrolase	R11541	4-[(2-hydroxyethoxy)carbonyl]benzoate[e] + H2O[e] => terephthalate[e] + ethylene glycol[e]	ISF6_0224	EC3.1.1.102	C21450 + C00001 <=> C06337 + C01380
 new_r_0003	"L-1,2-propanediol oxidoreductase"	R01781	ethylene glycol[c] + NAD+[c] <=> glycolaldehyde[c] + NADH[c] + H+[c]	b2799	EC1.1.1.77	C01380 + C00003 <=> C00266 + C00004 + C00080
 new_r_0004	alkan-1-ol dehydrogenase (acceptor)	R00639	Primary alcohol + NAD+ <=> Aldehyde + NADH	pegdh	EC1.1.99.20	C00226 + C00028 <=> C00071 + C00030
