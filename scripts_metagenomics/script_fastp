@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+for file in /cephyr/NOBACKUP/groups/snic2020-8-84/temp_fastqfiles/*.gz;
+do
+  file_name=$(echo $file | cut -d'/' -f 7)
+  file_ID=$(echo $file_name | cut -d'_' -f 1)
+  echo $file_ID
+
+  sbatch fastp_filter.sh $file_ID
+done
+wait
+
+declare -a already_exist=()
+
+#for file in /Users/leti/Desktop/iGEM/modelling/metagenomics/test/*.gz;
+for file in /cephyr/NOBACKUP/groups/snic2020-8-84/filteredfastq/*.gz;
+do
+  file_name=$(echo $file | cut -d'/' -f 9)
+  file_ID=$(echo $file_name | cut -d'_' -f 1)
+  if [[ ! " ${already_exist[@]} " =~ " ${file_ID} " ]];
+  then
+    already_exist+=("$file_ID")
+    cat "/cephyr/NOBACKUP/groups/snic2020-8-84/filteredfastq/${file_ID}_filtered_1_fastq.gz" "/cephyr/NOBACKUP/groups/snic2020-8-84/filteredfastq/${file_ID}_filtered_2_fastq.gz" >> merged_$file_ID.fastq.gz \
+    | mv {} merged_filteredfastq/. ##trying to take the output of cat to a new directory
+  fi
+done
+
+for file in merged_filteredfastq;
+do
+ sbatch humann.sh $file
+done
+
+sleep 60
