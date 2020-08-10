@@ -9,8 +9,8 @@ echo "Activating conda environment"
 source activate /cephyr/NOBACKUP/groups/snic2020-8-84/conda/envs/main_env
 
 echo "Running fastp"
-input_fastq1="/cephyr/NOBACKUP/groups/snic2020-8-84/temp_fastqfiles/${1}_1.fastq.gz"
-input_fastq2="/cephyr/NOBACKUP/groups/snic2020-8-84/temp_fastqfiles/${1}_2.fastq.gz"
+input_fastq1="/cephyr/NOBACKUP/groups/snic2020-8-84/fastqfiles/${1}_1.fastq.gz"
+input_fastq2="/cephyr/NOBACKUP/groups/snic2020-8-84/fastqfiles/${1}_2.fastq.gz"
 
 output_fastq1="/cephyr/NOBACKUP/groups/snic2020-8-84/filteredfastq/${1}_filtered_1.fastq.gz"
 output_fastq2="/cephyr/NOBACKUP/groups/snic2020-8-84/filteredfastq/${1}_filtered_2.fastq.gz"
