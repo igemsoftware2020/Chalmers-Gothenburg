@@ -13,7 +13,7 @@ wait
 declare -a already_exist=()
 
 #for file in /Users/leti/Desktop/iGEM/modelling/metagenomics/test/*.gz;
-#merging files/concatinate - not done?
+#merging files/concatinate [temporary]
 for file in /cephyr/NOBACKUP/groups/snic2020-8-84/temp_filteredfastq/*.gz;
 do
   file_name=$(echo $file | xargs -n 1 basename)

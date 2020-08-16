@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 #quality filter with fastp
-for file in /cephyr/NOBACKUP/groups/snic2020-8-84/fastqfiles/*.gz;
+for file in /cephyr/NOBACKUP/groups/snic2020-8-84/fastqfiles/*fastq;
 do
   file_name=$(echo $file | cut -d'/' -f 7)
   file_ID=$(echo $file_name | cut -d'_' -f 1)
   echo $file_ID
 
-  sbatch /cephyr/NOBACKUP/groups/snic2020-8-84/scripts/fastp_filter.sh $file_ID
+  sbatch /cephyr/NOBACKUP/groups/snic2020-8-84/scripts/temp_fastp.sh $file_ID
 done
 wait
 
 declare -a already_exist=()
 
 #for file in /Users/leti/Desktop/iGEM/modelling/metagenomics/test/*.gz;
-#merging files [cat]
+#merging files [cat] [merge.sh]
 for file in /cephyr/NOBACKUP/groups/snic2020-8-84/filteredfastq/*.gz;
 do
   file_name=$(echo $file | xargs -n 1 basename)
@@ -26,7 +26,7 @@ do
 done
 
 #running humann2   [main_script_humann2]
-for file in /cephyr/NOBACKUP/groups/snic2020-8-84/temp_merged_filteredfastq/*;
+for file in /cephyr/NOBACKUP/groups/snic2020-8-84/merged_filteredfastq/*;
 do
   file_name=$(echo $file | xargs -n 1 basename)
   file_ID=$(echo $file_name | cut -d'_' -f 2)
