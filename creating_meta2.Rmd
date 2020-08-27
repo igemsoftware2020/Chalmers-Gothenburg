@@ -1,0 +1,50 @@
+---
+title: "Creating meta2"
+output: creating_meta2
+---
+
+
+
+#Load library
+```{r}
+
+library(tidyverse)
+
+```
+
+#Data from study: McDonald (2)
+Loading file report tsv file
+```{r}
+file_report_2 <- read_delim("./2_mcdonald_filereport_read_run_PRJNA351238_tsv.txt", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+glimpse(file_report_2)
+```
+
+Select only necessary columns from file report 
+```{r}
+file_report_2_select <- select(file_report_2, run_accession, scientific_name, sample_alias)
+file_report_2_select
+```
+Change header name from run_accession to sample_id [READY TO MERGE]
+```{r}
+colnames(file_report_2_select)[2] <- "environment"
+colnames(file_report_2_select)[1] <- "sample_id"
+colnames(file_report_2_select)[3] <- "sample_alias"
+glimpse(file_report_2_select)
+```
+
+Adding name of study as extra column [READY TO MERGE]
+```{r}
+meta2 <- add_column(file_report_2_select, "study" = "E. Ransom-Jones et al. (2017)", .after = "sample_alias")
+```
+Adding another id column eg. "s001_gup_mar" (number_study_environment)
+```{r}
+
+#add_column(meta1, "id" = as.character (1:2) , .after = "sample_id")
+
+meta2 <- cbind("id" = sprintf("%03d", 1:nrow(meta2)),meta2)
+
+
+meta2$id = paste0("s", meta2$id, "_ran", "_was")
+meta2
+```
