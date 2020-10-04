@@ -1,0 +1,271 @@
+---
+title: "R masterscript for humann2 data"
+output: html_notebook
+---
+
+Loading library
+```{r}
+library(tidyverse)
+library(cowplot) # required to arrange multiple plots in a grid
+library(RColorBrewer)
+library(ggExtra)
+theme_set(theme_bw(base_size=12)) # set default ggplot2 theme
+```
+
+#Loading data
+
+Loading pathway abundance data
+```{r}
+path_abundance <- read_delim("./matrix_pathabundance.tsv", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+glimpse(path_abundance)
+```
+
+
+
+
+Moving file id from row to column (pivoting)
+```{r}
+pivot_path_abundance <- path_abundance %>% pivot_longer(-Pathway, names_to = "sample_id", values_to = "Abundance")
+```
+
+Deleting parts of sample id name
+```{r}
+pivot_path_abundance = pivot_path_abundance %>%
+  mutate(sample_id = gsub("merged_([A-Z]+[0-9]+)_Abundance","\\1", pivot_path_abundance$sample_id))
+  
+head(pivot_path_abundance)
+```
+
+Abundance norm, adding extra column
+```{r}
+ mutated_path_abundance <- pivot_path_abundance %>%
+  group_by(sample_id) %>%
+  mutate(abundance_norm = Abundance / sum(Abundance)) %>%
+  ungroup()
+
+head(mutated_path_abundance)
+
+mutated_path_abundance %>%
+  group_by(sample_id) %>%
+  summarize(sum_abundance_norm = sum(abundance_norm)) %>%
+  ungroup() %>%
+  head()
+
+```
+Plotting
+```{r}
+path_abundance_noBact = mutated_path_abundance %>% 
+  mutate(log_abundance_norm = log(abundance_norm + 1e-10)) %>% 
+  filter(Pathway != "UNMAPPED") %>% 
+  filter(!grepl("UNINTEGRATED",Pathway)) %>%
+  filter(!grepl("\\|",Pathway))
+head(path_abundance_noBact)
+
+p_barplot_path = path_abundance_noBact %>% 
+  group_by(sample_id) %>% 
+  filter(Abundance != 0) %>%
+  summarise(number_nonZero_pathways = length(Pathway)) %>% 
+  ungroup() %>%
+  ggplot(aes(x=sample_id, y = number_nonZero_pathways)) +
+  geom_bar(stat = "identity") +
+  theme_bw() +
+  ylab("Number of non-zero pathways") +
+  xlab("Sample") +
+  theme(axis.text.x = element_text(angle = 90))
+
+p_barplot_path
+  
+```
+Plotting
+```{r}
+path_abundance_noBact %>% 
+select(sample_id, Abundance, abundance_norm, log_abundance_norm, Pathway, starts_with("1CMET2"))
+  ggplot(aes(x = sample_id, y = log_abundance_norm)) +
+  geom_bar(stat = "identity") +
+  theme_bw() +
+  ylab("Abundance norm") +
+  xlab("Sample") +
+  ggtitle("Pathway 1") +
+  theme(axis.text.x = element_text(angle = 90))  
+  
+
+```
+# Global analysis
+Join all meta files(1-5)
+```{r}
+meta <- bind_rows(meta1, meta2, meta3, meta4_2, meta5_2)
+meta
+
+```
+Adding id column e.g. s01_soi_gup (number_environment_study)
+```{r}
+meta <- meta %>% 
+  mutate(id = paste0("s",sprintf("%02d", 1:nrow(meta)))) %>% 
+  mutate(id = case_when(
+    environment == "soil metagenome" ~ paste0(id,"_soilm_"),
+    environment == "wastewater metagenome" ~ paste0(id,"_waste_"),
+    environment == "marine metagenome" ~ paste0(id,"_marin_"),
+    environment == "freshwater sediment metagenome" ~ paste0(id,"_frwas_"),
+    environment == "freshwater metagenome" ~ paste0(id,"_fresh_"),
+    
+  ))
+meta
+
+meta <- meta %>% 
+  mutate(id = case_when(
+    study == "J. Gupta et al. (2017)" ~ paste0(id, "gup"),
+    study == "E. Ransom-Jones et al. (2017)" ~ paste0(id, "ran"),
+    study == "L.J. Pinnell, J.W. Turner (2019)" ~ paste0(id, "pin"),
+    study == "M.L. Petrovich et al. (2019)" ~ paste0(id, "pet"),
+    study == "J.A. Bryant et al. (2016)" ~ paste0(id, "bry")
+ ))
+
+meta
+    
+```
+Changing order of columns in meta
+```{r}
+meta <- meta %>% 
+
+select(id, sample_id, sample_alias, environment, study)
+
+meta
+```
+
+
+Join path abundance with meta
+```{r}
+
+join_path_meta <- left_join(path_abundance_noBact, meta, by='sample_id') 
+              
+head(join_path_meta)
+
+```
+Changing order of columns in merged file (join_path_meta)
+```{r}
+join_path_meta <- join_path_meta %>% 
+
+select(id, sample_id, sample_alias, environment, Pathway, study, Abundance, abundance_norm, log_abundance_norm)
+
+head(join_path_meta)
+```
+Deleting "amplicon" samples SRR4838360, SRR4838361, SRR5479799 
+
+```{r}
+
+```
+
+
+#PCA
+Pivot wider (id, Pathway, abundance_norm)
+```{r}
+select_path_meta <- join_path_meta %>% 
+select(id, Pathway, log_abundance_norm)
+head(select_path_meta)
+
+pivot_path_meta <- select_path_meta %>% 
+pivot_wider(names_from = id, values_from = log_abundance_norm)
+
+head(pivot_path_meta)
+
+
+
+```
+Changing pathway from text to numerical values
+```{r}
+
+df_pathway <- pivot_path_meta[,-1]
+df_pathway = as.data.frame(df_pathway, row.names = NULL, optional = FALSE,)
+row.names(df_pathway) <- pivot_path_meta$Pathway
+df_pathway = t(df_pathway)
+
+glimpse(df_pathway)
+```
+
+
+
+Preparing PCA components
+```{r}
+
+pca <- prcomp(df_pathway) # center = TRUE, scale. = TRUE)
+
+summary(pca)
+  
+```
+
+Add study + environment information back into PCA data
+```{r}
+
+pca_data = cbind(id = rownames(pca$x[,1:2]),
+                 pca$x[,1:2]) %>%
+  as_tibble() %>% 
+  left_join(meta, by = "id")  %>% 
+  mutate(PC1 = as.double(PC1), 
+         PC2 = as.double(PC2))
+
+glimpse(pca_data)
+
+
+```
+
+Adding percentage of variance captured
+```{r}
+percentage <- round(pca$sdev / sum(pca$sdev) * 100, 2)
+percentage <-
+  paste0(colnames(pca$x), " (", paste(as.character(percentage), "%", ")"))
+head(percentage)
+
+percentage[1]
+```
+
+Plot PC1 & PC2, colored by study
+```{r}
+pca_data %>% 
+ggplot(aes(PC1, PC2, group = study, color = study)) +
+  geom_point() +
+  stat_ellipse() +
+  xlab(percentage[1]) +
+  ylab(percentage[2])
+```
+Plot PC1 & PC2, colored by environment
+```{r, fig.width= 10, fig.height= 4}
+p_pca_env = pca_data %>% 
+  ggplot(aes(PC1, PC2, group = environment, color = environment)) +
+  geom_point(size = 1.5) +
+  stat_ellipse(size = 1, alpha = 0.2, geom = "polygon", aes(fill = environment)) +
+  xlab(percentage[1]) +
+  ylab(percentage[2]) +
+  theme_classic() +
+  scale_color_brewer(type = "qual", palette = "Set1") +
+  scale_fill_brewer(type = "qual", palette = "Set1") +
+  theme(legend.position = "bottom",
+        aspect.ratio = 1)
+
+p_pca_env = ggMarginal(p_pca_env, groupColour = TRUE)
+
+p_pca_env
+
+```
+
+
+
+```{r}
+pivot_path_abundance %>% 
+  inner_join(meta) %>% 
+  select(sample_id) %>% 
+  unique()
+
+samples_meta = meta$sample_id
+samples_path = pivot_path_abundance %>% 
+  select(sample_id) %>% 
+  unique() %>% 
+  .$sample_id
+
+missing_samples = setdiff(samples_meta,samples_path)
+
+meta %>% 
+  filter(sample_id %in% missing_samples)
+```
+
+

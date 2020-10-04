@@ -1,0 +1,72 @@
+---
+title: "creating meta 5"
+output: html_notebook
+---
+
+
+#Load library
+```{r}
+
+library(tidyverse)
+
+```
+
+#Data from study: Poretsky (5)
+Loading file report tsv file
+```{r}
+file_report_5 <- read_delim("./5_poretsky_filereport_sample_read_run_PRJNA385831_tsv.txt", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+glimpse(file_report_5)
+```
+
+Select only necessary columns from file report
+```{r}
+file_report_5_select <- select(file_report_5, run_accession, scientific_name, Sample)
+file_report_5_select
+```
+Change header name from run_accession to sample_id [READY TO MERGE]
+```{r}
+colnames(file_report_5_select)[2] <- "environment"
+colnames(file_report_5_select)[1] <- "sample_id"
+colnames(file_report_5_select)[3] <- "sample_alias"
+glimpse(file_report_5_select)
+```
+
+Loading table from article tsv file
+```{r}
+article_table_5 <- read_delim("./5_poretsky_excel1.tsv.txt", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+glimpse(article_table_5)
+
+```
+Select only necessary columns from article file
+```{r}
+article_table_5_select <- select(article_table_5, (Sample: Type))
+article_table_5_select
+```
+
+
+
+Adding name of study as extra column [READY TO MERGE]
+```{r}
+meta5_2 <- add_column(file_report_5_select, "study" = "M.L. Petrovich et al. (2019)", .after = "sample_alias")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
