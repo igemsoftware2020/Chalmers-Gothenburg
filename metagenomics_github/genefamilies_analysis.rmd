@@ -1,0 +1,24 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+Loading library
+```{r}
+library(tidyverse)
+library(cowplot) # required to arrange multiple plots in a grid
+library(RColorBrewer)
+library(ggExtra)
+theme_set(theme_bw(base_size=12)) # set default ggplot2 theme
+```
+
+```{r}
+genefamilies <- read_delim("C:/Users/earnh/genefamilies.tsv", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+glimpse(genefamilies)
+```
+Moving file id from row to column (pivoting)
+```{r}
+pivot_genefamilies <- genefamilies %>% pivot_longer(-`# Gene Family` , names_to = "sample_id", values_to = "Abundance")
+```
+
