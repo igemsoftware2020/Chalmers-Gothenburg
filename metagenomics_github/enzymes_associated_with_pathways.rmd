@@ -1,0 +1,21 @@
+---
+title: "enzymes_associated_with_pathways"
+output: html_notebook
+---
+
+#Load library
+```{r}
+
+library(tidyverse)
+
+```
+
+#Enzymes associated with pathways
+Loading "unipathway_pathways.tsv" 
+```{r}
+pathways <- read_delim("./unipathway_pathways.tsv", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+glimpse(pathways)
+```
+
+
