@@ -1,0 +1,2732 @@
+gene_id,pathway_id,rxn_id
+eco:b2066,Pyrimidine metabolism,CYTDK2
+eco:b0238,Purine metabolism,XPPT
+eco:b0238,Purine metabolism,HXPRT
+eco:b0474,Purine metabolism,NDPK5
+eco:b3281,"Phenylalanine, tyrosine and tryptophan biosynthesis",SHK3Dr
+eco:b0474,Purine metabolism,NDPK6
+eco:b0474,Purine metabolism,NDPK8
+eco:b1062,Pyrimidine metabolism,DHORTS
+eco:b1281,Pyrimidine metabolism,OMPDC
+eco:b3831,Pyrimidine metabolism,PYNP2r
+eco:b0243,Arginine and proline metabolism,G5SD
+eco:b0720,Citrate cycle (TCA cycle),CS
+eco:b1136,Citrate cycle (TCA cycle),ICDHyr
+eco:b0870,"Glycine, serine and threonine metabolism",ALATA_L2
+eco:b4382,Pyrimidine metabolism,DURIPP
+eco:b0351,Phenylalanine metabolism,ACALD
+eco:b3073,Lysine degradation,PTRCTA
+eco:b4069,Glycolysis / Gluconeogenesis,ACS
+eco:b3008,Cysteine and methionine metabolism,CYSDS
+eco:b1613,Fructose and mannose metabolism,MAN6PI
+eco:b2744,Purine metabolism,PPA
+eco:b0414,Riboflavin metabolism,APRAUR
+eco:b3708,Tryptophan metabolism,TRPAS2
+eco:b3403,Glycolysis / Gluconeogenesis,PPCK
+eco:b1479,Pyruvate metabolism,ME1
+eco:b3041,Riboflavin metabolism,DB4PS
+eco:b1190,D-Alanine metabolism,ALAR
+eco:b0025,Riboflavin metabolism,RBFK
+eco:b2290,Arginine biosynthesis,ALATA_L
+eco:b0063,Pentose and glucuronate interconversions,XYLK
+eco:b3752,Pentose phosphate pathway,RBK
+eco:b3926,Glycerolipid metabolism,GLYK
+eco:b4383,Pentose phosphate pathway,PPM
+eco:b0928,Arginine biosynthesis,ASPTA
+eco:b3812,Riboflavin metabolism,ACP1_FMN
+eco:b1662,Riboflavin metabolism,RBFSb
+eco:b1134,NA,NDP3
+eco:b3614,NA,CDPPH
+eco:b3614,NA,NDP7
+eco:b4232,Glycolysis / Gluconeogenesis,FBP
+NA,NA,EX_pi_e
+eco:b3430,Starch and sucrose metabolism,GLGC
+eco:b2551,"Glycine, serine and threonine metabolism",ALATA_D2
+eco:b1854,Glycolysis / Gluconeogenesis,PYK
+eco:b3368,Porphyrin and chlorophyll metabolism,SHCHD2
+NA,NA,EX_co2_e
+eco:b3197,Lipopolysaccharide biosynthesis,A5PISO
+eco:b0844,Riboflavin metabolism,PMDPHT
+eco:b2436,Porphyrin and chlorophyll metabolism,CPPPGO
+NA,NA,EX_met__L_e
+eco:b3500,Glutathione metabolism,GTHOr
+eco:b3770,Cysteine and methionine metabolism,ILETA
+eco:b0945,Pyrimidine metabolism,DHORD5
+NA,NA,EX_metsox_S__L_e
+eco:b2979,Glyoxylate and dicarboxylate metabolism,GLYCTO2
+eco:b3770,Cysteine and methionine metabolism,VALTA
+eco:b2979,Glyoxylate and dicarboxylate metabolism,GLYCTO3
+eco:b0071,"Valine, leucine and isoleucine biosynthesis",IPPMIb
+eco:b2979,Glyoxylate and dicarboxylate metabolism,GLYCTO4
+eco:b3642,Pyrimidine metabolism,ORPT
+eco:b0415,Riboflavin metabolism,RBFSa
+eco:b3670,"Valine, leucine and isoleucine biosynthesis",ACHBS
+eco:b3916,Glycolysis / Gluconeogenesis,PFK_3
+eco:b3771,"Valine, leucine and isoleucine biosynthesis",DHAD2
+eco:b0077,"Valine, leucine and isoleucine biosynthesis",ACLS
+eco:b1260,"Glycine, serine and threonine metabolism",TRPS2
+eco:b0908,"Phenylalanine, tyrosine and tryptophan biosynthesis",PSCVT
+eco:b2243,Glycerophospholipid metabolism,G3PD5
+eco:b2293,Fructose and mannose metabolism,G1PP
+eco:b0902,NA,PFL
+NA,NA,EX_acgam_e
+eco:b1263,"Phenylalanine, tyrosine and tryptophan biosynthesis",ANS
+eco:b4152,Citrate cycle (TCA cycle),FRD2
+eco:b4152,Citrate cycle (TCA cycle),FRD3
+eco:b1263,"Phenylalanine, tyrosine and tryptophan biosynthesis",ANPRT
+eco:b0871,Pyruvate metabolism,POX
+eco:b2599,"Phenylalanine, tyrosine and tryptophan biosynthesis",CHORM
+eco:b2297,Taurine and hypotaurine metabolism,PTAr
+eco:b2329,"Phenylalanine, tyrosine and tryptophan biosynthesis",CHORS
+eco:b1262,"Phenylalanine, tyrosine and tryptophan biosynthesis",IGPS
+eco:b2296,Taurine and hypotaurine metabolism,ACKr
+NA,NA,EX_cellb_e
+NA,NA,EX_crn_e
+NA,NA,EX_hxan_e
+NA,NA,EX_ile__L_e
+NA,NA,EX_chol_e
+NA,NA,EX_fe3_e
+eco:b3770,Cysteine and methionine metabolism,LEUTAi
+NA,NA,EX_lac__L_e
+NA,NA,EX_leu__L_e
+NA,NA,EX_glcn_e
+NA,NA,EX_no3_e
+NA,NA,EX_h_e
+eco:b0421,Terpenoid backbone biosynthesis,DMATT
+NA,NA,EX_orn_e
+eco:b0421,Terpenoid backbone biosynthesis,GRTT
+NA,NA,EX_gln__L_e
+eco:b3804,Porphyrin and chlorophyll metabolism,UPP3S
+NA,NA,EX_pro__L_e
+NA,NA,EX_glyc_e
+eco:b3997,Porphyrin and chlorophyll metabolism,UPPDC1
+NA,NA,EX_man_e
+eco:b4382,Pyrimidine metabolism,TMDPP
+NA,NA,EX_ade_e
+NA,NA,EX_mn2_e
+NA,NA,EX_4abut_e
+NA,NA,EX_ac_e
+NA,NA,EX_akg_e
+NA,NA,EX_ala__L_e
+NA,NA,EX_arg__L_e
+NA,NA,EX_asp__L_e
+NA,NA,EX_pyr_e
+NA,NA,EX_succ_e
+NA,NA,EX_thymd_e
+NA,NA,EX_rib__D_e
+NA,NA,EX_tyr__L_e
+NA,NA,EX_cytd_e
+NA,NA,EX_dcyt_e
+eco:b3633,Lipopolysaccharide biosynthesis,MOAT
+NA,NA,EX_fum_e
+NA,NA,EX_sbt__D_e
+NA,NA,EX_glu__L_e
+eco:b0174,Peptidoglycan biosynthesis,UDCPDPS
+eco:b2341,Fatty acid degradation,ECOAH6
+eco:b0524,Lipopolysaccharide biosynthesis,USHD
+NA,NA,EX_gua_e
+eco:b2779,Glycolysis / Gluconeogenesis,ENO
+eco:b2925,Glycolysis / Gluconeogenesis,FBA
+eco:b0126,Nitrogen metabolism,HCO3E
+eco:b0963,Propanoate metabolism,MGSA
+eco:b4006,Purine metabolism,IMPC
+eco:b2508,Purine metabolism,IMPD
+eco:b1702,Glycolysis / Gluconeogenesis,PPS
+eco:b2341,Fatty acid degradation,ECOAH4
+eco:b0182,Lipopolysaccharide biosynthesis,LPADSS
+eco:b2400,Porphyrin and chlorophyll metabolism,GLUTRS
+eco:b0915,Lipopolysaccharide biosynthesis,TDSK
+eco:b4025,Glycolysis / Gluconeogenesis,PGI
+eco:b3993,Thiamine metabolism,TMPPP
+NA,NA,EX_btn_e
+eco:b2926,Glycolysis / Gluconeogenesis,PGK
+NA,NA,EX_ptrc_e
+eco:b1850,Pentose phosphate pathway,EDA
+NA,NA,EX_spmd_e
+NA,NA,EX_thym_e
+NA,NA,EX_xtsn_e
+eco:b0099,NA,NTPP1
+eco:b2066,Pyrimidine metabolism,URIK1
+eco:b2066,Pyrimidine metabolism,URIK2
+eco:b0099,NA,NTPP2
+eco:b0767,Pentose phosphate pathway,PGL
+eco:b0160,Purine metabolism,NTPTP1
+eco:b0160,Purine metabolism,NTPTP2
+eco:b2066,Pyrimidine metabolism,CYTDK1
+eco:b3386,Pentose phosphate pathway,RPE
+eco:b1693,"Phenylalanine, tyrosine and tryptophan biosynthesis",DHQTi
+eco:b0073,"Valine, leucine and isoleucine biosynthesis",IPMD
+eco:b0523,Purine metabolism,AIRC3
+eco:b0008,Pentose phosphate pathway,TALA
+eco:b4384,Purine metabolism,PUNP1
+eco:b4384,Purine metabolism,PUNP2
+eco:b2407,Purine metabolism,PUNP3
+eco:b1131,Purine metabolism,ADSL2r
+eco:b2935,Pentose phosphate pathway,TKT1
+NA,NA,EX_fe2_e
+eco:b2407,Purine metabolism,PUNP5
+eco:b4384,Purine metabolism,PUNP6
+eco:b2407,Purine metabolism,PUNP7
+eco:b0678,Amino sugar and nucleotide sugar metabolism,G6PDA
+eco:b2582,NA,RNDR1
+eco:b1241,Glycolysis / Gluconeogenesis,ALCD2x
+eco:b3781,NA,RNDR3
+eco:b3781,NA,RNDR4
+eco:b3588,Glycolysis / Gluconeogenesis,ALDD2y
+eco:b2827,Pyrimidine metabolism,TMDS
+eco:b3903,Fructose and mannose metabolism,RMI
+eco:b1238,Pyrimidine metabolism,TMDK1
+eco:b4146,NA,LYSAM
+eco:b3639,Pantothenate and CoA biosynthesis,PPCDC
+eco:b1232,Glyoxylate and dicarboxylate metabolism,FTHFD
+NA,NA,EX_glc__D_e
+eco:b3771,"Valine, leucine and isoleucine biosynthesis",DHAD1
+eco:b0071,"Valine, leucine and isoleucine biosynthesis",IPPMIa
+NA,NA,EX_alltn_e
+eco:b2243,Glycerophospholipid metabolism,G3PD7
+eco:b1851,Pentose phosphate pathway,EDD
+NA,NA,EX_ura_e
+eco:b1109,Oxidative phosphorylation,NADH9
+NA,NA,EX_val__L_e
+eco:b1109,Oxidative phosphorylation,NADH10
+eco:b0474,Purine metabolism,ADK4
+eco:b0477,Purine metabolism,INSK
+eco:b3236,Citrate cycle (TCA cycle),MDH
+eco:b2662,"Alanine, aspartate and glutamate metabolism",ABTA
+NA,NA,EX_xan_e
+eco:b1612,Citrate cycle (TCA cycle),FUM
+eco:b0025,Riboflavin metabolism,FMNAT
+eco:b2418,Vitamin B6 metabolism,PYDXNK
+eco:b1638,Vitamin B6 metabolism,PYAM5PO
+eco:b1525,"Alanine, aspartate and glutamate metabolism",SSALx
+eco:b4139,"Alanine, aspartate and glutamate metabolism",ASPT
+eco:b0907,"Glycine, serine and threonine metabolism",OHPBAT
+eco:b4471,"Glycine, serine and threonine metabolism",SERD_L
+NA,NA,EX_dgsn_e
+eco:b3996,Nicotinate and nicotinamide metabolism,NADDP
+NA,NA,EX_arab__L_e
+NA,NA,EX_fru_e
+eco:b3616,"Glycine, serine and threonine metabolism",THRD
+NA,NA,HEX4
+NA,NA,EX_gal_e
+eco:b4390,Nicotinate and nicotinamide metabolism,NMNAT
+NA,NA,EX_xyl__D_e
+eco:b3774,"Valine, leucine and isoleucine biosynthesis",KARA1
+eco:b2103,Thiamine metabolism,HMPK1
+eco:b3774,"Valine, leucine and isoleucine biosynthesis",KARA2
+NA,NA,EX_duri_e
+NA,NA,EX_for_e
+NA,NA,EX_gly_e
+NA,NA,EX_h2_e
+NA,NA,EX_lys__L_e
+eco:b2316,Fatty acid biosynthesis,ACCOAC
+eco:b2615,Nicotinate and nicotinamide metabolism,NADK
+eco:b0507,Glyoxylate and dicarboxylate metabolism,GLXCL
+eco:b2265,Ubiquinone and other terpenoid-quinone biosynthesis,ICHORS_copy2
+eco:b2261,Ubiquinone and other terpenoid-quinone biosynthesis,SUCBZS
+eco:b0596,Biosynthesis of siderophore group nonribosomal peptides,DHBD
+eco:b0595,Biosynthesis of siderophore group nonribosomal peptides,ICHORT
+NA,NA,EX_ser__L_e
+NA,NA,EX_thm_e
+NA,NA,EX_trp__L_e
+eco:b1210,Porphyrin and chlorophyll metabolism,GLUTRR
+eco:b3429,Starch and sucrose metabolism,GLCS1
+eco:b3428,Starch and sucrose metabolism,GLCP
+NA,NA,EX_din_e
+eco:b0063,Pentose and glucuronate interconversions,RBK_L1
+eco:b0061,Pentose and glucuronate interconversions,RBP4E
+eco:b3062,Glyoxylate and dicarboxylate metabolism,TARTD
+eco:b2744,Purine metabolism,NTD2
+eco:b3126,Ascorbate and aldarate metabolism,GLCRAL
+eco:b2744,Purine metabolism,NTD4
+eco:b2744,Purine metabolism,NTD5
+NA,NA,EX_fmn_e
+NA,NA,EX_gthox_e
+eco:b2323,Fatty acid biosynthesis,KAS14
+eco:b0428,Oxidative phosphorylation,HEMEOS
+eco:b0120,Cysteine and methionine metabolism,ADMDC
+eco:b2937,Arginine and proline metabolism,AGMT
+eco:b2744,Purine metabolism,NTD6
+eco:b1651,Pyruvate metabolism,LGTHL
+eco:b0446,NA,PYDXPP
+eco:b0766,NA,PDXPP
+eco:b4117,Arginine and proline metabolism,ARGDC
+eco:b3846,Fatty acid degradation,HACD6
+eco:b2341,Fatty acid degradation,ECOAH1
+eco:b2341,Fatty acid degradation,ECOAH2
+eco:b3172,Arginine biosynthesis,ARGSS
+eco:b3958,Arginine biosynthesis,AGPR
+eco:b0121,Cysteine and methionine metabolism,SPMS
+eco:b0154,Porphyrin and chlorophyll metabolism,G1SAT
+eco:b0918,Lipopolysaccharide biosynthesis,KDOCT2
+eco:b2341,Fatty acid degradation,ECOAH3
+eco:b0758,Galactose metabolism,UGLT
+eco:b1054,Lipopolysaccharide biosynthesis,EDTXS1
+eco:b0420,Thiamine metabolism,DXPS
+eco:b1850,Pentose phosphate pathway,OAADC
+eco:b4322,Pentose and glucuronate interconversions,MNNH
+eco:b1208,Terpenoid backbone biosynthesis,CDPMEK
+eco:b1855,Lipopolysaccharide biosynthesis,EDTXS2
+eco:b3091,Pentose and glucuronate interconversions,ALTRH
+eco:b2746,Terpenoid backbone biosynthesis,MECDPS
+eco:b3092,Pentose and glucuronate interconversions,GUI1
+eco:b2378,Lipopolysaccharide biosynthesis,EDTXS3
+eco:b3176,Amino sugar and nucleotide sugar metabolism,PGAMT
+eco:b3526,Pentose phosphate pathway,DDGLK
+eco:b1855,Lipopolysaccharide biosynthesis,EDTXS4
+eco:b3565,Pentose and glucuronate interconversions,XYLI2
+eco:b2048,Fructose and mannose metabolism,PMANM
+eco:b4015,Glyoxylate and dicarboxylate metabolism,ICL
+eco:b3730,Amino sugar and nucleotide sugar metabolism,UAGDP
+eco:b3189,Amino sugar and nucleotide sugar metabolism,UAGCVT
+eco:b3967,D-Glutamine and D-glutamate metabolism,GLUR
+NA,NA,EX_tmao_e
+eco:b3786,Amino sugar and nucleotide sugar metabolism,UAG2E
+NA,NA,EX_acald_e
+eco:b2904,"Glycine, serine and threonine metabolism",GLYCL
+NA,NA,CMPN
+eco:b0109,Nicotinate and nicotinamide metabolism,NNDPR
+eco:b0261,Cysteine and methionine metabolism,HCYSMT
+NA,NA,EX_melib_e
+eco:b2323,Fatty acid biosynthesis,MACPD
+eco:b2232,Ubiquinone and other terpenoid-quinone biosynthesis,DMQMT
+eco:b0759,Galactose metabolism,UDPG4E
+eco:b0344,Galactose metabolism,LACZ
+eco:b4239,Starch and sucrose metabolism,TRE6PH
+eco:b3565,Pentose and glucuronate interconversions,XYLI1
+eco:b3956,Pyruvate metabolism,PPC
+eco:b0593,Ubiquinone and other terpenoid-quinone biosynthesis,ICHORS_copy1
+NA,NA,EX_sucr_e
+NA,NA,ALDD4
+eco:b3846,Fatty acid degradation,HACD4
+eco:b0822,NA,G3PT
+eco:b2542,Fatty acid degradation,CINNDO
+eco:b2541,Phenylalanine metabolism,DHPPD
+NA,NA,EX_tre_e
+NA,NA,EX_zn2_e
+eco:b3846,Fatty acid degradation,HACD5
+eco:b2541,Phenylalanine metabolism,DHCIND
+eco:b2341,Fatty acid degradation,HACD7
+eco:b0614,Two-component system,CITL
+eco:b2052,Fructose and mannose metabolism,GOFUCR
+eco:b2418,Vitamin B6 metabolism,PYDXK
+NA,NA,DNMPPA
+eco:b0142,Folate biosynthesis,HPPK2
+eco:b3634,Pantothenate and CoA biosynthesis,PTPATi
+eco:b0394,Fructose and mannose metabolism,HEX7
+eco:b0173,Terpenoid backbone biosynthesis,DXPRIi
+eco:b1277,Riboflavin metabolism,GTPCII2
+NA,NA,URIC
+eco:b2752,Purine metabolism,SADT2
+eco:b3843,Ubiquinone and other terpenoid-quinone biosynthesis,OPHBDC
+eco:b1094,Metabolic pathways,AACPS1
+eco:b2232,Ubiquinone and other terpenoid-quinone biosynthesis,OHPHM
+eco:b2551,"Glycine, serine and threonine metabolism",GHMT2r
+eco:b0945,Pyrimidine metabolism,DHORD2
+eco:b2799,Glyoxylate and dicarboxylate metabolism,LCARS
+eco:b1478,Glycolysis / Gluconeogenesis,ALCD19
+eco:b3902,Pentose and glucuronate interconversions,RMPA
+eco:b2705,Fructose and mannose metabolism,SBTPD
+eco:b3916,Glycolysis / Gluconeogenesis,PFK_2
+eco:b2091,Galactose metabolism,GLTPD
+NA,NA,EX_hdcea_e
+eco:b2222,Lysine degradation,ACACCT
+eco:b2472,Lysine biosynthesis,SDPDS
+eco:b2222,Lysine degradation,BUTCT
+eco:b3132,Galactose metabolism,TGBPA
+eco:b4323,Pentose and glucuronate interconversions,MANAO
+eco:b1521,Pentose and glucuronate interconversions,TAGURr
+eco:b1589,NA,DMSOR1
+eco:b3385,Glyoxylate and dicarboxylate metabolism,PGLYCP
+eco:b3553,Pentose phosphate pathway,2DGULRx
+eco:b3553,Pentose phosphate pathway,DKGLCNR2y
+eco:b2039,Streptomycin biosynthesis,G1PTT
+eco:b3788,Streptomycin biosynthesis,TDPGDH
+eco:b1812,Folate biosynthesis,ADCS
+eco:b1096,Folate biosynthesis,ADCL
+eco:b3553,Pentose phosphate pathway,2DGULRy
+eco:b1200,Glycerolipid metabolism,DHAPT
+NA,NA,EX_lac__D_e
+eco:b2036,Galactose metabolism,UDPGALM
+eco:b2038,Streptomycin biosynthesis,TDPDRE
+eco:b2040,Streptomycin biosynthesis,TDPDRR
+eco:b0910,Pyrimidine metabolism,UMPK
+eco:b0638,Porphyrin and chlorophyll metabolism,RZ5PP
+eco:b4477,Galactose metabolism,DDPGALA
+eco:b1238,Pyrimidine metabolism,DURIK1
+eco:b2243,Glycerophospholipid metabolism,G3PD6
+eco:b0512,Purine metabolism,ALLTN
+eco:b3972,Amino sugar and nucleotide sugar metabolism,UAPGR
+eco:b2498,Pyrimidine metabolism,UPPRT
+eco:b2744,Purine metabolism,NTD9
+eco:b2780,Pyrimidine metabolism,CTPS2
+eco:b2744,Purine metabolism,NTD1
+eco:b2744,Purine metabolism,NTD7
+eco:b0087,Peptidoglycan biosynthesis,PAPPT3
+eco:b0090,Peptidoglycan biosynthesis,UAGPT3
+eco:b0474,Purine metabolism,NDPK7
+NA,NA,AOBUTDs
+eco:b3617,"Glycine, serine and threonine metabolism",GLYAT
+eco:b0030,NA,ADNUC
+eco:b0200,Lipopolysaccharide biosynthesis,GMHEPPA
+eco:b0222,Lipopolysaccharide biosynthesis,S7PI
+eco:b1260,"Glycine, serine and threonine metabolism",TRPS3
+NA,NA,EX_ttdcea_e
+eco:b0825,NA,F6PA
+eco:b3619,Lipopolysaccharide biosynthesis,AGMHE
+eco:b0038,NA,CRNBTCT
+eco:b0038,NA,CRNCBCT
+eco:b2744,Purine metabolism,NTD10
+eco:b0036,NA,CRNCDH
+eco:b3052,Lipopolysaccharide biosynthesis,GMHEPAT
+NA,NA,EX_h2s_e
+eco:b0469,Purine metabolism,ADPT
+NA,NA,EX_gthrd_e
+eco:b4267,NA,IDOND
+eco:b4267,NA,IDOND2
+eco:b3844,Riboflavin metabolism,FADRx
+eco:b2784,Purine metabolism,GTPDPK
+NA,NA,NADN
+eco:b3553,Pentose phosphate pathway,GLYCLTDx
+eco:b0474,Purine metabolism,ADK1
+eco:b0474,Purine metabolism,NDPK2
+eco:b2518,Purine metabolism,NDPK3
+eco:b1033,"Glycine, serine and threonine metabolism",HPYRRy
+eco:b0474,Purine metabolism,NDPK4
+eco:b3957,Arginine biosynthesis,ACODA
+eco:b1623,Purine metabolism,ADA
+eco:b1623,Purine metabolism,DADA
+eco:b3665,Purine metabolism,ADD
+eco:b0475,Porphyrin and chlorophyll metabolism,FCLT
+eco:b4040,Ubiquinone and other terpenoid-quinone biosynthesis,HBZOPT
+eco:b3974,Pantothenate and CoA biosynthesis,PNTK
+eco:b4177,Purine metabolism,ADSS
+eco:b0677,Amino sugar and nucleotide sugar metabolism,AGDC
+eco:b3187,Terpenoid backbone biosynthesis,OCTDPS
+eco:b1767,"Alanine, aspartate and glutamate metabolism",ASNN
+eco:b0103,Pantothenate and CoA biosynthesis,DPCOAK
+eco:b2104,Thiamine metabolism,HETZK
+eco:b3744,"Alanine, aspartate and glutamate metabolism",ASNS2
+eco:b4244,Pyrimidine metabolism,ASPCT
+eco:b1215,Lipopolysaccharide biosynthesis,KDOPS
+eco:b3198,Lipopolysaccharide biosynthesis,KDOPP
+eco:b0029,Terpenoid backbone biosynthesis,DMPPS
+NA,NA,EX_26dap__M_e
+eco:b1094,Metabolic pathways,MCOATA
+eco:b0029,Terpenoid backbone biosynthesis,IPDPS
+eco:b1747,Arginine and proline metabolism,AST
+eco:b1744,Arginine and proline metabolism,SGDS
+eco:b0340,Nitrogen metabolism,CYNTAH
+eco:b3809,Lysine biosynthesis,DAPE
+eco:b0031,Monobactam biosynthesis,DHDPRy
+NA,NA,EX_acnam_e
+eco:b0003,"Glycine, serine and threonine metabolism",HSK
+eco:b3359,Arginine biosynthesis,SDPTA
+eco:b2988,Glutathione metabolism,GSPMDA
+eco:b2988,Glutathione metabolism,GSPMDS
+eco:b2883,Purine metabolism,GUAD
+eco:b0004,"Glycine, serine and threonine metabolism",THRS
+NA,NA,EX_amp_e
+eco:b4013,Cysteine and methionine metabolism,HSST
+eco:b2599,"Phenylalanine, tyrosine and tryptophan biosynthesis",PPNDH
+eco:b0895,Sulfur metabolism,TMAOR1
+eco:b0895,Sulfur metabolism,TMAOR2
+eco:b3648,Purine metabolism,DGK1
+eco:b1098,Pyrimidine metabolism,DTMPK
+eco:b0474,Purine metabolism,NDPK1
+eco:b0888,Selenocompound metabolism,TRDR
+eco:b2601,"Phenylalanine, tyrosine and tryptophan biosynthesis",DDPA
+eco:b2700,Nicotinate and nicotinamide metabolism,NMNDA
+eco:b1768,Nicotinate and nicotinamide metabolism,NNAM
+eco:b1014,"Alanine, aspartate and glutamate metabolism",P5CD
+eco:b2690,NA,PGMT
+eco:b2168,Fructose and mannose metabolism,FRUK
+eco:b1584,Arginine and proline metabolism,SPMDAT1
+eco:b2687,Cysteine and methionine metabolism,RHCCE
+NA,NA,EX_dha_e
+eco:b4196,Pentose and glucuronate interconversions,KG6PDC
+eco:b1584,Arginine and proline metabolism,SPMDAT2
+eco:b3790,O-Antigen nucleotide sugar biosynthesis,TDPADGAT
+eco:b4014,Pyruvate metabolism,MALS
+eco:b4197,Pentose and glucuronate interconversions,X5PL3E
+eco:b3575,Pentose and glucuronate interconversions,DOGULNR
+eco:b1897,Starch and sucrose metabolism,TRE6PP
+NA,NA,EX_fuc__L_e
+NA,NA,EX_met__D_e
+NA,NA,EX_tartr__L_e
+eco:b0312,"Glycine, serine and threonine metabolism",BETALDHx
+eco:b0312,"Glycine, serine and threonine metabolism",BETALDHy
+eco:b0403,Galactose metabolism,MLTG3
+NA,NA,EX_taur_e
+NA,NA,EX_maltpt_e
+NA,NA,EX_glyald_e
+NA,NA,EX_glcur_e
+eco:b3397,Purine metabolism,ADPRDP
+eco:b3012,NA,DKGLCNR1
+eco:b3962,Nicotinate and nicotinamide metabolism,NADTRHD
+eco:b1094,Metabolic pathways,AACPS2
+eco:b3844,Riboflavin metabolism,FMNRx2
+eco:b2563,Pantothenate and CoA biosynthesis,ACPS1
+NA,NA,EX_nmn_e
+NA,NA,EX_urea_e
+eco:b0062,Pentose and glucuronate interconversions,ARAI
+eco:b3600,Fructose and mannose metabolism,M1PD
+eco:b3608,Glycerophospholipid metabolism,G3PD2
+eco:b4119,Galactose metabolism,GALS3
+eco:b2802,Fructose and mannose metabolism,FCI
+eco:b2803,Fructose and mannose metabolism,FCLK
+eco:b2738,NA,FCLPA
+eco:b2507,Purine metabolism,GMPS2
+eco:b1982,Purine metabolism,AMPN
+eco:b0477,Purine metabolism,GSNK
+eco:b4069,Glycolysis / Gluconeogenesis,ACCOAL
+eco:b1236,Pentose and glucuronate interconversions,GALUi
+eco:b1094,Metabolic pathways,AACPS3
+eco:b0179,Lipopolysaccharide biosynthesis,U23GAAT
+NA,NA,EX_f6p_e
+eco:b0085,Lysine biosynthesis,UAAGDS
+eco:b2836,Fatty acid degradation,AACPS4
+eco:b0091,D-Glutamine and D-glutamate metabolism,UAMAS
+eco:b0088,D-Glutamine and D-glutamate metabolism,UAMAGS
+eco:b0505,Purine metabolism,UGLYCH
+eco:b2251,NA,NTPP3
+eco:b2781,Purine metabolism,NTPP6
+eco:b2781,Purine metabolism,NTPP7
+eco:b0350,Phenylalanine metabolism,OP4ENH
+NA,NA,EX_rmn_e
+eco:b0352,Phenylalanine metabolism,HOPNTAL
+eco:b2781,Purine metabolism,NTPP8
+eco:b0386,Arginine and proline metabolism,P5CR
+eco:b3425,Sulfur metabolism,CYANST
+NA,NA,EX_ttdca_e
+eco:b0414,Riboflavin metabolism,DHPPDA2
+eco:b0347,Phenylalanine metabolism,3HPPPNH
+NA,NA,G5SADs
+eco:b2053,Fructose and mannose metabolism,GMAND
+eco:b2920,Propanoate metabolism,PPCSCT
+eco:b2143,Pyrimidine metabolism,CYTD
+eco:b0727,Citrate cycle (TCA cycle),AKGDH
+eco:b1033,"Glycine, serine and threonine metabolism",HPYRRx
+eco:b3945,Glycerolipid metabolism,GLYCDx
+eco:b0131,beta-Alanine metabolism,ASP1DC
+eco:b0086,Lysine biosynthesis,UGMDDS
+eco:b2143,Pyrimidine metabolism,DCYTD
+eco:b0778,Biotin metabolism,DBTS
+eco:b2065,Pyrimidine metabolism,DCTPD
+eco:b0096,Lipopolysaccharide biosynthesis,UHGADA
+eco:b3222,Amino sugar and nucleotide sugar metabolism,AMANK
+eco:b1094,Metabolic pathways,UAGAAT
+eco:b2019,Histidine metabolism,ATPPRT
+eco:b2020,Histidine metabolism,HISTD
+eco:b2478,Monobactam biosynthesis,DHDPS
+eco:b3730,Amino sugar and nucleotide sugar metabolism,G1PACT
+eco:b1849,Purine metabolism,GART
+eco:b0337,Pyrimidine metabolism,CSND
+eco:b3729,"Alanine, aspartate and glutamate metabolism",GF6PTA
+eco:b2022,Histidine metabolism,IGPDH
+NA,NA,EX_glyclt_e
+eco:b1207,Pentose phosphate pathway,PRPPS
+NA,NA,H2SO
+eco:b2688,Cysteine and methionine metabolism,GLUCYS
+eco:b2026,Histidine metabolism,PRATPP
+eco:b0485,Arginine biosynthesis,GLUN
+eco:b2024,Histidine metabolism,PRMICI
+eco:b2312,Purine metabolism,GLUPRT
+NA,NA,EX_g6p_e
+eco:b0104,Purine metabolism,GMPR
+eco:b3607,Cysteine and methionine metabolism,SERAT
+eco:b2421,Cysteine and methionine metabolism,CYSS
+eco:b1740,Nicotinate and nicotinamide metabolism,NADS1
+eco:b4214,Sulfur metabolism,BPNT
+NA,NA,EX_2ddglcn_e
+eco:b2582,NA,PAPSR
+eco:b0002,"Glycine, serine and threonine metabolism",ASPK
+eco:b3433,"Glycine, serine and threonine metabolism",ASAD
+eco:b2838,Lysine biosynthesis,DAPDC
+NA,NA,EX_mmet_e
+eco:b3366,Nitrogen metabolism,NTRIR2x
+eco:b4254,Arginine biosynthesis,OCBT
+eco:b2500,Purine metabolism,GARFT
+eco:b3449,Glycerophospholipid metabolism,GPDDA1
+eco:b3449,Glycerophospholipid metabolism,GPDDA2
+eco:b4054,Cysteine and methionine metabolism,PHETA1
+eco:b2600,"Phenylalanine, tyrosine and tryptophan biosynthesis",PPND
+eco:b2942,Cysteine and methionine metabolism,METAT
+eco:b4192,Ascorbate and aldarate metabolism,ASCBPL
+eco:b1993,Porphyrin and chlorophyll metabolism,ACBIPGT
+eco:b1260,"Glycine, serine and threonine metabolism",TRPS1
+eco:b2026,Histidine metabolism,PRAMPC
+eco:b1992,Porphyrin and chlorophyll metabolism,ADOCBLS
+NA,NA,EX_galct__D_e
+eco:b1993,Porphyrin and chlorophyll metabolism,ADOCBIK
+eco:b0417,Thiamine metabolism,TMPK
+eco:b0348,Phenylalanine metabolism,HPPPNDO
+eco:b0331,Propanoate metabolism,MCITL2
+eco:b3564,Pentose and glucuronate interconversions,DXYLK
+eco:b2210,Citrate cycle (TCA cycle),MDH3
+eco:b1748,Arginine and proline metabolism,SOTA
+eco:b0348,Phenylalanine metabolism,DHCINDO
+eco:b1746,Arginine and proline metabolism,SGSAD
+eco:b0349,Phenylalanine metabolism,HKNDDH
+NA,NA,EX_idon__L_e
+eco:b0349,Phenylalanine metabolism,HKNTDH
+eco:b3124,"Glycine, serine and threonine metabolism",GLYCK2
+eco:b2297,Taurine and hypotaurine metabolism,PTA2
+eco:b2210,Citrate cycle (TCA cycle),MDH2
+NA,NA,EX_indole_e
+eco:b1748,Arginine and proline metabolism,ACOTA
+eco:b3449,Glycerophospholipid metabolism,GPDDA5
+eco:b2564,Vitamin B6 metabolism,PDX5PS
+eco:b0369,Porphyrin and chlorophyll metabolism,PPBNGS
+eco:b0583,Biosynthesis of siderophore group nonribosomal peptides,ENTCS
+eco:b2764,Sulfur metabolism,SULR
+eco:b0732,NA,MANPGH
+eco:b0517,Purine metabolism,URDGLYCD
+eco:b0521,Arginine biosynthesis,CBMKr
+eco:b3639,Pantothenate and CoA biosynthesis,PPNCL2
+eco:b4005,Purine metabolism,PRAGSr
+eco:b2557,Purine metabolism,PRFGS
+eco:b3223,Amino sugar and nucleotide sugar metabolism,AMANAPEr
+NA,NA,EX_3hcinnm_e
+eco:b2428,Amino sugar and nucleotide sugar metabolism,ACM6PH
+eco:b0639,Nicotinate and nicotinamide metabolism,NNATr
+eco:b2162,Purine metabolism,CYTDH
+NA,NA,EX_acac_e
+eco:b2441,Glycerophospholipid metabolism,ETHAAL
+eco:b2049,Fructose and mannose metabolism,MAN1PT2
+eco:b0907,"Glycine, serine and threonine metabolism",PSERT
+eco:b0049,Purine metabolism,AP4AH
+NA,NA,EX_acmana_e
+eco:b0049,Purine metabolism,AP5AH
+eco:b3806,Purine metabolism,ADNCYC
+eco:b0522,Purine metabolism,AIRC2
+eco:b1779,Glycolysis / Gluconeogenesis,GAPD
+eco:b2533,Streptomycin biosynthesis,MI1PP
+NA,NA,EX_galur_e
+eco:b0333,Propanoate metabolism,MCITS
+eco:b3115,Propanoate metabolism,PPAKr
+eco:b2388,Glycolysis / Gluconeogenesis,HEX1
+eco:b2029,Pentose phosphate pathway,GND
+eco:b0368,Taurine and hypotaurine metabolism,TAUDO
+NA,NA,DM_amob_c
+eco:b4161,Thiamine metabolism,NTP3
+eco:b4383,Pentose phosphate pathway,PPM2
+eco:b3633,Lipopolysaccharide biosynthesis,MOAT2
+NA,NA,EX_adn_e
+NA,NA,EX_ins_e
+eco:b1852,Pentose phosphate pathway,G6PDH2r
+eco:b2463,Pyruvate metabolism,ME2
+eco:b3960,Arginine biosynthesis,ARGSL
+eco:b0032,Pyrimidine metabolism,CBPS
+eco:b0242,Arginine and proline metabolism,GLU5K
+eco:b0074,"Valine, leucine and isoleucine biosynthesis",IPPS
+NA,NA,EX_mg2_e
+eco:b1094,Metabolic pathways,ACOATA
+eco:b1109,Oxidative phosphorylation,NADH5
+eco:b0134,Pantothenate and CoA biosynthesis,MOHMT
+NA,NA,EX_glyc3p_e
+eco:b0403,Galactose metabolism,MLTG2
+NA,NA,EX_but_e
+eco:b0403,Galactose metabolism,MLTG1
+eco:b3416,Starch and sucrose metabolism,AMALT3
+eco:b3417,Starch and sucrose metabolism,MLTP3
+NA,NA,EX_lcts_e
+NA,NA,EX_ocdca_e
+NA,NA,EX_cbl1_e
+eco:b3908,NA,SPODM
+eco:b0159,Cysteine and methionine metabolism,AHCYSNS
+eco:b3225,Amino sugar and nucleotide sugar metabolism,ACNML
+eco:b1106,Thiamine metabolism,TMK
+eco:b1759,NA,NTPP4
+eco:b2507,Purine metabolism,GMPS
+eco:b1732,Tryptophan metabolism,CAT
+NA,NA,FTHFLi
+NA,NA,EX_nac_e
+eco:b2028,Pentose and glucuronate interconversions,UDPGD
+eco:b0586,Biosynthesis of siderophore group nonribosomal peptides,SERASr
+eco:b2788,NA,GLCRD
+eco:b2542,Fatty acid degradation,PPPNDO
+eco:b0241,NA,26DAHtex
+eco:b0241,NA,HCINNMtex
+eco:b0929,beta-Lactam resistance,HPPPNtex
+eco:b0241,NA,ACtex
+eco:b0241,NA,ACALDtex
+eco:b4039,Ubiquinone and other terpenoid-quinone biosynthesis,CHRPL
+eco:b3791,O-Antigen nucleotide sugar biosynthesis,TDPAGTA
+eco:b3787,Amino sugar and nucleotide sugar metabolism,UACMAMO
+eco:b2925,Glycolysis / Gluconeogenesis,FBA3
+eco:b2103,Thiamine metabolism,PMPK
+eco:b1415,Pyruvate metabolism,LCADi
+eco:b2215,beta-Lactam resistance,ACMANAtex
+eco:b0241,NA,ACMUMtex
+eco:b2342,Fatty acid degradation,ACACT7r
+eco:b4388,"Glycine, serine and threonine metabolism",PSP_L
+eco:b0474,Purine metabolism,ADK3
+eco:b3517,"Alanine, aspartate and glutamate metabolism",GLUDC
+eco:b2342,Fatty acid degradation,ACACT2r
+eco:b3551,Biotin metabolism,BSORy
+eco:b0895,Sulfur metabolism,DMSOR2
+eco:b2750,Purine metabolism,ADSK
+eco:b2342,Fatty acid degradation,ACACT3r
+eco:b2342,Fatty acid degradation,ACACT4r
+eco:b3528,Two-component system,SUCCt2_2pp
+eco:b4123,Two-component system,SUCFUMtpp
+eco:b3940,"Glycine, serine and threonine metabolism",HSDy
+eco:b3008,Cysteine and methionine metabolism,CYSTL
+eco:b3794,NA,ACMAMUT
+eco:b3939,Cysteine and methionine metabolism,SHSL1
+eco:b1525,"Alanine, aspartate and glutamate metabolism",SSALy
+eco:b2417,Glycolysis / Gluconeogenesis,SUCptspp
+eco:b2423,Sulfur metabolism,SULabcpp
+eco:b2423,Sulfur metabolism,TSULabcpp
+eco:b3063,NA,TARTRt7pp
+NA,NA,EX_dad_2_e
+NA,NA,EX_ser__D_e
+eco:b3693,Galactose metabolism,DDGALK
+NA,NA,EX_gam6p_e
+NA,NA,EX_15dap_e
+eco:b2901,Glycolysis / Gluconeogenesis,AB6PGH
+NA,NA,EX_ocdcea_e
+NA,NA,EX_cynt_e
+NA,NA,EX_galctn__D_e
+eco:b3416,Starch and sucrose metabolism,AMALT1
+NA,NA,EX_glyb_e
+eco:b2913,"Glycine, serine and threonine metabolism",AHGDx
+eco:b3417,Starch and sucrose metabolism,MLTP2
+eco:b0365,Sulfur metabolism,TAURabcpp
+eco:b2964,NA,THMDt2pp_copy1
+eco:b0347,Phenylalanine metabolism,3HCINNMH
+eco:b3551,Biotin metabolism,BSORx
+eco:b1398,Phenylalanine metabolism,PACCOAL
+NA,NA,NMNt7pp
+NA,NA,EX_ca2_e
+NA,NA,EX_so3_e
+eco:b0241,NA,GLUtex
+eco:b3849,NA,Kt2pp
+eco:b0241,NA,GLYtex
+eco:b0049,Purine metabolism,GP4GH
+eco:b0241,NA,GLYALDtex
+eco:b2587,NA,AKGt2rpp
+eco:b3784,Metabolic pathways,ACGAMT
+eco:b4031,NA,XYLt2pp
+NA,NA,EX_ascb__L_e
+eco:b0241,NA,GLYBtex
+eco:b0241,NA,GLYCtex
+eco:b0241,NA,GLYC3Ptex
+eco:b0241,NA,GLYCLTtex
+eco:b1377,NA,GTPtex
+eco:b0411,NA,GUAtex
+eco:b0241,NA,Htex
+NA,NA,EX_ala_B_e
+NA,NA,EX_agm_e
+NA,NA,EX_minohp_e
+NA,NA,EX_ppt_e
+NA,NA,EX_hxa_e
+eco:b0241,NA,H2tex
+eco:b3875,NA,H2Otex
+eco:b4481,NA,AADDGT
+eco:b1701,NA,FACOAL160t2pp
+eco:b1701,NA,FACOAL180t2pp
+eco:b1646,NA,SPODMpp
+NA,NA,EX_lyx__L_e
+NA,NA,EX_acmum_e
+NA,NA,EX_dca_e
+NA,NA,EX_all__D_e
+eco:b2205,NA,NO3R1bpp
+NA,NA,O2tpp
+NA,NA,EX_octa_e
+eco:b0980,Inositol phosphate metabolism,PHYTSpp
+NA,NA,EX_gbbtn_e
+eco:b0383,Thiamine metabolism,PPTHpp
+NA,NA,PYRt2rpp
+eco:b1467,Nitrogen metabolism,NO3R2pp
+NA,NA,EX_xylu__L_e
+NA,NA,EX_gdp_e
+NA,NA,EX_gtp_e
+eco:b0980,Inositol phosphate metabolism,NTP3pp
+eco:b2206,Nitrogen metabolism,NO3R2bpp
+eco:b0066,ABC transporters,THMabcpp
+eco:b2406,NA,THMDt2pp_copy2
+eco:b3456,ABC transporters,THRabcpp
+eco:b2417,Glycolysis / Gluconeogenesis,TREptspp
+eco:b1602,Nicotinate and nicotinamide metabolism,THD2pp
+eco:b0997,Methane metabolism,TMAOR1pp
+eco:b0997,Methane metabolism,TMAOR2pp
+NA,NA,XANtpp
+eco:b0241,NA,DAPtex
+eco:b3161,NA,TRPt2rpp
+eco:b1907,NA,TYRt2rpp
+NA,NA,EX_tma_e
+eco:b2964,NA,URIt2pp_copy1
+eco:b2406,NA,URIt2pp_copy2
+eco:b3457,ABC transporters,VALabcpp
+eco:b0241,NA,12PPDStex
+eco:b0241,NA,DDGLCNtex
+eco:b2406,NA,XTSNt2rpp
+eco:b3568,ABC transporters,XYLabcpp
+eco:b3052,Lipopolysaccharide biosynthesis,GMHEPK
+eco:b3577,NA,XYLUt2pp
+eco:b3089,NA,THRt4pp
+eco:b0241,NA,GALURtex
+eco:b2153,Folate biosynthesis,GTPCI
+eco:b0935,Sulfur metabolism,FDMO
+eco:b0152,ABC transporters,FEOXAMabcpp
+NA,NA,EX_fruur_e
+eco:b0241,NA,GALtex
+eco:b1709,ABC transporters,CBL1abcpp
+NA,NA,EX_malttr_e
+eco:b2223,Two-component system,ACACt2pp
+eco:b2416,Phosphotransferase system (PTS),ACGAptspp
+eco:b2415,Phosphotransferase system (PTS),ACMANAptspp
+eco:b3224,NA,ACNAMt2pp
+eco:b0241,NA,GALCTtex
+eco:b0241,NA,GALCTNtex
+eco:b0241,NA,GALTtex
+NA,NA,EX_cbi_e
+eco:b0311,"Glycine, serine and threonine metabolism",CHOLD
+eco:b1896,Starch and sucrose metabolism,TRE6PS
+eco:b4381,Pentose phosphate pathway,DRPA
+eco:b2935,Pentose phosphate pathway,TKT2
+NA,NA,EX_arbtn_fe3_e
+eco:b0841,Peptidoglycan biosynthesis,UDCPDP
+NA,NA,EX_cpgn_e
+NA,NA,EX_ch4_e
+eco:b0589,ABC transporters,FEENTERabcpp
+NA,NA,EX_adocbl_e
+eco:b0153,ABC transporters,FECRMabcpp
+eco:b3519,Starch and sucrose metabolism,TREH
+eco:b0241,NA,GAMtex
+eco:b0241,NA,GBBTNtex
+eco:b3739,NA,ATPS4rpp
+eco:b0241,NA,INDOLEtex
+eco:b2841,NA,ARBt2rpp
+eco:b0910,Pyrimidine metabolism,CYTK1
+NA,NA,DAPabcpp
+eco:b0929,beta-Lactam resistance,L_LACtex
+eco:b4067,NA,ACt4pp
+eco:b3654,NA,ADEt2rpp
+NA,NA,CO2tpp
+NA,NA,DHAtpp
+eco:b1872,Methane metabolism,DMSOR1pp
+eco:b2308,ABC transporters,ARGabcpp
+eco:b2964,NA,ADNt2pp_copy1
+eco:b2406,NA,ADNt2pp_copy2
+eco:b3454,ABC transporters,ALAabcpp
+eco:b4087,ABC transporters,ALLabcpp
+eco:b0511,NA,ALLTNt2rpp
+eco:b4460,ABC transporters,ARBabcpp
+eco:b4115,NA,ARGAGMt7pp
+eco:b4195,Ascorbate and aldarate metabolism,ASCBptspp
+eco:b0910,Pyrimidine metabolism,CYTK2
+eco:b1453,NA,ASNt2rpp
+eco:b0654,ABC transporters,ASPabcpp
+eco:b4077,NA,ASPt2pp
+eco:b2341,Fatty acid degradation,ECOAH8
+eco:b0124,Pentose phosphate pathway,GLCDpp
+eco:b4464,NA,GUAtpp
+eco:b3528,Two-component system,ASPt2_2pp
+eco:b0973,Nitrotoluene degradation,HYD2pp
+eco:b3648,Purine metabolism,GK1
+eco:b4064,NA,HYXNtpp
+NA,NA,NACtpp
+eco:b4138,NA,ASPt2_3pp
+eco:b0241,NA,HIStex
+eco:b4287,ABC transporters,FE3DCITabcpp
+eco:b0241,NA,HXAtex
+eco:b3846,Fatty acid degradation,HACD1
+eco:b2215,beta-Lactam resistance,HYXNtex
+eco:b0241,NA,IDONtex
+eco:b0241,NA,ILEtex
+eco:b0241,NA,INSTtex
+eco:b0411,NA,INStex
+eco:b0241,NA,Ktex
+eco:b1102,NA,CPGNtonex
+eco:b0241,NA,GLCRtex
+eco:b0241,NA,GLCNtex
+eco:b0241,NA,GLCURtex
+eco:b0929,beta-Lactam resistance,GLNtex
+eco:b0241,NA,O2tex
+NA,NA,EX_ppa_e
+eco:b3846,Fatty acid degradation,HACD2
+eco:b0241,NA,OCTAtex
+eco:b0241,NA,D_LACtex
+eco:b4055,Riboflavin metabolism,NTD8pp
+eco:b0241,NA,ORNtex
+eco:b0241,NA,FRULYStex
+eco:b4036,NA,MALTtexi
+eco:b2341,Fatty acid degradation,ECOAH5
+eco:b2315,Folate biosynthesis,DHFS
+eco:b0612,Two-component system,CITt7pp
+eco:b0040,NA,CRNt7pp
+NA,NA,EX_ni2_e
+eco:b4036,NA,GLCtex_copy1
+NA,NA,EX_no_e
+eco:b2129,ABC transporters,CHLabcpp
+eco:b2964,NA,DGSNt2pp
+eco:b1252,NA,FE3DCITtonex
+eco:b2964,NA,DINSt2pp
+eco:b2393,NA,DURIt2pp
+eco:b3409,NA,FE2abcpp
+eco:b2415,Phosphotransferase system (PTS),FRUptspp
+eco:b2801,NA,FUCtpp
+NA,NA,EX_fad_e
+eco:b2789,NA,GALCTt2rpp
+eco:b2943,NA,GALt2pp
+eco:b0241,NA,ASPtex
+eco:b2663,NA,ABUTt2pp
+eco:b3528,Two-component system,FUMt2_2pp
+eco:b4138,NA,FUMt2_3pp
+eco:b0241,NA,PHEtex
+eco:b0584,Two-component system,FEENTERtonex
+eco:b0336,NA,CSNt2pp
+eco:b0341,NA,CYNTt2pp
+eco:b1918,ABC transporters,CYSabcpp
+eco:b2416,Phosphotransferase system (PTS),SBTptspp
+eco:b0241,NA,PItex
+eco:b1197,Starch and sucrose metabolism,TREHpp
+eco:b0978,Oxidative phosphorylation,CYTBDpp
+eco:b2393,NA,CYTDt2pp_copy1
+eco:b2406,NA,CYTDt2pp_copy2
+eco:b2393,NA,DADNt2pp
+eco:b2393,NA,DCYTt2pp
+eco:b0978,Oxidative phosphorylation,CYTBD2pp
+eco:b1119,Amino sugar and nucleotide sugar metabolism,ACGAMK
+NA,NA,ACALDtpp
+eco:b0010,NA,ACt2rpp
+eco:b3909,NA,DDGLCNt2rpp
+eco:b0241,NA,RMNtex
+NA,NA,EX_meoh_e
+NA,NA,EX_fe3dcit_e
+NA,NA,EX_fe3hox_e
+NA,NA,EX_fecrm_e
+NA,NA,EX_feenter_e
+NA,NA,EX_feoxam_e
+eco:b4036,NA,MALTTRtexi
+eco:b4036,NA,MALTTTRtexi
+eco:b4036,NA,MALTPTtexi
+eco:b4019,Cysteine and methionine metabolism,METS
+eco:b2574,"Alanine, aspartate and glutamate metabolism",ASPO3
+eco:b2574,"Alanine, aspartate and glutamate metabolism",ASPO5
+eco:b2574,"Alanine, aspartate and glutamate metabolism",ASPO4
+NA,NA,EX_3amp_e
+NA,NA,EX_3gmp_e
+NA,NA,EX_3ump_e
+eco:b2574,"Alanine, aspartate and glutamate metabolism",ASPO6
+NA,NA,EX_cu2_e
+eco:b0241,NA,LCTStex
+eco:b0241,NA,LEUtex
+eco:b0241,NA,LYStex
+NA,NA,EX_glyc__R_e
+NA,NA,EX_eca4colipa_e
+eco:b1967,Pyruvate metabolism,GLYOX3
+eco:b0935,Sulfur metabolism,FDMO3
+eco:b0241,NA,LYXtex
+eco:b0241,NA,MANtex
+eco:b2215,beta-Lactam resistance,MAN6Ptex
+eco:b0935,Sulfur metabolism,FDMO4
+eco:b0887,ABC transporters,CYSabc2pp
+eco:b0934,Sulfur metabolism,BUTSO3abcpp
+eco:b0934,Sulfur metabolism,ETHSO3abcpp
+eco:b0241,NA,MELIBtex
+eco:b0241,NA,DMSOtex
+eco:b0411,NA,DURItex
+NA,NA,EX_mal__D_e
+eco:b0241,NA,FRUtex
+eco:b0241,NA,FUCtex
+NA,NA,EX_sel_e
+NA,NA,EX_hg2_e
+eco:b2032,NA,O16GLCT1
+eco:b2027,NA,O16AP2pp
+eco:b2027,NA,O16AP3pp
+eco:b0241,NA,FUMtex
+eco:b3845,Fatty acid degradation,ACACT5r
+eco:b3622,Lipopolysaccharide biosynthesis,O16A4Lpp
+eco:b2476,Purine metabolism,PRASCSi
+eco:b0459,NA,MALTATr
+NA,NA,DHBSH
+eco:b1800,Glyoxylate and dicarboxylate metabolism,MALDDH
+eco:b1377,NA,FE2tex
+eco:b0241,NA,NMNtex
+eco:b0585,NA,ENTERES
+eco:b0241,NA,NO2tex
+eco:b0509,Glyoxylate and dicarboxylate metabolism,TRSARr
+eco:b3177,Folate biosynthesis,DHPS2
+NA,NA,FEOXAMUtex
+NA,NA,ARBTNtpp
+eco:b0529,One carbon pool by folate,MTHFC
+NA,NA,ARBTNtex
+eco:b0529,One carbon pool by folate,MTHFD
+eco:b3903,Fructose and mannose metabolism,LYXI
+eco:b2223,Two-component system,BUTt2rpp
+eco:b4132,NA,CADVtpp
+eco:b0750,Nicotinate and nicotinamide metabolism,QULNS
+eco:b0241,NA,23CAMPtex
+eco:b0241,NA,23CCMPtex
+eco:b0241,NA,23CUMPtex
+eco:b0241,NA,23CGMPtex
+eco:b0241,NA,3AMPtex
+eco:b0241,NA,3CMPtex
+eco:b1326,NA,LADGMDH
+eco:b2690,NA,ALKP
+eco:b0929,beta-Lactam resistance,GDPtex
+NA,NA,EX_cobalt2_e
+eco:b1325,NA,ALAGLUE
+eco:b0591,NA,FEENTERtpp
+eco:b0241,NA,TMAtex
+NA,NA,EX_pheme_e
+eco:b0241,NA,TMAOtex
+eco:b0241,NA,TREtex
+eco:b0306,NA,L_LACD3
+eco:b3035,beta-Lactam resistance,FEENTERtex
+NA,NA,FE3HOXUtpp
+NA,NA,FEOXAMUtpp
+NA,NA,FECRMUtpp
+NA,NA,FE3HOXR2
+eco:b0308,NA,L_LACD2
+eco:b2342,Fatty acid degradation,ACACT6r
+eco:b0241,NA,TRPtex
+eco:b0692,NA,PTRCt2pp
+eco:b1298,Arginine and proline metabolism,GGGABAH
+eco:b0241,NA,PNTOtex
+eco:b3374,NA,FRULYSK
+eco:b0935,Sulfur metabolism,FDMO6
+eco:b0241,NA,TSULtex
+eco:b0241,NA,TYRtex
+eco:b0241,NA,URAtex
+eco:b0241,NA,UREAtex
+eco:b0411,NA,URItex
+eco:b0934,Sulfur metabolism,SULFACabcpp
+eco:b0241,NA,ETHSO3tex
+eco:b0241,NA,BUTSO3tex
+eco:b1377,NA,LIPOtex
+eco:b1308,NA,CYANSTpp
+eco:b0241,NA,VALtex
+eco:b0241,NA,XANtex
+eco:b2521,Cysteine and methionine metabolism,MCPST
+eco:b0241,NA,XYLtex
+eco:b0241,NA,PPPNtex
+eco:b0241,NA,ABUTtex
+eco:b0904,NA,FORtppi
+eco:b2198,ABC transporters,PHEMEabcpp
+NA,NA,METSOX1abcpp
+eco:b0241,NA,PPTtex
+eco:b2215,beta-Lactam resistance,GALBDtex
+eco:b0622,Lipopolysaccharide biosynthesis,LIPAHT2ex
+NA,NA,DATPHs
+eco:b3631,Lipopolysaccharide biosynthesis,GLCTR1
+eco:b0914,ABC transporters,LIPAabcpp
+eco:b0622,Lipopolysaccharide biosynthesis,LIPAHTex
+eco:b0914,ABC transporters,LIPACabcpp
+eco:b3785,NA,ECAP1pp
+eco:b0241,NA,PTRCtex
+eco:b1278,Glycerophospholipid metabolism,UDCPDPpp
+eco:b1300,Arginine and proline metabolism,GGGABADr
+NA,NA,EX_mso3_e
+NA,NA,EX_23camp_e
+NA,NA,EX_23cgmp_e
+NA,NA,EX_23cump_e
+eco:b3785,NA,ECAP2pp
+eco:b3622,Lipopolysaccharide biosynthesis,ECA4OALpp
+eco:b3844,Riboflavin metabolism,FE3Ri
+NA,NA,FE3HOXR3
+NA,NA,FEENTERR1
+eco:b2552,NA,NODOy
+eco:b0241,NA,PYRtex
+eco:b0756,Glycolysis / Gluconeogenesis,GALM2pp
+eco:b0484,NA,CU1abcpp
+eco:b3469,NA,HG2abcpp
+NA,NA,FEENTERR3
+eco:b1377,NA,SULFACtex
+NA,NA,EX_sulfac_e
+NA,NA,EX_butso3_e
+eco:b3626,Lipopolysaccharide biosynthesis,GLCTR3
+eco:b3623,Lipopolysaccharide biosynthesis,HEPT4
+NA,NA,EX_ethso3_e
+eco:b0241,NA,DSERtex
+eco:b2257,Lipopolysaccharide biosynthesis,LA4NTpp
+eco:b2552,NA,NODOx
+eco:b0241,NA,SERtex
+eco:b0241,NA,NOtex
+NA,NA,NOtpp
+eco:b2711,NA,NHFRBO
+NA,NA,N2Otpp
+eco:b0241,NA,N2Otex
+eco:b0040,NA,CRNt8pp
+eco:b4111,NA,CRNt2rpp
+eco:b4111,NA,CRNDt2rpp
+eco:b4111,NA,CTBTt2rpp
+eco:b1386,"Glycine, serine and threonine metabolism",42A12BOOXpp
+eco:b1386,"Glycine, serine and threonine metabolism",TYROXDApp
+NA,NA,PACALDt2rpp
+eco:b0241,NA,PEAMNtex
+eco:b0241,NA,PACALDtex
+NA,NA,LIPOt2pp
+eco:b0110,NA,AGM4PA
+eco:b0849,NA,RNDR3b
+eco:b0849,NA,RNDR4b
+eco:b0241,NA,ACGAL1Ptex
+eco:b0241,NA,ACGALtex
+eco:b0241,NA,GLCUR1Ptex
+eco:b0241,NA,UDPGLCURtex
+eco:b0480,Purine metabolism,UDPGALPpp
+eco:b0480,Purine metabolism,UACGAMPpp
+eco:b0480,Purine metabolism,UACGALPpp
+eco:b0480,Purine metabolism,UGLCURPpp
+eco:b0123,NA,FEROpp
+eco:b0365,Sulfur metabolism,ISETACabcpp
+eco:b0241,NA,ISETACtex
+NA,NA,GUR1PPpp
+eco:b0241,NA,UDPGtex
+NA,NA,ACGAL1PPpp
+eco:b0929,beta-Lactam resistance,UDPGALtex
+eco:b0241,NA,ACGAM1Ptex
+eco:b0241,NA,UACGAMtex
+eco:b0241,NA,UDPACGALtex
+eco:b1192,NA,AM4PCP
+eco:b0110,NA,AM3PA
+eco:b1192,NA,UM4PCP
+eco:b1270,Porphyrin and chlorophyll metabolism,CBLAT
+eco:b4070,Nitrogen metabolism,NTRIR4pp
+eco:b4070,Nitrogen metabolism,NTRIR3pp
+eco:b3679,NA,INOSTt4pp
+NA,NA,PHEMEtiex
+eco:b0110,NA,AGM3PA
+eco:b0241,NA,CYANtex
+eco:b0241,NA,SO3tex
+eco:b0241,NA,TCYNTtex
+eco:b1463,NA,ACANTHAT
+NA,NA,METSOX2abcpp
+eco:b0241,NA,METSOX1tex
+eco:b0241,NA,METSOX2tex
+eco:b0241,NA,3UMPtex
+eco:b0933,Sulfur metabolism,MSO3abcpp
+eco:b0241,NA,MSO3tex
+NA,NA,FECRMR1
+NA,NA,FECRMR2
+eco:b1134,NA,TDP
+eco:b1245,beta-Lactam resistance,3PEPTabcpp
+eco:b1243,beta-Lactam resistance,4PEPTabcpp
+eco:b0241,NA,3GMPtex
+NA,NA,FALDtpp
+NA,NA,EX_tym_e
+eco:b0433,beta-Lactam resistance,AGM3Pt2pp
+eco:b0241,NA,SO4tex
+eco:b0433,beta-Lactam resistance,AGM4Pt2pp
+eco:b0433,beta-Lactam resistance,AGMt2pp
+NA,NA,FECRMexs
+NA,NA,ARBTNR1
+NA,NA,ARBTNR2
+eco:b2582,NA,METSOXR1
+eco:b2582,NA,METSOXR2
+eco:b2871,NA,DAPAL
+eco:b0932,Glutathione metabolism,AMPTASECG
+NA,NA,EX_imp_e
+eco:b0241,NA,DOPAtex
+eco:b0241,NA,4HOXPACDtex
+NA,NA,ARBTNR3
+NA,NA,ARBTNexs
+NA,NA,FEOXAMexs
+eco:b2132,Cyanoamino acid metabolism,LACZpp
+eco:b2215,beta-Lactam resistance,SPMDtex
+eco:b2239,Glycerophospholipid metabolism,GPDDA1pp
+eco:b2239,Glycerophospholipid metabolism,GPDDA5pp
+eco:b0241,NA,ETHAtex
+eco:b0241,NA,G3PStex
+eco:b4367,NA,FEOXAMR1
+eco:b4367,NA,FEOXAMR2
+eco:b4367,NA,FEOXAMR3
+eco:b4055,Riboflavin metabolism,PTHRpp
+NA,NA,FEENTERR2
+eco:b3844,Riboflavin metabolism,FLVR
+eco:b0241,NA,SUCCtex
+NA,NA,FE3HOXR1
+NA,NA,FEENTERexs
+eco:b0241,NA,SUCRtex
+NA,NA,FE3HOXexs
+NA,NA,FECRMR3
+eco:b0935,Sulfur metabolism,FDMO2
+eco:b0237,Glutathione metabolism,LALGP
+eco:b2817,Cationic antimicrobial peptide (CAMP) resistance,AGM4PApp
+eco:b2802,Fructose and mannose metabolism,ARABDI
+eco:b0572,Two-component system,AGt3
+eco:b3915,NA,CD2t3pp
+eco:b1859,ABC transporters,ZNabcpp
+eco:b1981,NA,SKMt2pp
+eco:b2392,NA,FE2t2pp
+eco:b0241,NA,GLYC2Ptex
+eco:b0241,NA,PSERtex
+eco:b0241,NA,TARTRtex
+eco:b0241,NA,R5Ptex
+eco:b0241,NA,THRPtex
+eco:b0241,NA,TYRPtex
+eco:b4055,Riboflavin metabolism,R5PPpp
+eco:b4055,Riboflavin metabolism,PSP_Lpp
+eco:b4055,Riboflavin metabolism,TYRPpp
+NA,NA,R1PK
+eco:b3610,NA,PAPSR2
+eco:b1064,NA,GRXR
+eco:b2675,Purine metabolism,RNDR1b
+eco:b4094,Pentose phosphate pathway,R15BPK
+eco:b0698,Two-component system,Kabcpp
+eco:b0849,NA,RNDR2b
+eco:b0241,NA,TAURtex
+eco:b0452,Biosynthesis of unsaturated fatty acids,FACOAE181
+eco:b0452,Biosynthesis of unsaturated fatty acids,FACOAE160
+eco:b0452,Biosynthesis of unsaturated fatty acids,FACOAE140
+eco:b3455,ABC transporters,LEUabcpp
+eco:b3603,NA,L_LACt2rpp
+eco:b3528,Two-component system,MALt2_2pp
+NA,NA,CPGNR1
+NA,NA,CPGNR2
+eco:b0241,NA,THRtex
+NA,NA,CPGNR3
+NA,NA,CPGNUtpp
+NA,NA,CPGNUtex
+eco:b4123,Two-component system,MALt2_3pp
+eco:b4033,ABC transporters,MALTabcpp
+eco:b4034,ABC transporters,MALTHXabcpp
+eco:b4035,ABC transporters,MALTPTabcpp
+eco:b1927,Starch and sucrose metabolism,AAMYL
+eco:b3571,Starch and sucrose metabolism,AAMYLpp
+eco:b4034,ABC transporters,MALTTRabcpp
+eco:b0241,NA,THMDtex
+eco:b4033,ABC transporters,MALTTTRabcpp
+eco:b3666,Two-component system,MAN6Pt6_2pp
+eco:b1805,Fatty acid biosynthesis,FACOAL80t2pp
+eco:b3650,Purine metabolism,PPGPPDP
+eco:b0151,ABC transporters,CPGNabcpp
+NA,NA,CPGNexs
+eco:b2415,Phosphotransferase system (PTS),MANGLYCptspp
+eco:b4120,NA,MELIBt2pp
+eco:b1711,ABC transporters,CBIuabcpp
+eco:b0198,ABC transporters,METabcpp
+eco:b0241,NA,CITtex
+eco:b0241,NA,ACGAtex
+eco:b2344,NA,DDCAtexi
+eco:b2344,NA,TTDCAtexi
+eco:b2344,NA,HDCAtexi
+NA,NA,GUACYC
+NA,NA,EX_fe3hox_un_e
+eco:b1297,Arginine and proline metabolism,GGPTRCS
+NA,NA,EX_23dappa_e
+eco:b3907,NA,RMNtpp
+eco:b4213,Purine metabolism,23PDE2pp
+eco:b4213,Purine metabolism,23PDE4pp
+eco:b4213,Purine metabolism,23PDE9pp
+eco:b3089,NA,SERt4pp
+eco:b0241,NA,METDtex
+eco:b4123,Two-component system,SUCCt2_3pp
+eco:b2415,Phosphotransferase system (PTS),MNLptspp
+eco:b1186,NA,NAt3_1p5pp
+NA,NA,ATPHs
+eco:b1059,NA,SARCOX
+NA,NA,GTPHs
+eco:b0822,NA,MN6PP
+eco:b0019,NA,NAt3_2pp
+NA,NA,NH4tpp
+eco:b3580,Pentose and glucuronate interconversions,3KGK
+eco:b0241,NA,METtex
+NA,NA,EX_cd2_e
+eco:b0822,NA,F6PP
+eco:b0751,NA,NMNPtpp
+eco:b1223,Nitrogen metabolism,NO2t2rpp
+eco:b1223,Nitrogen metabolism,NO3t7pp
+eco:b2307,ABC transporters,ORNabcpp
+eco:b3725,ABC transporters,PIuabcpp
+eco:b3258,NA,PNTOt4pp
+eco:b3371,NA,FRULYSDG
+eco:b0198,ABC transporters,METDabcpp
+eco:b2051,NA,GDPMNH
+eco:b1805,Fatty acid biosynthesis,FACOAL60t2pp
+eco:b4265,NA,IDONt2rpp
+eco:b3456,ABC transporters,ILEabcpp
+eco:b3266,NA,INDOLEt2pp
+eco:b2964,NA,INSt2pp
+eco:b2677,ABC transporters,PROabcpp
+eco:b4111,NA,PROt2rpp
+eco:b1377,NA,MNLtex
+eco:b1015,NA,PROt4pp
+eco:b0854,ABC transporters,PTRCabcpp
+eco:b3907,NA,LYXt2pp
+eco:b2784,Purine metabolism,GDPDPK
+eco:b2344,NA,OCDCAtexi
+eco:b2344,NA,OCDCEAtexi
+eco:b2957,"Alanine, aspartate and glutamate metabolism",ASNNpp
+eco:b2957,"Alanine, aspartate and glutamate metabolism",GLUNpp
+eco:b0241,NA,G6Ptex
+eco:b2744,Purine metabolism,NTD12
+eco:b0764,ABC transporters,TUNGSabcpp
+eco:b0241,NA,NAtex
+eco:b0764,ABC transporters,MOBDabcpp
+eco:b0241,NA,MOBDtex
+eco:b3480,ABC transporters,NI2uabcpp
+eco:b1252,NA,FECRMtonex
+NA,NA,ARBTNtonex
+eco:b1709,ABC transporters,ADOCBLabcpp
+NA,NA,EX_enter_e
+NA,NA,EX_fecrm_un_e
+NA,NA,EX_cgly_e
+eco:b0241,NA,NI2tex
+eco:b4055,Riboflavin metabolism,NTD10pp
+eco:b0480,Purine metabolism,NTD1pp
+NA,NA,EX_chtbs_e
+NA,NA,EX_gmp_e
+eco:b4055,Riboflavin metabolism,NTD2pp
+eco:b0241,NA,NACtex
+eco:b0480,Purine metabolism,NTD3pp
+eco:b0480,Purine metabolism,NTD4pp
+eco:b4055,Riboflavin metabolism,NTD5pp
+NA,NA,EX_h2o2_e
+NA,NA,EX_ump_e
+NA,NA,EX_pydam_e
+eco:b2679,ABC transporters,CRNabcpp
+eco:b2679,ABC transporters,CRNDabcpp
+eco:b1865,Folate biosynthesis,DNTPPA
+eco:b0480,Purine metabolism,NTD6pp
+eco:b0480,Purine metabolism,NTD7pp
+eco:b2678,ABC transporters,CTBTabcpp
+eco:b0480,Purine metabolism,NTD9pp
+eco:b1377,NA,NH4tex
+eco:b1386,"Glycine, serine and threonine metabolism",PEAMNOpp
+eco:b1002,Glycolysis / Gluconeogenesis,GAL1PPpp
+eco:b2954,Purine metabolism,NTPP9
+eco:b2954,Purine metabolism,NTPP10
+eco:b2954,Purine metabolism,NTPP11
+eco:b0241,NA,H2O2tex
+eco:b2938,Arginine and proline metabolism,ARGDCpp
+eco:b2162,Purine metabolism,URIH
+eco:b4090,Pentose phosphate pathway,ALLPI
+eco:b4084,Fructose and mannose metabolism,ALLK
+eco:b4085,Fructose and mannose metabolism,ALLULPE
+eco:b0241,NA,ADEtex
+eco:b0411,NA,ADNtex
+eco:b3028,NA,NADPHQR2
+eco:b3028,NA,NADPHQR3
+eco:b3028,NA,NADPHQR4
+eco:b3432,Starch and sucrose metabolism,GLBRAN2
+eco:b1064,NA,ASR
+eco:b0241,NA,ASO3tex
+eco:b0241,NA,AGMtex
+eco:b0241,NA,ALAtex
+eco:b0241,NA,BALAtex
+eco:b0241,NA,DALAtex
+eco:b0241,NA,MANGLYCtex
+NA,NA,EX_frulys_e
+eco:b2215,beta-Lactam resistance,AMPtex
+NA,NA,METOX1s
+eco:b0030,NA,XTSNH
+NA,NA,METOX2s
+eco:b4321,NA,FRUURt2rpp
+eco:b0241,NA,FRUURtex
+eco:b0241,NA,ARBtex
+eco:b0241,NA,ARGtex
+eco:b0030,NA,INSH
+eco:b0241,NA,ASCBtex
+eco:b1805,Fatty acid biosynthesis,FACOAL100t2pp
+eco:b4230,ABC transporters,RIBabcpp
+eco:b3792,NA,ECAtpp
+eco:b2033,NA,O16AT
+eco:b2034,NA,O16GALFT
+NA,NA,O16GLCT2
+eco:b2037,NA,O16AUNDtpp
+eco:b2027,NA,O16AP1pp
+eco:b2239,Glycerophospholipid metabolism,GPDDA3pp
+eco:b2239,Glycerophospholipid metabolism,GPDDA4pp
+eco:b2239,Glycerophospholipid metabolism,GPDDA2pp
+eco:b1701,NA,FACOAL120t2pp
+eco:b3127,NA,GLYCAt2rpp
+eco:b0241,NA,GLYCAtex
+eco:b1701,NA,FACOAL140t2pp
+NA,NA,EX_enlipa_e
+eco:b0241,NA,BUTtex
+NA,NA,EX_hacolipa_e
+eco:b1192,NA,AGM4PCP
+eco:b1192,NA,4PCP
+eco:b1252,NA,FE3HOXtonex
+eco:b3469,NA,CU2abcpp
+eco:b3469,NA,COBALT2abcpp
+eco:b3469,NA,NI2abcpp
+eco:b4242,NA,MG2uabcpp
+eco:b2175,NA,4PCPpp
+eco:b0261,Cysteine and methionine metabolism,HCYSMT2
+eco:b0356,Glycolysis / Gluconeogenesis,FALDH2
+eco:b0241,NA,CHLtex
+eco:b2131,ABC transporters,GLYBabcpp
+eco:b2240,NA,GLYC3Pt6pp
+eco:b0241,NA,MMETtex
+eco:b0241,NA,FE3tex
+eco:b0241,NA,MG2tex
+eco:b0241,NA,Zn2tex
+eco:b0260,NA,MMETt2pp
+eco:b0241,NA,CD2tex
+eco:b4067,NA,GLYCLTt4pp
+NA,NA,GLYCtpp
+NA,NA,H2Otpp
+eco:b0811,ABC transporters,GLNabcpp
+eco:b0241,NA,CO2tex
+eco:b0653,ABC transporters,GLUabcpp
+eco:b1492,Quorum sensing,GLUABUTt7pp
+eco:b4077,NA,GLUt2rpp
+eco:b0353,NA,HCINNMt2rpp
+eco:b2307,ABC transporters,HISabcpp
+eco:b0112,NA,HISt2rpp
+eco:b1270,Porphyrin and chlorophyll metabolism,CBIAT
+eco:b3653,NA,GLUt4pp
+eco:b3927,NA,GLYALDtpp
+eco:b0241,NA,CRNtex
+NA,NA,EX_etha_e
+eco:b3959,Arginine biosynthesis,ACGK
+eco:b2308,ABC transporters,LYSabcpp
+eco:b0241,NA,COBALT2tex
+eco:b1528,NA,LCTSt3ipp
+eco:b2501,Oxidative phosphorylation,PPK2
+eco:b1528,NA,ARBt3ipp
+eco:b4032,ABC transporters,14GLUCANabcpp
+eco:b4036,NA,14GLUCANtexi
+eco:b0241,NA,DINStex
+eco:b2303,Folate biosynthesis,DHPTPE
+eco:b0325,Glycolysis / Gluconeogenesis,PPDOy
+NA,NA,FALGTHLs
+eco:b0480,Purine metabolism,NTD12pp
+eco:b2502,Purine metabolism,PPA2
+eco:b0241,NA,DIMPtex
+NA,NA,EX_hdca_e
+NA,NA,EX_glcr_e
+eco:b3437,Pentose phosphate pathway,GNK
+eco:b3805,Porphyrin and chlorophyll metabolism,HMBS
+eco:b4213,Purine metabolism,3NTD7pp
+eco:b0241,NA,DMStex
+eco:b4213,Purine metabolism,3NTD4pp
+eco:b4213,Purine metabolism,3NTD2pp
+eco:b4213,Purine metabolism,3NTD9pp
+eco:b3904,Pentose and glucuronate interconversions,RMK
+eco:b4079,NA,FHL
+NA,NA,HYPOE
+eco:b2747,Terpenoid backbone biosynthesis,MEPCT
+eco:b1761,Arginine biosynthesis,GLUDy
+eco:b4213,Purine metabolism,23PDE7pp
+eco:b2092,NA,GALTptspp
+eco:b3093,NA,GALURt2rpp
+eco:b3469,NA,ZN2abcpp
+eco:b0241,NA,CSNtex
+eco:b1033,"Glycine, serine and threonine metabolism",GLYCLTDy
+eco:b0186,Lysine degradation,LYSDC
+eco:b1189,Phenylalanine metabolism,DAAD
+eco:b4321,NA,GLCNt2rpp
+eco:b1621,Glycolysis / Gluconeogenesis,GLCptspp
+eco:b3127,NA,GLCRt2rpp
+eco:b2943,NA,GLCt2pp
+eco:b3927,NA,UREAtpp
+eco:b2882,NA,XANt2pp
+eco:b3452,ABC transporters,GLYC3Pabcpp
+eco:b2536,NA,PPPNt2rpp
+eco:b0692,NA,PTRCORNt7pp
+eco:b3909,NA,GLCURt2rpp
+eco:b2417,Glycolysis / Gluconeogenesis,ACMUMptspp
+NA,NA,EX_h2o_e
+NA,NA,EX_ala__D_e
+eco:b2021,Histidine metabolism,HSTPT
+eco:b1123,ABC transporters,SPMDabcpp
+eco:b2215,beta-Lactam resistance,CYNTtex
+eco:b0241,NA,HG2tex
+eco:b1865,Folate biosynthesis,NTPP5
+eco:b0166,Lysine biosynthesis,THDPS
+eco:b1519,NA,ACONMT
+eco:b0241,NA,XTSNtex
+NA,NA,ATPM
+eco:b0241,NA,CYStex
+NA,NA,NADPPPS
+NA,NA,EX_mnl_e
+eco:b3772,"Glycine, serine and threonine metabolism",THRD_L
+NA,NA,EX_malt_e
+eco:b2744,Purine metabolism,NTD3
+eco:b0241,NA,CYTDtex
+eco:b0212,Pyruvate metabolism,GLYOX
+eco:b0411,NA,DADNtex
+eco:b0241,NA,4PEPTtex
+eco:b0931,Nicotinate and nicotinamide metabolism,NAMNPP
+NA,NA,EX_pnto__R_e
+eco:b1764,Selenocompound metabolism,SELNPS
+eco:b0241,NA,DHAtex
+eco:b0241,NA,ETOHtex
+eco:b1059,NA,MTRPOX
+eco:b2175,NA,AGM4PCPpp
+eco:b3779,Purine metabolism,GTPDPDP
+eco:b0036,NA,CRNCAR
+eco:b2148,ABC transporters,GALabcpp
+eco:b3603,NA,GLYCLTt2rpp
+eco:b3654,NA,GUAt2pp
+eco:b0353,NA,HPPPNt2rpp
+eco:b3781,NA,RNDR2
+NA,NA,EX_asn__L_e
+eco:b1640,NA,ANHMK
+eco:b0241,NA,DCAtex
+eco:b1606,One carbon pool by folate,DHFR
+NA,NA,EX_cit_e
+eco:b1262,"Phenylalanine, tyrosine and tryptophan biosynthesis",PRAIi
+NA,NA,EX_mal__L_e
+NA,NA,NMNN
+eco:b2866,Purine metabolism,XAND
+NA,NA,EX_no2_e
+eco:b3846,Fatty acid degradation,HACD3
+eco:b4054,Cysteine and methionine metabolism,TYRTA
+eco:b3390,"Phenylalanine, tyrosine and tryptophan biosynthesis",SHKK
+eco:b0411,NA,DCYTtex
+NA,NA,EX_gam_e
+eco:b0241,NA,ACACtex
+eco:b4311,NA,ACNAMtex
+eco:b0151,ABC transporters,ARBTNabcpp
+NA,NA,EX_inost_e
+NA,NA,EX_mobd_e
+eco:b1991,Porphyrin and chlorophyll metabolism,NNDMBRT
+eco:b0241,NA,DGSNtex
+eco:b2551,"Glycine, serine and threonine metabolism",THRA2
+eco:b3502,NA,ASO3t8pp
+eco:b1377,NA,H2Stex
+eco:b2501,Oxidative phosphorylation,PPK
+NA,NA,EX_so4_e
+eco:b1745,Arginine and proline metabolism,SADH
+eco:b3213,"Alanine, aspartate and glutamate metabolism",GLUSy
+eco:b0125,Purine metabolism,GUAPRT
+NA,NA,EX_phe__L_e
+NA,NA,EX_thr__L_e
+NA,NA,EX_uri_e
+NA,NA,OMCDC
+eco:b1444,Lysine degradation,ABUTD
+eco:b2927,Vitamin B6 metabolism,E4PD
+eco:b2023,Histidine metabolism,IG3PS
+eco:b0115,Glycolysis / Gluconeogenesis,PDH
+eco:b3941,One carbon pool by folate,MTHFR2
+eco:b1872,Methane metabolism,DMSOR2pp
+NA,NA,H2St1pp
+NA,NA,EX_nh4_e
+eco:b0474,Purine metabolism,DADK
+eco:b3640,Pyrimidine metabolism,DUTPDP
+NA,NA,EX_ddca_e
+eco:b0973,Nitrotoluene degradation,HYD3pp
+eco:b1467,Nitrogen metabolism,NO3R1pp
+eco:b4161,Thiamine metabolism,NTP5
+eco:b2715,Glycolysis / Gluconeogenesis,CELBpts
+eco:b0904,NA,FORt2pp
+NA,NA,EX_r5p_e
+NA,NA,EX_glyc2p_e
+eco:b0159,Cysteine and methionine metabolism,MTAN
+eco:b0425,Pantothenate and CoA biosynthesis,DPR
+NA,NA,EX_halipa_e
+eco:b1094,Metabolic pathways,AACPS5
+eco:b1819,Fructose and mannose metabolism,MANptspp
+NA,NA,EX_cmp_e
+eco:b2744,Purine metabolism,NTD8
+eco:b3128,Ascorbate and aldarate metabolism,GALCTD
+NA,NA,EX_malthx_e
+eco:b0403,Galactose metabolism,MLTG4
+eco:b2255,Amino sugar and nucleotide sugar metabolism,UDPGDC
+eco:b2407,Purine metabolism,PUNP4
+eco:b0774,Biotin metabolism,AMAOTr
+NA,NA,EX_csn_e
+NA,NA,EX_etoh_e
+eco:b0822,NA,G6PP
+eco:b2919,Propanoate metabolism,MMCD
+eco:b3870,Arginine biosynthesis,GLNS
+eco:b0241,NA,TYMtex
+eco:b2947,Cysteine and methionine metabolism,GTHS
+NA,NA,EX_g3pe_e
+NA,NA,EX_pacald_e
+NA,NA,EX_his__L_e
+NA,NA,EX_k_e
+NA,NA,EX_na1_e
+eco:b2224,Fatty acid degradation,ACACT1r
+eco:b1605,NA,ARGORNt7pp
+NA,NA,EX_dmso_e
+eco:b0241,NA,CMPtex
+eco:b0241,NA,DUMPtex
+eco:b0241,NA,XMPtex
+eco:b0241,NA,3PEPTtex
+NA,NA,EX_12ppd__S_e
+NA,NA,EX_pppn_e
+eco:b0241,NA,ANHGMtex
+eco:b1621,Glycolysis / Gluconeogenesis,MALTptspp
+eco:b2253,Amino sugar and nucleotide sugar metabolism,UDPKAAT
+eco:b2255,Amino sugar and nucleotide sugar metabolism,ULA4NFT
+NA,NA,EX_acgam1p_e
+eco:b0480,Purine metabolism,NTD11pp
+NA,NA,EX_galt_e
+eco:b3553,Pentose phosphate pathway,DKGLCNR2x
+eco:b2818,Arginine biosynthesis,ACGS
+eco:b1489,NA,PDE1
+eco:b2254,Amino sugar and nucleotide sugar metabolism,UPLA4FNT
+eco:b2256,Amino sugar and nucleotide sugar metabolism,UPLA4FNF
+eco:b2258,Cationic antimicrobial peptide (CAMP) resistance,ULA4Ntppi
+eco:b3621,Lipopolysaccharide biosynthesis,HEPT1
+eco:b0241,NA,FALDtex
+eco:b0334,Propanoate metabolism,MCITD
+eco:b1377,NA,CU2tex
+NA,NA,EX_glcur1p_e
+eco:b0459,NA,GLCATr
+eco:b3012,NA,ALR2
+eco:b3416,Starch and sucrose metabolism,AMALT2
+eco:b3417,Starch and sucrose metabolism,MLTP1
+eco:b3620,Lipopolysaccharide biosynthesis,HEPT2
+NA,NA,FECRMUtex
+eco:b0381,D-Alanine metabolism,ALAALAr
+NA,NA,EX_thrp_e
+eco:b0241,NA,CLtex
+eco:b0241,NA,CYSDtex
+NA,NA,CYSDabcpp
+eco:b2866,Purine metabolism,HXAND
+NA,NA,EX_fald_e
+NA,NA,EX_pydxn_e
+NA,NA,EX_acgal_e
+NA,NA,EX_so2_e
+NA,NA,EX_dms_e
+eco:b2215,beta-Lactam resistance,GMPtex
+eco:b0241,NA,IMPtex
+eco:b0241,NA,G3PItex
+eco:b3469,NA,CD2abcpp
+eco:b0241,NA,G3PGtex
+eco:b0929,beta-Lactam resistance,G3PEtex
+eco:b0241,NA,G3PCtex
+eco:b3624,Lipopolysaccharide biosynthesis,MOAT3C
+eco:b0929,beta-Lactam resistance,UMPtex
+eco:b0241,NA,G1Ptex
+eco:b0474,Purine metabolism,ADNK1
+eco:b0572,Two-component system,CUt3
+eco:b3915,NA,ZN2t3pp
+eco:b0241,NA,SKMtex
+eco:b2392,NA,MNt2pp
+eco:b3629,Lipopolysaccharide biosynthesis,RHAT1
+eco:b2149,ABC transporters,GLCabcpp
+eco:b3628,Lipopolysaccharide biosynthesis,GALT1
+eco:b0241,NA,MNtex
+eco:b0241,NA,GAL1Ptex
+eco:b3627,Lipopolysaccharide biosynthesis,GLCTR2
+eco:b4055,Riboflavin metabolism,G2PPpp
+eco:b0480,Purine metabolism,UDPGPpp
+NA,NA,EX_acgal1p_e
+NA,NA,EX_cyan_e
+NA,NA,EX_tyrp_e
+eco:b1377,NA,O2Stex
+eco:b3630,Lipopolysaccharide biosynthesis,HEPK1
+eco:b3632,Lipopolysaccharide biosynthesis,HEPT3
+eco:b3625,Lipopolysaccharide biosynthesis,HEPK2
+eco:b3588,Glycolysis / Gluconeogenesis,ALDD3y
+NA,NA,EX_uacgam_e
+eco:b3350,NA,Kt3pp
+NA,NA,EX_udpacgal_e
+NA,NA,EX_udpg_e
+NA,NA,EX_udpgal_e
+NA,NA,EX_udpglcur_e
+NA,NA,EX_14glucan_e
+NA,NA,EX_pser__L_e
+eco:b0822,NA,R5PP
+NA,NA,EX_xmp_e
+NA,NA,EX_damp_e
+eco:b2810,NA,CYSSADS
+NA,NA,EX_dimp_e
+eco:b3867,Porphyrin and chlorophyll metabolism,CPPPGO2
+NA,NA,EX_isetac_e
+eco:b1107,Amino sugar and nucleotide sugar metabolism,AGM3PH
+eco:b0813,NA,HOMt2pp
+NA,NA,EX_aso3_e
+NA,NA,EX_tcynt_e
+NA,NA,EX_fe3dhbzs_e
+eco:b4169,Cationic antimicrobial peptide (CAMP) resistance,AGM3PApp
+eco:b3850,Porphyrin and chlorophyll metabolism,PPPGO
+NA,NA,EX_feoxam_un_e
+eco:b0241,NA,HOMtex
+eco:b0241,NA,SO2tex
+NA,NA,SO2tpp
+eco:b2133,Pyruvate metabolism,LDH_D2
+NA,NA,EX_g3pc_e
+NA,NA,EX_g3pg_e
+NA,NA,EX_g3pi_e
+eco:b3368,Porphyrin and chlorophyll metabolism,SHCHF
+eco:b0729,Citrate cycle (TCA cycle),SUCOAS
+eco:b2260,Ubiquinone and other terpenoid-quinone biosynthesis,SUCBZL
+eco:b1919,Cysteine and methionine metabolism,CYSDDS
+eco:b2578,NA,CYStpp
+NA,NA,EX_g3ps_e
+NA,NA,EX_peamn_e
+NA,NA,EX_34dhpac_e
+eco:b0650,NA,NTP1
+eco:b0241,NA,DAMPtex
+eco:b0241,NA,DCMPtex
+eco:b0241,NA,DGMPtex
+eco:b0241,NA,DTMPtex
+eco:b2578,NA,ACSERtpp
+eco:b1377,NA,ACSERtex
+NA,NA,LALDO3
+eco:b4161,Thiamine metabolism,NTP10
+eco:b2499,Purine metabolism,PRAIS
+eco:b2052,Fructose and mannose metabolism,GDMANE
+eco:b3449,Glycerophospholipid metabolism,GPDDA4
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATG120
+eco:b3821,Glycerophospholipid metabolism,PLIPA1E140pp
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2E140
+eco:b3821,Glycerophospholipid metabolism,PLIPA1E160pp
+eco:b0757,Galactose metabolism,GALKr
+eco:b3821,Glycerophospholipid metabolism,PLIPA1E161pp
+eco:b1094,Metabolic pathways,AACPS8
+eco:b1094,Metabolic pathways,AACPS9
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2E180
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2G161
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2G181
+eco:b2835,NA,2AGPE120tipp
+eco:b2222,Lysine degradation,HXCT
+eco:b1094,Metabolic pathways,AACPS6
+eco:b2836,Fatty acid degradation,2AGPEAT160
+eco:b1094,Metabolic pathways,AACPS7
+eco:b0133,beta-Alanine metabolism,PANTS
+eco:b3450,ABC transporters,G3PGabcpp
+eco:b3450,ABC transporters,G3PIabcpp
+eco:b2147,Pyrimidine metabolism,DURADx
+eco:b2341,Fatty acid degradation,ECOAH7
+eco:b1002,Glycolysis / Gluconeogenesis,G1PPpp
+eco:b4478,Galactose metabolism,GALCTND
+eco:b1415,Pyruvate metabolism,GCALDD
+eco:b2022,Histidine metabolism,HISTP
+eco:b3450,ABC transporters,G3PSabcpp
+eco:b3029,NA,QMO2
+eco:b3029,NA,QMO3
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2E141
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2E161
+eco:b1380,Pyruvate metabolism,LDH_D
+eco:b3416,Starch and sucrose metabolism,AMALT4
+eco:b2744,Purine metabolism,NTD11
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2E181
+eco:b2165,Pyrimidine metabolism,YUMPS
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2G180
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2G141
+eco:b2835,NA,2AGPA120tipp
+eco:b2835,NA,2AGPG180tipp
+eco:b2889,Terpenoid backbone biosynthesis,IPDDI
+eco:b2965,Arginine and proline metabolism,ORNDC
+eco:b3368,Porphyrin and chlorophyll metabolism,UPP3MT
+eco:b1091,Fatty acid biosynthesis,KAS15
+eco:b0241,NA,ALAALAtex
+eco:b1805,Fatty acid biosynthesis,FACOAL181t2pp
+eco:b0954,Fatty acid biosynthesis,T2DECAI
+eco:b2836,Fatty acid degradation,2AGPGAT180
+eco:b2836,Fatty acid degradation,2AGPGAT181
+eco:b2323,Fatty acid biosynthesis,3OAS161
+eco:b3389,"Phenylalanine, tyrosine and tryptophan biosynthesis",DHQS
+eco:b1288,Fatty acid biosynthesis,EAR141y
+eco:b1288,Fatty acid biosynthesis,EAR161x
+eco:b2835,NA,2AGPG141tipp
+eco:b2835,NA,2AGPG161tipp
+eco:b2835,NA,2AGPG181tipp
+eco:b2836,Fatty acid degradation,2AGPEAT140
+eco:b2836,Fatty acid degradation,2AGPEAT120
+eco:b0175,Glycerophospholipid metabolism,DASYN160
+eco:b0175,Glycerophospholipid metabolism,DASYN161
+eco:b0175,Glycerophospholipid metabolism,DASYN181
+eco:b3918,Glycerophospholipid metabolism,CDAPPA161
+eco:b2836,Fatty acid degradation,2AGPEAT161
+eco:b2836,Fatty acid degradation,2AGPEAT141
+eco:b2836,Fatty acid degradation,2AGPGAT160
+eco:b1912,Glycerophospholipid metabolism,PGSA180
+eco:b2913,"Glycine, serine and threonine metabolism",PGCD
+eco:b2585,"Glycine, serine and threonine metabolism",PSSA140
+eco:b2836,Fatty acid degradation,2AGPGAT141
+eco:b0452,Biosynthesis of unsaturated fatty acids,FACOAE180
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATG140
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATG141
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATG160
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATG180
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATG161
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATG181
+eco:b0452,Biosynthesis of unsaturated fatty acids,FACOAE100
+eco:b0452,Biosynthesis of unsaturated fatty acids,FACOAE80
+eco:b0452,Biosynthesis of unsaturated fatty acids,FACOAE60
+eco:b1249,Glycerophospholipid metabolism,CLPNS180pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA1E120pp
+eco:b1249,Glycerophospholipid metabolism,CLPNS181pp
+NA,NA,EX_cys__L_e
+eco:b0914,ABC transporters,PG161abcpp
+eco:b0914,ABC transporters,PGP120abcpp
+eco:b0241,NA,MALtex
+eco:b1377,NA,NO3tex
+eco:b2323,Fatty acid biosynthesis,3OAS141
+eco:b1093,Fatty acid biosynthesis,3OAR121
+eco:b1661,NA,CFAS160G
+eco:b0914,ABC transporters,PGP161abcpp
+eco:b0914,ABC transporters,PGP181abcpp
+eco:b0914,ABC transporters,PA120abcpp
+eco:b3821,Glycerophospholipid metabolism,PLIPA1G120pp
+eco:b2497,NA,URAt2pp
+eco:b0452,Biosynthesis of unsaturated fatty acids,FACOAE141
+eco:b0789,Glycerophospholipid metabolism,CLPNS120pp
+eco:b1677,NA,ALPATE160pp
+eco:b0452,Biosynthesis of unsaturated fatty acids,FACOAE161
+NA,NA,EX_gsn_e
+eco:b2344,NA,TTDCEAtexi
+eco:b2344,NA,HDCEAtexi
+eco:b1677,NA,ALPATG160pp
+eco:b2836,Fatty acid degradation,2AGPGAT120
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATE120
+eco:b1488,Vancomycin resistance,ALAALAD
+eco:b2836,Fatty acid degradation,2AGPEAT180
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATE140
+NA,NA,EX_orot_e
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATE160
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATE180
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATE141
+eco:b2836,Fatty acid degradation,2AGPEAT181
+eco:b2836,Fatty acid degradation,2AGPGAT140
+eco:b3821,Glycerophospholipid metabolism,PLIPA1E181pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA1G180pp
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATE161
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2ATE181
+eco:b1701,NA,FACOAL141t2pp
+eco:b1805,Fatty acid biosynthesis,FACOAL161t2pp
+eco:b0914,ABC transporters,PA160abcpp
+eco:b3821,Glycerophospholipid metabolism,PLIPA1G181pp
+eco:b3544,ABC transporters,ALAALAabcpp
+eco:b2223,Two-component system,HEXt2rpp
+eco:b3450,ABC transporters,G3PEabcpp
+eco:b3450,ABC transporters,G3PCabcpp
+eco:b2836,Fatty acid degradation,2AGPGAT161
+eco:b0914,ABC transporters,PA181abcpp
+NA,NA,12DGR141tipp
+eco:b2523,Glutathione metabolism,AMPTASEPG
+eco:b1131,Purine metabolism,ADSL1r
+eco:b3544,ABC transporters,PROGLYabcpp
+eco:b0831,ABC transporters,GTHRDabcpp
+eco:b0418,Glycerophospholipid metabolism,PGPP140pp
+eco:b0418,Glycerophospholipid metabolism,PGPP141pp
+eco:b0418,Glycerophospholipid metabolism,PGPP160pp
+eco:b2835,NA,2AGPG140tipp
+eco:b0418,Glycerophospholipid metabolism,PGPP180pp
+eco:b2835,NA,2AGPG160tipp
+eco:b2366,"Glycine, serine and threonine metabolism",SERD_D
+NA,NA,CLPNH141pp
+NA,NA,CLPNH160pp
+NA,NA,CLPNH161pp
+eco:b4006,Purine metabolism,AICART
+NA,NA,CLPNH181pp
+eco:b3603,NA,D_LACt2pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA1E180pp
+eco:b0241,NA,RIBtex
+eco:b3844,Riboflavin metabolism,FLVRx
+eco:b0241,NA,THMtex
+eco:b0241,NA,XYLUtex
+eco:b3821,Glycerophospholipid metabolism,PLIPA1G140pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA1G161pp
+eco:b0789,Glycerophospholipid metabolism,CLPNS160pp
+eco:b1249,Glycerophospholipid metabolism,CLPNS161pp
+NA,NA,EX_manglyc_e
+eco:b0929,beta-Lactam resistance,ALLtex
+eco:b0914,ABC transporters,PG160abcpp
+eco:b1818,Fructose and mannose metabolism,FRUpts2pp
+eco:b0914,ABC transporters,PGP140abcpp
+eco:b1278,Glycerophospholipid metabolism,PAPA120pp
+eco:b1278,Glycerophospholipid metabolism,PAPA140pp
+eco:b1301,Arginine and proline metabolism,GGPTRCO
+NA,NA,EX_metsox_R__L_e
+eco:b1278,Glycerophospholipid metabolism,PAPA141pp
+eco:b0241,NA,34dhpactex
+eco:b1278,Glycerophospholipid metabolism,PAPA160pp
+eco:b3666,Two-component system,G6Pt6_2pp
+eco:b1278,Glycerophospholipid metabolism,PAPA161pp
+eco:b4036,NA,MALTHXtexi
+NA,NA,12PPDStpp
+eco:b1278,Glycerophospholipid metabolism,PAPA180pp
+eco:b1377,NA,PROtex
+eco:b0508,Glyoxylate and dicarboxylate metabolism,HPYRI
+NA,NA,FE3HOXUtex
+eco:b0973,Nitrotoluene degradation,HYD1pp
+NA,NA,EX_cl_e
+eco:b1252,NA,FE3DHBZStonex
+NA,NA,AACTOOR
+NA,NA,H2tpp
+eco:b0241,NA,23DAPPAtex
+eco:b3785,NA,ECAP3pp
+eco:b0150,NA,FEOXAMtonex
+eco:b0613,Two-component system,TPRDCOAS
+NA,NA,ACGAM1PPpp
+NA,NA,EX_dgmp_e
+eco:b2415,Phosphotransferase system (PTS),GAMptspp
+eco:b2964,NA,GSNt2pp
+NA,NA,EX_4hoxpacd_e
+eco:b0937,Riboflavin metabolism,FMNRx
+NA,NA,EX_3hpppn_e
+NA,NA,EX_man6p_e
+eco:b0241,NA,GSNtex
+eco:b0241,NA,SBTtex
+eco:b0241,NA,FORtex
+NA,NA,EX_tsul_e
+eco:b0576,NA,PHEt2rpp
+eco:b0594,Biosynthesis of siderophore group nonribosomal peptides,DHBS
+eco:b3781,NA,THIORDXi
+NA,NA,EX_n2o_e
+eco:b3850,Porphyrin and chlorophyll metabolism,PPPGO3
+eco:b3916,Glycolysis / Gluconeogenesis,PFK
+eco:b1638,Vitamin B6 metabolism,PDX5POi
+NA,NA,PDX5PO2
+eco:b0632,Peptidoglycan biosynthesis,MDDCP1pp
+eco:b3092,Pentose and glucuronate interconversions,GUI2
+eco:b3833,Ubiquinone and other terpenoid-quinone biosynthesis,OMBZLM
+eco:b3821,Glycerophospholipid metabolism,PLIPA1A181pp
+eco:b0755,Glycolysis / Gluconeogenesis,PGM
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2A141
+eco:b3915,NA,HG2t3pp
+eco:b0432,Oxidative phosphorylation,CYTBO3_4pp
+NA,NA,EX_maltttr_e
+eco:b0514,"Glycine, serine and threonine metabolism",GLYCK
+eco:b0403,Galactose metabolism,MLTG5
+eco:b3449,Glycerophospholipid metabolism,GPDDA3
+eco:b1288,Fatty acid biosynthesis,EAR141x
+eco:b1288,Fatty acid biosynthesis,EAR181x
+eco:b3919,Glycolysis / Gluconeogenesis,TPI
+eco:b1288,Fatty acid biosynthesis,EAR181y
+eco:b1094,Metabolic pathways,G3PAT141
+eco:b3826,NA,2DOXG6PP
+NA,NA,OXAMTC
+NA,NA,UDCPPtppi
+eco:b1107,Amino sugar and nucleotide sugar metabolism,AGMH
+eco:b1094,Metabolic pathways,G3PAT181
+eco:b0175,Glycerophospholipid metabolism,DASYN140
+eco:b1069,NA,MPTG
+eco:b0175,Glycerophospholipid metabolism,DASYN180
+eco:b0149,Peptidoglycan biosynthesis,MPTG2
+eco:b0175,Glycerophospholipid metabolism,DASYN141
+eco:b2914,Pentose phosphate pathway,RPI
+eco:b0635,Peptidoglycan biosynthesis,MCTP1App
+eco:b0635,Peptidoglycan biosynthesis,MCTP2App
+eco:b3918,Glycerophospholipid metabolism,CDAPPA160
+eco:b3918,Glycerophospholipid metabolism,CDAPPA141
+eco:b1678,NA,MCTP1Bpp
+eco:b2320,Vitamin B6 metabolism,PERD
+eco:b1528,NA,MELIBt3ipp
+eco:b1912,Glycerophospholipid metabolism,PGSA141
+NA,NA,EX_alaala_e
+NA,NA,EX_dtmp_e
+eco:b0159,Cysteine and methionine metabolism,5DOAN
+NA,NA,DM_5drib_c
+NA,NA,EX_lipoate_e
+NA,NA,EX_pydx_e
+NA,NA,EX_g1p_e
+eco:b0241,NA,GLCtex_copy2
+eco:b0842,NA,NAt3pp
+NA,NA,MINOHPtexi
+NA,NA,12PPDRtpp
+eco:b2154,Methane metabolism,SFGTHi
+eco:b2418,Vitamin B6 metabolism,PYDAMK
+NA,NA,DHORDfum
+eco:b0914,ABC transporters,K2L4Aabcpp
+eco:b0452,Biosynthesis of unsaturated fatty acids,FACOAE120
+eco:b1093,Fatty acid biosynthesis,3OAR120
+eco:b0954,Fatty acid biosynthesis,3HAD80
+eco:b0180,Fatty acid biosynthesis,3HAD120
+eco:b2893,NA,DSBCGT
+eco:b0604,NA,DSBGGT
+eco:b1288,Fatty acid biosynthesis,EAR180x
+eco:b0241,NA,AKGtex
+eco:b2413,NA,SO4t2pp
+eco:b1288,Fatty acid biosynthesis,EAR180y
+eco:b3018,Glycerolipid metabolism,AGPAT120
+eco:b3930,Ubiquinone and other terpenoid-quinone biosynthesis,DHNAOT4
+eco:b3994,Thiamine metabolism,AMPMS2
+NA,NA,DM_oxam_c
+eco:b3945,Glycerolipid metabolism,ALR4x
+eco:b0418,Glycerophospholipid metabolism,PGPP120
+eco:b4042,Glycerolipid metabolism,DAGK120
+eco:b0241,NA,ALLTNtex
+eco:b2585,"Glycine, serine and threonine metabolism",PSSA180
+eco:b0241,NA,ASNtex
+eco:b2585,"Glycine, serine and threonine metabolism",PSSA161
+eco:b2585,"Glycine, serine and threonine metabolism",PSSA141
+eco:b4160,Glycerophospholipid metabolism,PSD160
+eco:b4160,Glycerophospholipid metabolism,PSD161
+eco:b4160,Glycerophospholipid metabolism,PSD180
+eco:b0914,ABC transporters,COLIPAabcpp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1G141pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1G180pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1G181pp
+NA,NA,ACONIs
+eco:b0118,Citrate cycle (TCA cycle),ACONTb
+eco:b3417,Starch and sucrose metabolism,GLCP2
+eco:b3666,Two-component system,F6Pt6_2pp
+NA,NA,PPALtpp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2A140pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2A141pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2A180pp
+eco:b3666,Two-component system,GAM6Pt6_2pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2E141pp
+eco:b0151,ABC transporters,FE3HOXabcpp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2E181pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2G140pp
+eco:b0241,NA,PPALtex
+eco:b0241,NA,CA2tex
+eco:b0241,NA,CUtex
+eco:b0954,Fatty acid biosynthesis,3HAD161
+eco:b3821,Glycerophospholipid metabolism,PLIPA2G160pp
+eco:b0123,NA,CU1Opp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2G181pp
+eco:b0721,Citrate cycle (TCA cycle),SUCDi
+eco:b2764,Sulfur metabolism,FADRx2
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1E141pp
+eco:b3945,Glycerolipid metabolism,LALDO2x
+eco:b0241,NA,12PPDRtex
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1E160pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1E180pp
+eco:b0674,"Alanine, aspartate and glutamate metabolism",ASNS1
+eco:b1288,Fatty acid biosynthesis,EAR80y
+eco:b1288,Fatty acid biosynthesis,EAR120y
+eco:b1093,Fatty acid biosynthesis,3OAR181
+eco:b0954,Fatty acid biosynthesis,3HAD121
+eco:b1288,Fatty acid biosynthesis,EAR121y
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1E181pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1G160pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1G161pp
+eco:b3447,Taurine and hypotaurine metabolism,GTHRDHpp
+NA,NA,EX_o2_e
+eco:b0241,NA,PROGLYtex
+NA,NA,EX_progly_e
+eco:b0632,Peptidoglycan biosynthesis,MDDCP2pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1G120pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2E140pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2E160pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2A161pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2A181pp
+eco:b0241,NA,F6Ptex
+eco:b0632,Peptidoglycan biosynthesis,MDDCP3pp
+eco:b1288,Fatty acid biosynthesis,EAR140x
+eco:b1288,Fatty acid biosynthesis,EAR40y
+eco:b0241,NA,GAMAN6Ptex
+NA,NA,EX_gal_bD_e
+eco:b1095,Fatty acid biosynthesis,3OAS181
+eco:b1288,Fatty acid biosynthesis,EAR161y
+eco:b1094,Metabolic pathways,G3PAT140
+eco:b1094,Metabolic pathways,G3PAT160
+eco:b1094,Metabolic pathways,G3PAT161
+eco:b3018,Glycerolipid metabolism,AGPAT160
+eco:b3018,Glycerolipid metabolism,AGPAT140
+eco:b1912,Glycerophospholipid metabolism,PGSA160
+eco:b1113,Cationic antimicrobial peptide (CAMP) resistance,MLDCP2Bpp
+eco:b2323,Fatty acid biosynthesis,3OAS140
+eco:b1093,Fatty acid biosynthesis,3OAR140
+eco:b3918,Glycerophospholipid metabolism,CDAPPA140
+eco:b0925,NA,MLDCP1App
+eco:b1288,Fatty acid biosynthesis,EAR160y
+eco:b1093,Fatty acid biosynthesis,3OAR160
+eco:b1489,NA,PDE4
+eco:b1912,Glycerophospholipid metabolism,PGSA161
+eco:b0954,Fatty acid biosynthesis,3HAD181
+eco:b0418,Glycerophospholipid metabolism,PGPP160
+eco:b1288,Fatty acid biosynthesis,EAR100y
+eco:b1093,Fatty acid biosynthesis,3OAR141
+eco:b1093,Fatty acid biosynthesis,3OAR161
+eco:b0954,Fatty acid biosynthesis,3HAD141
+eco:b1288,Fatty acid biosynthesis,EAR121x
+eco:b0418,Glycerophospholipid metabolism,PGPP180
+eco:b0418,Glycerophospholipid metabolism,PGPP161
+eco:b1278,Glycerophospholipid metabolism,PGPP181
+eco:b4160,Glycerophospholipid metabolism,PSD140
+eco:b0118,Citrate cycle (TCA cycle),MICITDr
+eco:b3918,Glycerophospholipid metabolism,CDAPPA180
+eco:b1107,Amino sugar and nucleotide sugar metabolism,AGM4PH
+eco:b4394,Purine metabolism,NTP12
+eco:b0914,ABC transporters,PE141abcpp
+eco:b3918,Glycerophospholipid metabolism,CDAPPA181
+eco:b1912,Glycerophospholipid metabolism,PGSA140
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1A141pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1A180pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1E140pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1E161pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1G140pp
+eco:b0914,ABC transporters,PE160abcpp
+eco:b0914,ABC transporters,PE161abcpp
+eco:b4160,Glycerophospholipid metabolism,PSD141
+eco:b0914,ABC transporters,PG140abcpp
+eco:b0914,ABC transporters,PG141abcpp
+eco:b0118,Citrate cycle (TCA cycle),ACONTa
+eco:b1113,Cationic antimicrobial peptide (CAMP) resistance,MLDCP2App
+NA,NA,12DGR140tipp
+eco:b0914,ABC transporters,PG180abcpp
+NA,NA,12DGR160tipp
+eco:b0914,ABC transporters,PG181abcpp
+eco:b0110,NA,AM4PA
+eco:b0914,ABC transporters,PGP141abcpp
+eco:b0914,ABC transporters,PGP160abcpp
+NA,NA,12DGR180tipp
+eco:b0418,Glycerophospholipid metabolism,PGPP120pp
+eco:b0418,Glycerophospholipid metabolism,PGPP181pp
+NA,NA,CLPNH120pp
+eco:b0914,ABC transporters,PGP180abcpp
+NA,NA,EX_dump_e
+eco:b1278,Glycerophospholipid metabolism,PAPA181pp
+eco:b0914,ABC transporters,PA140abcpp
+NA,NA,CLPNH140pp
+NA,NA,EX_12ppd__R_e
+eco:b1912,Glycerophospholipid metabolism,PGSA181
+eco:b0418,Glycerophospholipid metabolism,PGPP140
+eco:b0418,Glycerophospholipid metabolism,PGPP141
+eco:b0632,Peptidoglycan biosynthesis,MDDCP5pp
+eco:b4392,NA,MLTGY3pp
+NA,NA,12DGR120tipp
+eco:b0632,Peptidoglycan biosynthesis,MDDCP4pp
+eco:b1249,Glycerophospholipid metabolism,CLPNS140pp
+eco:b1249,Glycerophospholipid metabolism,CLPNS141pp
+eco:b1094,Metabolic pathways,G3PAT180
+NA,NA,EX_o2s_e
+eco:b3821,Glycerophospholipid metabolism,PLIPA1G160pp
+eco:b0914,ABC transporters,PG120abcpp
+NA,NA,EX_gal1p_e
+eco:b0914,ABC transporters,PE140abcpp
+eco:b1661,NA,CFAS160E
+eco:b3821,Glycerophospholipid metabolism,PLIPA1G141pp
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2E160
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2G140
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2G160
+eco:b1661,NA,CFAS180E
+NA,NA,EX_dcmp_e
+eco:b1661,NA,CFAS180G
+eco:b1278,Glycerophospholipid metabolism,PAPA160
+eco:b2835,NA,2AGPE140tipp
+eco:b2835,NA,2AGPE160tipp
+eco:b2835,NA,2AGPE180tipp
+eco:b1278,Glycerophospholipid metabolism,PAPA180
+eco:b1278,Glycerophospholipid metabolism,PAPA181
+eco:b2835,NA,2AGPE141tipp
+eco:b2835,NA,2AGPE161tipp
+NA,NA,EX_23ccmp_e
+eco:b2835,NA,2AGPA161tipp
+eco:b2835,NA,2AGPA181tipp
+eco:b2835,NA,2AGPG120tipp
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2G120
+eco:b0914,ABC transporters,PA141abcpp
+eco:b3546,Lipopolysaccharide biosynthesis,PETNT161pp
+eco:b2585,"Glycine, serine and threonine metabolism",PSSA160
+eco:b2585,"Glycine, serine and threonine metabolism",PSSA181
+eco:b4042,Glycerolipid metabolism,DAGK140
+eco:b4042,Glycerolipid metabolism,DAGK160
+eco:b4042,Glycerolipid metabolism,DAGK141
+eco:b4042,Glycerolipid metabolism,DAGK161
+eco:b3018,Glycerolipid metabolism,AGPAT181
+eco:b0914,ABC transporters,PA161abcpp
+eco:b0914,ABC transporters,PA180abcpp
+eco:b0418,Glycerophospholipid metabolism,PGPP161pp
+eco:b0914,ABC transporters,PE120abcpp
+eco:b3182,Peptidoglycan biosynthesis,MDDEP3pp
+eco:b3182,Peptidoglycan biosynthesis,MDDEP4pp
+eco:b0914,ABC transporters,PE180abcpp
+eco:b1278,Glycerophospholipid metabolism,PAPA140
+eco:b2963,NA,MLTGY1pp
+NA,NA,EX_3cmp_e
+eco:b0241,NA,CGLYtex
+eco:b0954,Fatty acid biosynthesis,3HAD40
+eco:b3821,Glycerophospholipid metabolism,PLIPA1E141pp
+eco:b1095,Fatty acid biosynthesis,3OAS60
+eco:b2323,Fatty acid biosynthesis,3OAS160
+eco:b1278,Glycerophospholipid metabolism,PAPA141
+eco:b1278,Glycerophospholipid metabolism,PAPA161
+eco:b0241,NA,GTHOXtex
+eco:b1185,NA,DSBAO1
+eco:b1185,NA,DSBAO2
+eco:b2582,NA,DSBDR
+eco:b2893,NA,TDSR1
+eco:b3544,ABC transporters,CGLYabcpp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2A120pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2A160pp
+NA,NA,CLPNH180pp
+eco:b1093,Fatty acid biosynthesis,3OAR60
+eco:b1093,Fatty acid biosynthesis,3OAR80
+eco:b0925,NA,MLDCP3App
+eco:b0925,NA,MLDCP1Bpp
+eco:b2835,NA,2AGPE181tipp
+eco:b2835,NA,2AGPA140tipp
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2E120
+eco:b1288,Fatty acid biosynthesis,EAR100x
+eco:b1288,Fatty acid biosynthesis,EAR120x
+eco:b1288,Fatty acid biosynthesis,EAR160x
+eco:b2835,NA,2AGPA160tipp
+eco:b1539,Pyrimidine metabolism,ATHRDHr
+eco:b2835,NA,2AGPA180tipp
+eco:b2835,NA,2AGPA141tipp
+eco:b1288,Fatty acid biosynthesis,EAR140y
+eco:b2323,Fatty acid biosynthesis,3OAS121
+eco:b2323,Fatty acid biosynthesis,3OAS80
+eco:b2323,Fatty acid biosynthesis,3OAS100
+eco:b1095,Fatty acid biosynthesis,3OAS120
+eco:b1539,Pyrimidine metabolism,LSERDHr
+eco:b1093,Fatty acid biosynthesis,3OAR40
+eco:b1093,Fatty acid biosynthesis,3OAR100
+eco:b1539,Pyrimidine metabolism,DSERDHr
+eco:b0954,Fatty acid biosynthesis,3HAD60
+eco:b0954,Fatty acid biosynthesis,3HAD100
+eco:b0954,Fatty acid biosynthesis,3HAD140
+eco:b0954,Fatty acid biosynthesis,3HAD160
+NA,NA,EX_urate_e
+eco:b4160,Glycerophospholipid metabolism,PSD120
+eco:b3018,Glycerolipid metabolism,AGPAT180
+eco:b3018,Glycerolipid metabolism,AGPAT141
+eco:b1278,Glycerophospholipid metabolism,PAPA120
+NA,NA,EX_skm_e
+NA,NA,EX_cpgn_un_e
+eco:b3182,Peptidoglycan biosynthesis,MDDEP1pp
+eco:b3182,Peptidoglycan biosynthesis,MDDEP2pp
+eco:b3018,Glycerolipid metabolism,AGPAT161
+eco:b0175,Glycerophospholipid metabolism,DASYN120
+eco:b1288,Fatty acid biosynthesis,EAR40x
+eco:b1288,Fatty acid biosynthesis,EAR60y
+eco:b2328,NA,MLDEP1pp
+eco:b4160,Glycerophospholipid metabolism,PSD181
+eco:b4042,Glycerolipid metabolism,DAGK180
+eco:b4042,Glycerolipid metabolism,DAGK181
+eco:b2328,NA,MLDEP2pp
+NA,NA,EX_ag_e
+eco:b2963,NA,MLTGY2pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2E120pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2G141pp
+eco:b4392,NA,MLTGY4pp
+eco:b1288,Fatty acid biosynthesis,EAR60x
+eco:b3821,Glycerophospholipid metabolism,PLIPA2G161pp
+NA,NA,EX_cys__D_e
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1A120pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1A140pp
+eco:b1288,Fatty acid biosynthesis,EAR80x
+eco:b0914,ABC transporters,PE181abcpp
+NA,NA,12DGR161tipp
+NA,NA,12DGR181tipp
+eco:b4394,Purine metabolism,NTP11
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1A181pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1E120pp
+eco:b1093,Fatty acid biosynthesis,3OAR180
+eco:b1094,Metabolic pathways,G3PAT120
+eco:b1912,Glycerophospholipid metabolism,PGSA120
+eco:b1095,Fatty acid biosynthesis,3OAS180
+eco:b0954,Fatty acid biosynthesis,3HAD180
+eco:b3918,Glycerophospholipid metabolism,CDAPPA120
+eco:b0604,NA,TDSR2
+NA,NA,EX_acser_e
+eco:b0241,NA,GTHRDtex
+eco:b0886,ABC transporters,GTHRDabc2pp
+NA,NA,OMMBLHX3
+eco:b2585,"Glycine, serine and threonine metabolism",PSSA120
+eco:b4233,NA,UM4PL
+eco:b0446,NA,2MAHMP
+NA,NA,EX_cu_e
+eco:b3040,NA,ZN2tpp
+eco:b3816,NA,NI2tpp
+NA,NA,EX_arbtn_e
+eco:b0752,NA,COBALT2t3pp
+NA,NA,23DAPPAt2pp
+eco:b0606,NA,NADHPO
+eco:b0221,Fatty acid degradation,ACOAD7f
+eco:b0221,Fatty acid degradation,ACOAD8f
+eco:b3821,Glycerophospholipid metabolism,PLIPA1A120pp
+eco:b0221,Fatty acid degradation,ACOAD5f
+eco:b3821,Glycerophospholipid metabolism,PLIPA1A140pp
+NA,NA,EX_dopa_e
+eco:b3821,Glycerophospholipid metabolism,PLIPA1A141pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA1A160pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA1A161pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA1A180pp
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2A120
+eco:b3196,NA,CAt6pp
+eco:b0221,Fatty acid degradation,ACOAD3f
+eco:b0221,Fatty acid degradation,ACOAD2f
+eco:b0221,Fatty acid degradation,ACOAD4f
+eco:b0221,Fatty acid degradation,ACOAD6f
+eco:b2279,Oxidative phosphorylation,NADH16pp
+eco:b2279,Oxidative phosphorylation,NADH18pp
+NA,NA,EX_tartr__D_e
+eco:b1801,NA,GLYBt2pp
+eco:b4265,NA,5DGLCNt2rpp
+eco:b3691,NA,GALCTNt2pp
+eco:b2215,beta-Lactam resistance,GALCTNLtex
+NA,NA,EX_galctn__L_e
+eco:b4208,NA,DSERt2pp
+NA,NA,EX_hom__L_e
+eco:b0007,NA,ALAt4pp
+eco:b2923,NA,LYSt3pp
+eco:b2843,Pentose and glucuronate interconversions,KDUI
+NA,NA,EX_tungs_e
+eco:b1216,NA,CA2t3pp
+eco:b0037,NA,CTBTCAL2
+eco:b0902,NA,OBTFL
+eco:b2279,Oxidative phosphorylation,NADH17pp
+eco:b0404,Pantothenate and CoA biosynthesis,FA161ACPHi
+eco:b1734,Glycolysis / Gluconeogenesis,BGLA1
+eco:b0404,Pantothenate and CoA biosynthesis,FA141ACPHi
+eco:b0813,NA,THRt2pp
+eco:b2923,NA,ARGt3pp
+eco:b0404,Pantothenate and CoA biosynthesis,FA160ACPHi
+eco:b1377,NA,MALDtex
+eco:b1377,NA,OROTtex
+NA,NA,EX_crn__D_e
+eco:b2467,NA,GDPMNP
+NA,NA,OPHHX3
+eco:b3833,Ubiquinone and other terpenoid-quinone biosynthesis,AMMQLT8
+eco:b0404,Pantothenate and CoA biosynthesis,FA120ACPHi
+eco:b0404,Pantothenate and CoA biosynthesis,FA80ACPHi
+eco:b0404,Pantothenate and CoA biosynthesis,FA140ACPHi
+eco:b1015,NA,PPAt4pp
+eco:b3528,Two-component system,OROTt2_2pp
+eco:b3528,Two-component system,MALDt2_2pp
+eco:b0404,Pantothenate and CoA biosynthesis,FA100ACPHi
+eco:b0037,NA,CRNDCAL2
+eco:b1377,NA,5DGLCNtex
+NA,NA,EX_LalaDgluMdapDala_e
+NA,NA,EX_5dglcn_e
+eco:b4122,Citrate cycle (TCA cycle),DTARTD
+eco:b0037,NA,CRNCAL2
+eco:b0314,NA,CHLt2pp
+eco:b0007,NA,GLYt4pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2E161pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2E180pp
+eco:b4474,NA,FRULYSE
+eco:b3370,NA,FRULYSt2pp
+NA,NA,EX_LalaDgluMdap_e
+NA,NA,EX_psclys_e
+eco:b0929,beta-Lactam resistance,TUNGStex
+eco:b3821,Glycerophospholipid metabolism,PLIPA2G120pp
+eco:b3821,Glycerophospholipid metabolism,PLIPA2G180pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1A161pp
+eco:b0494,Biosynthesis of unsaturated fatty acids,LPLIPAL1A160pp
+eco:b3370,NA,PSCLYSt2pp
+eco:b2156,NA,LYSt2pp
+eco:b3040,NA,COBALT2tpp
+eco:b2373,Glyoxylate and dicarboxylate metabolism,OXCDC
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2A140
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2A160
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2A161
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2A180
+eco:b1801,NA,GLYt2pp
+eco:b4208,NA,ALAt2pp
+NA,NA,EX_anhgm_e
+eco:b4208,NA,BALAt2pp
+eco:b4208,NA,DALAt2pp
+eco:b3040,NA,FE2tpp
+eco:b3825,Glycerophospholipid metabolism,LPLIPAL2A181
+NA,NA,DM_aacald_c
+eco:b4233,NA,UM3PL
+eco:b3040,NA,MN2tpp
+eco:b3816,NA,MG2tpp
+eco:b1377,NA,5MTRtex
+eco:b3915,NA,NI2t3pp
+eco:b0241,NA,PPAtex
+eco:b4356,NA,GALCTNLt2pp
+eco:b4358,Ascorbate and aldarate metabolism,GALCTLO
+NA,NA,THYMt3pp
+eco:b0155,NA,CLt3_2pp
+NA,NA,EX_ppal_e
+eco:b1378,Glycolysis / Gluconeogenesis,POR5
+eco:b3846,Fatty acid degradation,HACD8
+eco:b3846,Fatty acid degradation,CTECOAI8
+eco:b3846,Fatty acid degradation,CTECOAI6
+NA,NA,MTHTHFSs
+NA,NA,SELGTHR
+NA,NA,SELGTHR3
+NA,NA,EX_slnt_e
+eco:b0777,Biotin metabolism,MALCOAMT
+eco:b0929,beta-Lactam resistance,PSCLYStex
+eco:b0241,NA,THYMtex
+eco:b3040,NA,CU2tpp
+eco:b3915,NA,FE2t3pp
+eco:b3915,NA,MN2t3pp
+NA,NA,MG2t3_2pp
+eco:b3040,NA,CD2tpp
+NA,NA,ETHAt2pp
+NA,NA,FE3abcpp
+eco:b2551,"Glycine, serine and threonine metabolism",THRA
+eco:b1091,Fatty acid biosynthesis,OGMEACPS
+eco:b1093,Fatty acid biosynthesis,OGMEACPR
+eco:b2323,Fatty acid biosynthesis,OPMEACPS
+eco:b4262,ABC transporters,LIPAabctex
+eco:b1341,Biofilm formation - Escherichia coli,DGUNC
+eco:b0063,Pentose and glucuronate interconversions,XYLK2
+eco:b3431,Starch and sucrose metabolism,GLDBRAN2
+eco:b2215,beta-Lactam resistance,LALADGLUtex
+eco:b1680,Selenocompound metabolism,S2FE2SR
+eco:b2503,NA,CDGUNPD
+eco:b2342,Fatty acid degradation,ACACT8r
+eco:b1634,NA,LALALGLUtpp
+eco:b3846,Fatty acid degradation,CTECOAI7
+eco:b4262,ABC transporters,CLIPAabctex
+eco:b1009,Pyrimidine metabolism,3AMACHYD
+eco:b4262,ABC transporters,K2L4Aabctex
+eco:b3893,Glyoxylate and dicarboxylate metabolism,FDH4pp
+eco:b1474,Two-component system,FDH5pp
+eco:b1094,Metabolic pathways,ACPPAT140
+eco:b3059,Glycerolipid metabolism,APG3PAT140
+eco:b1285,Quorum sensing,LDGUNPD
+eco:b0009,Folate biosynthesis,MPTAT
+eco:b3059,Glycerolipid metabolism,APG3PAT141
+eco:b0784,Sulfur relay system,MOADSUx
+eco:b1377,NA,3HPPtex
+eco:b0463,beta-Lactam resistance,CMtpp
+eco:b0463,beta-Lactam resistance,FUSAtpp
+eco:b3059,Glycerolipid metabolism,APG3PAT181
+eco:b0968,Pyruvate metabolism,APH140
+eco:b0968,Pyruvate metabolism,APH160
+eco:b0180,Fatty acid biosynthesis,OPMEACPD
+eco:b1288,Fatty acid biosynthesis,EPMEACPR
+NA,NA,RFAMPtex
+eco:b1377,NA,MINCYCtex
+eco:b0776,Biotin metabolism,AOXSr2
+eco:b0463,beta-Lactam resistance,MINCYCtpp
+NA,NA,MEOHtrpp
+NA,NA,EX_LalaDglu_e
+eco:b1680,Selenocompound metabolism,SCYSDS
+eco:b0929,beta-Lactam resistance,DOXRBCNtex
+eco:b0463,beta-Lactam resistance,DOXRBCNtpp
+eco:b1680,Selenocompound metabolism,S2FE2SS
+eco:b1682,NA,S4FE4SR
+eco:b0444,Folate biosynthesis,CCGS
+eco:b1377,NA,SELtex
+eco:b1589,NA,SELR
+eco:b0180,Fatty acid biosynthesis,OGMEACPD
+eco:b1288,Fatty acid biosynthesis,EGMEACPR
+eco:b1093,Fatty acid biosynthesis,OPMEACPR
+eco:b3412,Biotin metabolism,PMEACPE
+NA,NA,ETOHtrpp
+eco:b1394,Phenylalanine metabolism,REPHACCOAI
+eco:b1094,Metabolic pathways,ACPPAT141
+eco:b1094,Metabolic pathways,ACPPAT161
+eco:b1094,Metabolic pathways,ACPPAT180
+eco:b3059,Glycerolipid metabolism,APG3PAT160
+eco:b3059,Glycerolipid metabolism,APG3PAT161
+eco:b0929,beta-Lactam resistance,MEOHtex
+NA,NA,EX_5mtr_e
+eco:b3059,Glycerolipid metabolism,APG3PAT180
+eco:b2530,Thiamine metabolism,ICYSDS
+eco:b2515,Terpenoid backbone biosynthesis,MECDPDH5
+eco:b2794,Folate biosynthesis,CDGR
+eco:b3924,Metabolic pathways,RNTR1c2
+eco:b3924,Metabolic pathways,RNTR2c2
+eco:b2529,NA,I4FE4SR
+eco:b1682,NA,S2FE2ST
+eco:b0827,Folate biosynthesis,BMOCOS
+eco:b0827,Folate biosynthesis,BWCOS
+eco:b3924,Metabolic pathways,RNTR3c2
+eco:b3924,Metabolic pathways,RNTR4c2
+eco:b3857,Folate biosynthesis,BWCOGDS1
+eco:b3857,Folate biosynthesis,BWCOGDS2
+eco:b3924,Metabolic pathways,FLDR2
+NA,NA,CDGS
+NA,NA,5MTRtpp
+eco:b0929,beta-Lactam resistance,TTRCYCtex
+eco:b3058,Folate biosynthesis,DHNPTE
+eco:b1606,One carbon pool by folate,DHMPTR
+eco:b0463,beta-Lactam resistance,NOVBCNtpp
+eco:b2215,beta-Lactam resistance,CMtex
+eco:b0463,beta-Lactam resistance,TTRCYCtpp
+eco:b1377,NA,LALALGLUtex
+NA,NA,CBMD
+eco:b0709,NA,LALADGLUtpp
+eco:b2530,Thiamine metabolism,I2FE2SS
+eco:b2529,NA,I2FE2ST
+eco:b4209,NA,FESR
+eco:b1387,Phenylalanine metabolism,OXCOAHDH
+eco:b1393,Fatty acid degradation,DHACOAH
+eco:b2530,Thiamine metabolism,I2FE2SS2
+eco:b1008,Pyrimidine metabolism,MSAR
+eco:b2529,NA,I4FE4ST
+eco:b1682,NA,S4FE4ST
+eco:b2551,"Glycine, serine and threonine metabolism",THFAT
+eco:b2912,One carbon pool by folate,FOMETRi
+eco:b1377,NA,SLNTtex
+eco:b1680,Selenocompound metabolism,S2FE2SS2
+eco:b0775,Biotin metabolism,BTS5
+NA,NA,SELGTHR2
+NA,NA,EX_LalaLglu_e
+eco:b3650,Purine metabolism,GDPTPDP
+eco:b0628,Lipoic acid metabolism,LIPOS
+eco:b2174,Lipopolysaccharide biosynthesis,COLIPAKpp
+eco:b1094,Metabolic pathways,ACPPAT120
+NA,NA,3HPPtpp
+eco:b0826,Sulfur relay system,MPTSS
+eco:b0783,Folate biosynthesis,CPMPS
+eco:b0630,Lipoic acid metabolism,LIPOCT
+eco:b4386,Lipoic acid metabolism,LIPATPT
+eco:b4386,Lipoic acid metabolism,LIPAMPL
+eco:b1385,Phenylalanine metabolism,ALDD19xr
+eco:b2917,"Valine, leucine and isoleucine degradation",MMM
+eco:b3857,Folate biosynthesis,MOGDS
+eco:b2765,Folate biosynthesis,CPH4S
+eco:b0827,Folate biosynthesis,WCOS
+eco:b0463,beta-Lactam resistance,RFAMPtpp
+eco:b2263,Ubiquinone and other terpenoid-quinone biosynthesis,SHCHCS3
+eco:b3572,"Valine, leucine and isoleucine biosynthesis",VPAMTr
+eco:b4262,ABC transporters,ACOLIPAabctex
+eco:b1854,Glycolysis / Gluconeogenesis,PYK4
+eco:b4167,NA,NADPHXD
+NA,NA,NADHHR
+eco:b4262,ABC transporters,ECA4COLIPAabctex
+NA,NA,EX_ttrcyc_e
+eco:b4262,ABC transporters,COLIPAPabctex
+eco:b4167,NA,NADPHXE
+eco:b2670,NA,ALAtpp
+NA,NA,CH4tex
+NA,NA,EX_mincyc_e
+eco:b1377,NA,TARTRDtex
+NA,NA,DM_4crsol_c
+eco:b1397,Phenylalanine metabolism,3OXCOAT
+NA,NA,BTNt2ipp
+eco:b1011,Pyrimidine metabolism,URACPAH
+eco:b2215,beta-Lactam resistance,BTNtex
+eco:b0588,ABC transporters,DHBSZ3FEabcpp
+eco:b3070,NA,FE3DHBZS3R
+NA,NA,DXYLONtpp
+eco:b0269,Pentose and glucuronate interconversions,DXYLTD
+eco:b4298,Pentose and glucuronate interconversions,2DDARAA
+eco:b2415,Phosphotransferase system (PTS),2DGLCptspp
+eco:b3553,Pentose phosphate pathway,2DGULRGx
+eco:b3553,Pentose phosphate pathway,2DGULRGy
+eco:b4129,Aminoacyl-tRNA biosynthesis,AP4AS
+eco:b3722,Phosphotransferase system (PTS),ARBTptspp
+eco:b2215,beta-Lactam resistance,ARBTtex
+NA,NA,EX_arbt_e
+eco:b3715,NA,GNP
+eco:b0516,Purine metabolism,ALLTAMH2
+eco:b0515,Purine metabolism,UGCIAMH
+NA,NA,DMSOtpp
+eco:b1010,Pyrimidine metabolism,POAACR
+eco:b2215,beta-Lactam resistance,PYDXtex
+NA,NA,PYDXtpp
+eco:b4138,NA,SUCASPtpp
+eco:b1617,Pentose and glucuronate interconversions,METGLCUR
+eco:b1695,NA,ACOAD1fr
+eco:b3577,NA,23DOGULNt4pp
+NA,NA,FE3DCITexs
+eco:b4138,NA,SUCMALtpp
+eco:b2215,beta-Lactam resistance,PYDXNtex
+eco:b0585,NA,FEENTERES
+NA,NA,PYDXNtpp
+eco:b3070,NA,FEENTERR4
+eco:b1094,Metabolic pathways,ACPPAT160
+eco:b1377,NA,DXYLONtex
+eco:b2215,beta-Lactam resistance,PYDAMtex
+NA,NA,PYDAMtpp
+eco:b0929,beta-Lactam resistance,PSURItex
+eco:b1771,Propanoate metabolism,ALR2x
+eco:b2907,Ubiquinone and other terpenoid-quinone biosynthesis,OMPHHXy
+eco:b0543,NA,CHLt3pp
+eco:b3011,Propanoate metabolism,13PPDH2
+eco:b4123,Two-component system,TARTt2_3pp
+eco:b4123,Two-component system,SUCTARTtpp
+eco:b0121,Cysteine and methionine metabolism,APCS
+eco:b1738,Starch and sucrose metabolism,CHTBSptspp
+eco:b0543,NA,GLYBt3pp
+eco:b1601,NA,AI2tpp
+eco:b1094,Metabolic pathways,ACPPAT181
+eco:b0624,NA,Ftpp
+eco:b3880,NA,SQVOSI
+eco:b3881,NA,6D6SPA
+eco:b2215,beta-Lactam resistance,CHTBStex
+eco:b1473,NA,TRPtipp
+eco:b1473,NA,TYRtipp
+NA,NA,ThDPAT
+eco:b3882,Butanoate metabolism,GHBDHx
+eco:b3877,NA,DHPStr
+eco:b3876,NA,SQtr
+eco:b3875,NA,DHPStex
+eco:b3945,Glycerolipid metabolism,APPLDHr
+eco:b1600,NA,SPMDt3pp
+eco:b0929,beta-Lactam resistance,FMNtex
+eco:b0968,Pyruvate metabolism,APH141
+NA,NA,EX_dxylnt_e
+eco:b1511,Quorum sensing,AI2K
+eco:b1473,NA,PHEtipp
+eco:b2533,Streptomycin biosynthesis,G2PP
+NA,NA,MALt3pp
+NA,NA,CITt3pp
+eco:b0968,Pyruvate metabolism,APH161
+eco:b3058,Folate biosynthesis,DHNPA2r
+NA,NA,QUIN2tpp
+eco:b3450,ABC transporters,GLYC2Pabcpp
+eco:b1377,NA,CRNDtex
+eco:b2660,Lysine degradation,SHGO
+eco:b0241,NA,CLBtex
+eco:b2371,NA,ACOXT
+NA,NA,EX_mththf_e
+eco:b2989,NA,2HESR
+eco:b1619,Secondary bile acid biosynthesis,CHOLID
+eco:b4337,NA,CHOLATEtpp
+eco:b4167,NA,NADHXD
+NA,NA,NADPHHR
+eco:b1779,Glycolysis / Gluconeogenesis,NADPHHS
+eco:b1337,NA,4ABZGLUH
+eco:b1336,NA,4ABZGLUtr
+NA,NA,NADHHS
+eco:b0968,Pyruvate metabolism,APH180
+eco:b4167,NA,NADHXE
+eco:b2423,Sulfur metabolism,SELabcpp
+eco:b2873,Pyrimidine metabolism,PHDA
+eco:b1430,NA,TEO2M
+eco:b1396,Phenylalanine metabolism,PACOAT
+eco:b3943,NA,CYSItpp
+eco:b1854,Glycolysis / Gluconeogenesis,PYK2
+eco:b1854,Glycolysis / Gluconeogenesis,PYK3
+eco:b0968,Pyruvate metabolism,APH181
+eco:b0578,Nitrotoluene degradation,DHPTDNR
+eco:b0578,Nitrotoluene degradation,DHPTDNRN
+eco:b1710,Glutathione metabolism,GTHPi
+eco:b2264,Ubiquinone and other terpenoid-quinone biosynthesis,SEPHCHCS
+eco:b2262,Ubiquinone and other terpenoid-quinone biosynthesis,DHNCOAS
+eco:b3253,Propanoate metabolism,PCNO
+eco:b1854,Glycolysis / Gluconeogenesis,PYK6
+eco:b1686,Ubiquinone and other terpenoid-quinone biosynthesis,DHNCOAT
+eco:b1985,NA,FADt
+eco:b1396,Phenylalanine metabolism,HPACOAT
+eco:b1021,Biofilm formation - Escherichia coli,PUACGAMtr
+eco:b1733,NA,DC6PDA
+eco:b4266,NA,5DGLCNR
+eco:b3493,NA,PIt2rpp
+eco:b0241,NA,FADtex
+eco:b1516,ABC transporters,AI2abcpp
+eco:b1518,Quorum sensing,PAI2I
+eco:b3240,NA,4HBZt3pp
+eco:b1449,NA,CURR
+eco:b2245,Fructose and mannose metabolism,LKDRA
+eco:b0401,NA,LEUt2rpp
+eco:b0343,NA,LCTStpp
+eco:b4141,NA,ILEt3pp
+eco:b1448,NA,METNA
+eco:b1798,NA,METt3pp
+NA,NA,FESD1s
+eco:b3662,NA,GSNt3pp
+eco:b1592,NA,CLtipp
+eco:b2842,Pentose and glucuronate interconversions,5DKGR
+eco:b3656,NA,XYHDL
+eco:b1377,NA,2DGLCtex
+eco:b0822,NA,E4PP
+eco:b1021,Biofilm formation - Escherichia coli,PUACGAMS
+eco:b4020,NA,PItpp
+eco:b2293,Fructose and mannose metabolism,RU5PP
+NA,NA,EX_doxrbcn_e
+eco:b3883,NA,6D6SFK
+eco:b3882,Butanoate metabolism,3SLAR
+eco:b1798,NA,LEUt3pp
+eco:b3662,NA,INSt3pp
+eco:b3161,NA,INDOLEt2rpp
+eco:b3875,NA,SQtex
+eco:b0401,NA,ILEt2rpp
+eco:b3927,NA,GLYtpp
+NA,NA,EX_dhps_e
+NA,NA,MOX
+eco:b2215,beta-Lactam resistance,URATEtex
+NA,NA,EX_cs1_e
+NA,NA,EX_fusa_e
+eco:b1252,NA,CBL1tonex
+eco:b1252,NA,CBItonex
+eco:b2913,"Glycine, serine and threonine metabolism",ARHGDx
+eco:b4098,Phosphonate and phosphinate metabolism,CPL
+NA,NA,EX_mepn_e
+eco:b2164,NA,PSURItpp
+eco:b0928,Arginine biosynthesis,CYSTA
+eco:b3070,NA,FE3DCITR5
+NA,NA,CH4t2pp
+NA,NA,EX_cm_e
+eco:b0870,"Glycine, serine and threonine metabolism",4HTHRA
+NA,NA,EX_novbcn_e
+eco:b2529,NA,I2FE2SR
+eco:b1727,Fructose and mannose metabolism,GAPP
+eco:b3991,Thiamine metabolism,TYRL
+eco:b1616,NA,METGLCURt2pp
+eco:b1377,NA,METGLCURtex
+eco:b3488,NA,INOSTO
+eco:b0423,Thiamine metabolism,THZPSN3
+eco:b1813,NA,HPYRP
+eco:b2166,Pyrimidine metabolism,PSURIK
+eco:b1985,NA,FMNt
+eco:b2215,beta-Lactam resistance,AI2tex
+eco:b1517,Quorum sensing,PAI2T
+eco:b3291,NA,CUt2pp
+eco:b0241,NA,Ftex
+eco:b3059,Glycerolipid metabolism,APG3PAT120
+eco:b0929,beta-Lactam resistance,CYSItex
+eco:b1533,NA,SERtpp
+eco:b1692,"Phenylalanine, tyrosine and tryptophan biosynthesis",QUINDHyi
+eco:b1449,NA,DHCURR
+eco:b2247,Fructose and mannose metabolism,RHMND
+eco:b0597,Biosynthesis of siderophore group nonribosomal peptides,3HBZCT
+eco:b1870,NA,CXSAMS
+NA,NA,EX_2dglc_e
+eco:b3116,NA,THRt2rpp
+eco:b2796,NA,SERt2rpp
+NA,NA,DHGLYH
+eco:b1103,NA,PNSPA
+eco:b0003,"Glycine, serine and threonine metabolism",4HTHRK
+eco:b0221,Fatty acid degradation,ACOAD1f
+eco:b4093,Phosphonate and phosphinate metabolism,AMPNTAT
+NA,NA,EX_sq_e
+eco:b0968,Pyruvate metabolism,APH120
+eco:b2888,NA,URATEtpp
+eco:b0929,beta-Lactam resistance,CS1tex
+eco:b1252,NA,ADOCBLtonex
+eco:b3878,NA,SQGH
+NA,NA,URAtpp
+eco:b1206,NA,ASPtpp
+eco:b1206,NA,FUMt1pp
+eco:b1206,NA,SUCCt1pp
+eco:b1692,"Phenylalanine, tyrosine and tryptophan biosynthesis",QUINDH
+eco:b3546,Lipopolysaccharide biosynthesis,PETNT181pp
+eco:b4096,Phosphonate and phosphinate metabolism,ARMEPNS
+eco:b0325,Glycolysis / Gluconeogenesis,LCARSyi
+eco:b2877,Folate biosynthesis,MOCDS
+NA,NA,BIOMASS_Ec_iML1515_core_75p37M
+NA,NA,BIOMASS_Ec_iML1515_WT_75p37M
+eco:b4095,Phosphonate and phosphinate metabolism,RPNTPH
+eco:b4092,Phosphonate and phosphinate metabolism,PRCPD
+eco:b2215,beta-Lactam resistance,FUSAtex
+eco:b0929,beta-Lactam resistance,MEPNtex
+eco:b2047,NA,UDPGPT
+eco:b4104,NA,MEPNabcpp
+eco:b0662,Ubiquinone and other terpenoid-quinone biosynthesis,OMMBLHXy
+eco:b2906,Ubiquinone and other terpenoid-quinone biosynthesis,OPHHXy
+eco:b1014,"Alanine, aspartate and glutamate metabolism",PROD3
+NA,NA,NOVBCNtex
+eco:b2690,NA,F1PP
+eco:b0383,Thiamine metabolism,ACP1p
+NA,NA,EX_4abzglu_e
+NA,NA,EX_rfamp_e
+eco:b1300,Arginine and proline metabolism,3HPADHi
+eco:b0241,NA,4ABZGLUtex
+eco:b2215,beta-Lactam resistance,QUIN2tex
+eco:b1400,NA,2HPTCOAT
+NA,NA,EX_metglcur_e
+NA,NA,EX_quin_e
+eco:b1734,Glycolysis / Gluconeogenesis,MC6PH
+eco:b2374,NA,FORCT
+eco:b2423,Sulfur metabolism,SLNTabcpp
+eco:b0401,NA,VALt2rpp
+NA,NA,DHPTDCs2
+eco:b2683,NA,VALt3pp
+eco:b1821,NA,MN2tipp
+NA,NA,EX_3hpp_e
+eco:b1391,Phenylalanine metabolism,PACCOAE
+eco:b1397,Phenylalanine metabolism,OXDHCOAT
+eco:b1395,Phenylalanine metabolism,HADPCOADH3
+eco:b4262,ABC transporters,O16A4COLIPAabctex
+eco:b0641,NA,COLIPAabctex
+eco:b4262,ABC transporters,ENLIPAabctex
+NA,NA,DM_mththf_c
+eco:b1007,Pyrimidine metabolism,PYROX
+eco:b3857,Folate biosynthesis,BMOGDS1
+eco:b0785,Folate biosynthesis,MPTS
+eco:b0827,Folate biosynthesis,MOCOS
+eco:b3857,Folate biosynthesis,BMOGDS2
+NA,NA,FESD2s
+eco:b4386,Lipoic acid metabolism,OCTNLL
+eco:ISF6_4831,NA,RXN-17825
+eco:ISF6_0224,NA,RXN-17826
+eco:b2799,NA,GLYCOALDREDUCT
+eco:b1241,NA,ALD-CPLX
+eco:pueA,NA,pueA-0001
+NA,NA,hydrolysis
+eco:add,NA,add-0001
+eco:DSC_08750,NA,RO5263
+eco:DSC_09350,NA,R05239
+eco:DSC_09355,NA,R033462
+eco:DSC_09385,NA,R02606
+NA,NA,tr_eg
+NA,NA,tr_2-oxopent-4-enoate
+NA,NA,EXC_OUT_m_1890
+NA,NA,EXC_OUT_m_1883
+NA,NA,EXC_BOTH_pu
+NA,NA,EXC_BOTH_pet
+NA,NA,EXC_BOTH_nad
+NA,NA,EXC_BOTH_nadh
