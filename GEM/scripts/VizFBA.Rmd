@@ -1,0 +1,99 @@
+---
+title: "Visualize fluxes from FBA"
+author: "iGEM 2020"
+output:
+  html_document:
+    df_print: kable
+    toc: true
+    toc_float: true
+---
+
+# Load libraries
+```{r}
+library(tidyverse)
+library(cowplot)
+library(ggpubr)
+library(ggsci)
+library(ggrepel)
+library(ggExtra)
+library(readxl)
+library(ComplexHeatmap)
+library(Rtsne)
+select = dplyr::select
+mutate = dplyr::mutate
+```
+
+set wd
+```{r}
+setwd("/Users/leti/Desktop/iGEM/modelling/repository/iGEMChalmers2020/GEM/")
+```
+
+# Load Data
+Load fba flux distribution data and metadata
+```{r}
+df_glu <- read_excel("/Users/leti/Desktop/iGEM/modelling/repository/iGEMChalmers2020/GEM/scripts/flux_distribution_fba_glucose.xlsx")
+df_pu <- read_excel("/Users/leti/Desktop/iGEM/modelling/repository/iGEMChalmers2020/GEM/scripts/flux_distribution_fba_pu.xlsx")
+df_pet <- read_excel("/Users/leti/Desktop/iGEM/modelling/repository/iGEMChalmers2020/GEM/scripts/flux_distribution_fba_pet.xlsx")
+ 
+df_kegg = read_csv("/Users/leti/Desktop/iGEM/modelling/repository/iGEMChalmers2020/GEM/scrap/kegg_df.csv")
+```
+merge all distributions
+```{r}
+df_full = 
+  full_join(df_glu, df_pu, by = "rxns_names")
+df_full = full_join(df_full, df_pet, by ="rxns_names")
+
+df_full %>% rename("Glucose" = fluxes_glu, "Polyurethane" = fluxes_pu, "PET" = fluxes_pet, "Rxns" = rxns_names) -> df_full
+
+```
+
+#DE expression
+FC & wilcox test
+Consider flux as an absolute entity
+```{r}
+df_full %>% mutate(FC_pu = abs(Polyurethane) - abs(Glucose), FC_pet = abs(PET) - abs(Glucose)) -> df_fc 
+
+options(scipen = 1)
+df_fc %>% mutate(p_value_pu = wilcox.test(Glucose, Polyurethane, paired = TRUE)$p.value, p_value_pet = wilcox.test(Glucose, PET, paired = TRUE)$p.value, p_value_pu_pet = wilcox.test(Polyurethane, PET, paired = TRUE)$p.value) -> df_diff
+
+df_diff %>% select(Rxns, FC_pu, p_value_pu) %>% arrange(FC_pu) -> df_pu
+df_diff %>% select(Rxns, FC_pet, p_value_pet) %>% arrange(FC_pet) -> df_pet
+
+df_pu = df_pu %>% left_join(df_kegg, by = c("Rxns" = "rxn_id"))
+df_pet = df_pet %>% left_join(df_kegg, by = c("Rxns" = "rxn_id"))
+```
+
+### Calculate biochemical yield
+```{r}
+df_full %>%  filter(Rxns == "BIOMASS_Ec_iML1515_core_75p37M") %>% 
+   pivot_longer(cols = c(Glucose, Polyurethane, PET)) -> biomass
+
+df_full %>% filter(Rxns == "EX_glc__D_e") %>% select(Glucose) %>% pivot_longer(Glucose, values_to = "Consumption")  %>% right_join(biomass, by = "name") -> yield_glu
+
+df_full %>% filter(Rxns == "EXC_BOTH_pu") %>% select(Polyurethane) %>% pivot_longer(Polyurethane, values_to = "Consumption")  %>% right_join(biomass, by = "name") -> yield_pu
+
+df_full %>% filter(Rxns == "EXC_BOTH_pet") %>% select(PET) %>% pivot_longer(PET, values_to = "Consumption")  %>% right_join(biomass, by = "name") -> yield_pet
+
+yield_glu = yield_glu %>% filter(name == "Glucose") %>% mutate(yield = value / abs(Consumption))
+yield_pu = yield_pu %>% filter(name == "Polyurethane") %>% mutate(yield = value / abs(Consumption))
+yield_pet = yield_pet %>% filter(name == "PET") %>% mutate(yield = value / abs(Consumption))
+
+total_yield = rbind(yield_glu, yield_pu, yield_pet) %>% 
+  rename("Condition" = name)
+
+head(total_yield)
+```
+Plot yield
+```{r}
+ggplot(total_yield, aes(x = Condition, y = yield, fill = Condition)) +
+  geom_col() + 
+  theme_bw() + 
+  theme(legend.position = "bottom",
+        aspect.ratio = 1) +
+  ylab("Yield" ) 
+  
+  
+
+
+```
+
