@@ -10,19 +10,17 @@ cd scripts
 % Gurobi)
 %checkInstallation
 % IMPORT TEMPLATE 
-%load E.coli iML1515 model using CbMode (iML1515 has been written for
+%load E.coli iML1515 model using CbModel (iML1515 has been written for
 %COBRA)
 %source http://bigg.ucsd.edu/models/iML1515
-modelEco = importModel('../Data/templateModel/iML1515.xml'); 
+modelEco = importModel('../Data/templateModel/iML1515.xml'); %RAVEN model
+modelcobra = readCbModel('../Data/templateModel/iML1515.xml'); %cobra model
 %standardize met ids and correct some metNames
 modelEco = correctMets_iml1515(modelEco);
 %create an excel sheet for the model. Since we do not really need this for
 %the addition of reactions or analysis, create a scrap folder to keep these
 %kind of documents
 mkdir([root '/scrap'])
-%exportToExcelFormat(modelEco, [root '/scrap/modelEco.xlsx']);
-% Store original model in scrap folder. 
-%save([root '/scrap/importModels.mat'],'modelEco')
 
 
 % ADD REACTIONS & METABOLITES
@@ -37,7 +35,7 @@ modelEco = addMets(modelEco, metsToAdd);
 clear metsToAdd;
 %Add rxns for degradation of PET
 rxnsToAdd.rxns      = {'RXN-17825', 'RXN-17826', 'GLYCOALDREDUCT', 'ALD-CPLX','pueA-0001', 'hydrolysis', 'add-0001', 'RO5263', 'R05239', 'R033462', 'R02606','tr_eg', 'tr_2-oxopent-4-enoate'};
-rxnsToAdd.equations = {'ethylene terephtalate(n)[e] + H2O[e] => 4-[(2-hydroxyethoxy)-carbonyl]benzoate[e]',...
+rxnsToAdd.equations = {'polyethylene terephtalate[e] + H2O[e] => 4-[(2-hydroxyethoxy)-carbonyl]benzoate[e]',...
 '4-[(2-hydroxyethoxy)-carbonyl]benzoate[e] + H2O[e] => terephtalate[e] + ethylene glycol[e]',...
 'ethylene glycol[c] + NAD+[c] <=> Glycolaldehyde[c] + NADH[c] + H+[c]',...
 'Glycolaldehyde[c] + NADH[c] + H2O[c] => Glycolate C2H3O3[c] + NAD+[c] + 2 H+[c]',...
@@ -109,76 +107,6 @@ save([root '/scrap/importModels.mat'],'modelEco')
 
 %getExchangeRxns: get all the exchange reactions from a model and loop
 %through them opening all exchange.
-
-biomass = 'BIOMASS_Ec_iML1515_core_75p37M'; %make it easier to call biomass rxn
-
-%%
-%GROWTH IN PU
-% add polyurethane as metabolite and impair growth in glucose. Check if the
-% model can theoretically still produce biomass. 
-modelEco = setParam(modelEco, 'lb', 'EX_glc__D_e', 0);
-
-%modelEco = setParam(modelEco, 'lb', 'EX_pyr_e', -10);
-modelEco = setParam(modelEco, 'lb', 'EXC_BOTH_pu', -10); %open polyurethane
-modelEco = setParam(modelEco, 'lb', 'EXC_BOTH_pet', 0); 
-
-
-%make sure that the objective function is biomass production
-%perform FBA
-solPU = solveLP(modelEco, 0); %see documentation to decide second variable
-
-%printFluxes(modelEco, solPU.x) %print exchange rxns fluxes
-%printFluxes(modelEco, solPU.x,false) %to see the biomass flux
-
-solutionsPU = randomSampling(modelEco, 10000); 
-
-fluxes_pu = extractfield(solPU, 'x'); %extract the fluxes from the FBA
-fluxes_pu = fluxes_pu.'; %transpose
-
-rxns_names = extractfield(modelEco, 'rxns'); 
-rxns_names = vertcat(rxns_names{:});
-
-%rxns_names_fluxes = [rxns_names_fluxes, num2cell(fluxes_pu,2)] %combine names of rxns and flux values
- 
-%genes_names_fluxes  = regexp(regexprep(modelEco.grRules, '\or|and|\(|\)', ''), '\ ', 'split');
-
-df_rxns_pu = table(rxns_names, fluxes_pu);
-df_rxns_random_pu = table(rxns_names, solutionsPU); 
-
-%filename = 'rxns_pu.xlsx';
-%writetable(df_rxns_pu,filename,'Sheet',1,'Range','D1') %export to excel
-%the FBA results
-
-filename_random = 'rxns_random_pu.xlsx';
-writetable(df_rxns_random_pu,filename_random,'Sheet',1,'Range','D1') %export random fluxes to excel
-
-clear rxns_names_fluxes genes_names_fluxes filename df_rxns_genes_fluxes
-%%
-%FBA for growth in glucose 
-
-modelEco = setParam(modelEco, 'lb', 'EX_glc__D_e', -10); 
-modelEco = setParam(modelEco, 'lb', 'EXC_BOTH_pu', 0); 
-modelEco = setParam(modelEco, 'lb', 'EXC_BOTH_pet', 0);
-
-solGlu = solveLP(modelEco); 
-
-solutionsGlu = randomSampling(modelEco,10000);
-
-printFluxes(modelEco, solGlu.x, false);
-
-fluxes_glu = extractfield(solGlu, 'x'); %extract the fluxes from the FBA
-fluxes_glu = fluxes_glu.'; %transpose
-
-rxns_names_fluxes = extractfield(modelEco, 'rxns'); 
-rxns_names_fluxes = vertcat(rxns_names_fluxes{:});
-
-df_rxns_fluxes = table(rxns_names_fluxes, fluxes_glu);
-
-
-filename = 'rxns_fluxes_glu.xlsx'; %solutions random sampling + rxn_ids
-writetable(df_rxns_fluxes,filename,'Sheet',1,'Range','D1') %export to excel
-
-clear rxns_names_fluxes genes_names_fluxes filename df_rxns_genes_fluxes fluxes_gu
 
 %random sampling setting biomass to optimal value 
 %setParam(modelEco, 'lb', biomass, 0.876997214);
@@ -283,7 +211,7 @@ modelEco = setParam(modelEco, 'lb', 'EXC_BOTH_pet', -10);
 
 %perform FBA
 solPET = solveLP(modelEco, 0);
-printFluxes(modelEco, solPET.x) %print exchange rxns fluxes
+printFluxes(modelEco, solPET.x, false) %print exchange rxns fluxes
 
 %[essentialRxns, essentialRxnsIndexes]=getEssentialRxns(modelEco)%get the
 %reactions that need to be non 0 so that we can see flux
@@ -302,21 +230,41 @@ clear index_biomass;
 %%
 %why does it not grow in PET
 
-%rxns = {"RXN-17825"; "RXN-17826"; 'GLYCOALDREDUCT'; 'ALD-CPLX';'pueA-0001'; 'hydrolysis'; 'add-0001'; 'RO5263'; 'R05239'; 'R033462'; 'R02606';'tr_eg'; 'tr_2-oxopent-4-enoate'};
+rxns = {"RXN-17825"; "RXN-17826"; 'GLYCOALDREDUCT'; 'ALD-CPLX';'pueA-0001'; 'hydrolysis'; 'add-0001'; 'RO5263'; 'R05239'; 'R033462'; 'R02606';'tr_eg'; 'tr_2-oxopent-4-enoate'};
 
 ex_rxns = getExchangeRxns(modelEco); %get all the exchange reactions in the model. 
 
-for i=1:length(rxns)
-    modelEco = setParam(modelEco, 'lb', rxns(i), -1000); %open each exchange reaction and see if it carries flux
-    modelEco = setParam(modelEco, 'obj', rxns(i), 1);
-    sol = solveLP(modelEco, 0);
+    %modelEco = setParam(modelEco, 'lb', ex_rxns, -1000); %open each exchange reaction and see if it carries flux
+    biomass_obj = setParam(modelEco, 'obj', 2669, 1);
+    [model,pos] = changeMedia_batch(biomass_obj,'polyethylene terephtalate exchange (BOTH)');
+
+    for i =1:length(rxns)
+    model = setParam(model, 'obj', rxns(i), 1);
+    sol = solveLP(model, 0);
     if ~isempty(sol.x)
         fprintf('Able to find a solution for %s \n', rxns{i});
+        printFluxes(model,sol.x)
     else
         fprintf('No solution found \n'); 
     end
 end
 
+%% 
+pet_obj = setParam(modelEco, 'obj', 'EXC_BOTH_pet', -1);
+[model,pos] = changeMedia_batch(pet_obj,'polyethylene terephtalate exchange (BOTH)');
 
+solveLP(model)
+
+%find if metabolite is connected 
+modelEco.metNames(1878)
+find(modelEco.S(1878,:))
+%our pet rxn is not connected 
 %gapReport(modelEco)
 %maximize production of precursors one by one 
+%%
+[model,pos] = changeMedia_batch(modelEco,'polyethylene terephtalate exchange (BOTH)');
+solPET = solveLP(model,1)
+printFluxes(modelEco, solPET.x)
+
+%find uptake bound for ammonia in e coli to have a more realistic
+%simulation: buscar estudios que han hecho batch growth. 

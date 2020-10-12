@@ -23,4 +23,17 @@ if ~isempty(idx)
         newModel.metNames(i) = {'H2O'};
     end
 end
+%let's do the same for O2 and CO2
+idx = find(strcmpi(newModel.metNames,'O2 O2'));
+if ~isempty(idx)
+    for i=idx
+        newModel.metNames(i) = {'O2'};
+    end
+end
+idx = find(strcmpi(newModel.metNames,'CO2 CO2'));
+if ~isempty(idx)
+    for i=idx
+        newModel.metNames(i) = {'CO2'};
+    end
+end
 end
