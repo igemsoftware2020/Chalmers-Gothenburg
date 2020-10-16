@@ -6,8 +6,8 @@
 
 This is the repository for the project "No Time to Waste" developed at Chalmers (Gothenburg) as part of the iGEM competition 2020. Here, you can find the code we used to perform all our dry-lab analysis. Welcome!
 
-##Project Overview
+## Project Overview
 
 
 
-##Modelling Overview
+## Modelling Overview
