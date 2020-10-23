@@ -1,0 +1,77 @@
+---
+title: "Plate reading plot"
+output: html_notebook
+---
+
+```{r}
+library(readxl)
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+library(hrbrthemes)
+library(wesanderson)
+library(ggpubr)
+library(ggsci)
+library(ggrepel)
+library(ggExtra)
+```
+
+```{r}
+df_plate <- read_excel("/Users/castilln/Desktop/igem/github/analysis/plate_reading/plate_reading.xlsx")
+
+```
+
+```{r}
+df_plate %>% 
+  filter(Promotor == "Blank") %>% 
+  select(Fluorescence) -> blank_fl
+
+df_plate %>% 
+  filter(Promotor == "Blank") %>% 
+  select(OD) -> blank_od
+
+blank_od = as.numeric(blank_od)
+
+
+df_plate %>% 
+  mutate(Fluorescence_norm = as.numeric(Fluorescence) - as.numeric(blank_fl)) %>% 
+  mutate(OD_norm = as.numeric(OD) - blank_od) %>% 
+  mutate(Intensity = Fluorescence_norm/OD_norm) %>% 
+  filter(Promotor != "Blank") %>% 
+  group_by(Promotor) %>% 
+  mutate(Mean = mean(Intensity)) %>% 
+  mutate(SD = sd(Intensity)) %>% 
+  ggplot(aes(x = Promotor, y = Mean, fill = Promotor,label=sprintf("%0.0f", round(Mean, digits = 0)))) + 
+    geom_col(position = position_dodge()) +
+    #geom_jitter(aes(x = Promotor, y = Intensity, fill = Promotor), size = 0.7) +
+    geom_errorbar(aes(ymin = Mean - SD, ymax = Mean + SD), size = 0.2, position = position_dodge(1)) + 
+    geom_text(position = position_dodge(), hjust = -0.3, vjust = -5, size = 3.7) + 
+    theme_bw() +
+    xlab("") +
+    ylab("Intensity mean") + 
+    theme( axis.ticks.x = element_blank(),
+           axis.ticks.y = element_blank(),
+           axis.text.y = element_blank(),
+          legend.position = "none",
+          panel.background = element_blank(),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank()) +
+    scale_fill_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) +
+    stat_compare_means(label = "p.signif",vjust = 2, hjust = -3) -> plate_reader_plot
+
+    ggsave("plot_reader_plot.png", device = "png", width = 25, height = 15, units = "cm", dpi = "retina")
+
+
+
+```
+
+max.temp <- c(159751.8, 149089.51, 20198.887)
+
+barplot(max.temp,
+        main = "Intensity of promotor A, B and C",
+        xlab = "Promotor",
+        ylab = "Intensity",
+        ylim = c(0, 200000),
+        names.arg = c("A", "B", "c"),
+        col = c("red", "blue", "green"),
+        horiz = FALSE)
