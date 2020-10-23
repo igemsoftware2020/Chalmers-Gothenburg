@@ -1,0 +1,217 @@
+---
+title: "Enzyme analysis from metagenomics"
+author: "iGEM Chalmers 2020"
+output: html_notebook
+---
+source R profile. Set memory to 64000. 
+```{r}
+#Sys.setenv("R_ENVIRON_USER"='/Users/leti/.Renviron')
+#Sys.getenv("R_ENVIRON_USER")
+#Sys.setenv("R_MAX_VSIZE"=64000)
+#source("/Users/leti/.Renviron")
+```
+
+Loading library
+```{r}
+library(tidyverse)
+library(cowplot) # required to arrange multiple plots in a grid
+library(RColorBrewer)
+library(ggExtra)
+library(readxl)
+library(data.table)
+library(wesanderson)
+library(ggpubr)
+library(ggsci)
+library(ggrepel)
+theme_set(theme_bw(base_size=12)) # set default ggplot2 theme
+```
+
+```{r}
+#results from humann2 pipeline
+genefamilies <- read_delim("/Users/castilln/Desktop/igem/github/metagenomics_github/genefamilies.tsv",
+"\t", escape_double = FALSE, trim_ws = TRUE)
+
+#data frame with enzymes picked from pathways associated with plastic degradation, with their corresponding Uniprot IDs
+df_enzymes <- read_delim("/Users/castilln/Desktop/igem/github/metagenomics_github/picked_out_enzymes_from_pathways.csv", 
+    ";", escape_double = FALSE, trim_ws = TRUE) 
+
+meta <- fread("/Users/castilln/Desktop/igem/github/metagenomics_github/meta.csv", header=TRUE)
+
+```
+Moving file id from row to column (pivoting)
+```{r}
+pivot_genefamilies <- genefamilies %>% pivot_longer(-`# Gene Family` , names_to = "sample_id", values_to = "Abundance")
+```
+
+save matrix
+```{r}
+#saveRDS(pivot_genefamilies, file="./pivot_genefamilies") 
+#pivot_gene_families <- readRDS("pivot_genefamilies.rds")
+```
+
+Remove organism specific mappings
+```{r}
+df_gene =
+  pivot_genefamilies %>% 
+  rename(gene_id = `# Gene Family`) %>% 
+  filter(!grepl("\\|", gene_id)) 
+
+head(df_gene)
+```
+
+Convert to relative abundance and log transform
+```{r}
+df_gene_norm = 
+  df_gene %>% 
+  group_by(sample_id) %>% 
+  mutate(abundance_norm = (Abundance + 1)/sum(Abundance)) %>% 
+  mutate(abundance_norm_log = log10(abundance_norm))
+
+#view(df_gene_norm)
+```
+
+save norm df
+```{r}
+#saveRDS(df_gene_norm, file="./df_gene_norm") 
+```
+
+Enzymes dataframe and df_gene_norm should have the same variable name for the gene ID so that it is easier to filter
+```{r}
+df_enzymes %>% rename("gene_id" = "Uniref ID") -> df_enzymes
+```
+
+Merge both df and keep only those observations from humann that are also present in our hand-picked enzymes
+```{r}
+filtered_enzymes <- semi_join(df_gene_norm, df_enzymes, by = "gene_id")
+```
+
+Find unique enzymes ID
+```{r}
+filtered_enzymes %>% 
+  ungroup() %>% 
+  select(gene_id) %>% 
+  unique() -> enz_id
+```
+
+```{r}
+enzymes_in_sample  <- inner_join(df_gene_norm, filtered_enzymes, by = "gene_id")
+
+enzymes_in_sample %>%
+mutate(sample_id = gsub(".*[_]([^.]+)[_].*", "\\1", sample_id)) -> enzymes_in_sample
+
+enzymes_meta = inner_join(enzymes_in_sample, meta, by="sample_id", all=TRUE)
+
+enzymes_meta %>%
+mutate(environment = case_when(
+grepl("marine", environment) ~ "Marine (deep)",
+grepl("sediment", environment) ~ "Water sedimnent",
+grepl("freshwater", environment) ~ "Marine (surface)",
+grepl("wastewater", environment) ~ "Wastewater",
+grepl("soil", environment) ~ "Soil"
+)) %>% 
+  filter(gene_id == "UniRef90_Q9AQI0") %>% 
+ggplot(aes(x = environment, y=abundance_norm, color = environment)) +
+geom_jitter(aes(color = environment), size = 2) +
+#geom_point(position = "jitter") +
+ggtitle("Abundance across environments") +
+#facet_wrap(vars(environment), ncol =5) +
+theme_bw() +
+theme(axis.ticks.x = element_blank(),
+legend.position = "none",
+plot.title = element_text(face = "bold"),
+panel.background = element_blank(),
+panel.grid.major = element_blank(),
+panel.grid.minor = element_blank()) +
+ylab("Normalized abundance") +
+xlab("") +
+scale_color_manual(values = wes_palette("Cavalcanti1", n = 5, type = "discrete")) +
+stat_compare_means(label = "p.signif",vjust = 2, hjust = 1)-> q9Aqi0_plot
+ggsave("q9Aqi0_plot.png", device = "png", width = 40, height = 20, units = "cm", dpi = "retina")
+
+enzymes_meta %>%
+mutate(environment = case_when(
+grepl("marine", environment) ~ "Marine (deep)",
+grepl("sediment", environment) ~ "Water sedimnent",
+grepl("freshwater", environment) ~ "Marine (surface)",
+grepl("wastewater", environment) ~ "Wastewater",
+grepl("soil", environment) ~ "Soil"
+)) %>% 
+  filter(gene_id == "UniRef90_Q9KWL3") %>% 
+ggplot(aes(x = environment, y=abundance_norm, color = environment)) +
+geom_jitter(aes(color = environment), size = 2) +
+#geom_point(position = "jitter") +
+ggtitle("Abundance across environments") +
+#facet_wrap(vars(environment), ncol =5) +
+theme_bw() +
+theme(axis.ticks.x = element_blank(),
+legend.position = "none",
+plot.title = element_text(face = "bold"),
+panel.background = element_blank(),
+panel.grid.major = element_blank(),
+panel.grid.minor = element_blank()) +
+ylab("Normalized abundance") +
+xlab("") +
+scale_color_manual(values = wes_palette("Cavalcanti1", n = 5, type = "discrete"))+ 
+  stat_compare_means(label = "p.signif",vjust = 2, hjust = 1)-> Q9KWL3_plot
+ggsave("Q9KWL3_plot.png", device = "png", width = 40, height = 20, units = "cm", dpi = "retina")
+```
+
+read pmdb excel   
+```{r}
+df_pmdb <- read_excel("/Users/castilln/Desktop/igem/github/metagenomics_github/data/pmdb.xlsx")
+```
+select for enzymes associated with degradation of PU, PET or PEG
+```{r}
+df_pmdb %>%  
+  filter(Plastic == "PU" | Plastic == "PEG" | Plastic == "PET") %>% 
+  select(`Genes names`, `UniProt links`, Plastic) -> df_pmdb_filtered
+```
+extract uniprot id from uniprot link
+```{r}
+df_pmdb_filtered %>%  
+  mutate(Uniprot_id = basename(`UniProt links`)) %>% 
+  select(`Genes names`, Uniprot_id, Plastic) %>% 
+  filter(`Genes names` != "N/A") %>%  
+  mutate(Uniprot_id = paste0("UniRef90_", Uniprot_id)) %>% 
+  rename("gene_id" = "Uniprot_id") -> df_pmdb_filtered
+```
+
+check if there is presence of any of these enzymes in our data
+```{r}
+present <- semi_join(df_gene_norm, df_pmdb_filtered, by = "gene_id") 
+
+present %>%
+mutate(sample_id = gsub(".*[_]([^.]+)[_].*", "\\1", sample_id)) -> present
+meta_present = full_join(present, meta, by="sample_id", all=TRUE)
+```
+
+
+```{r}
+meta_present %>%
+mutate(environment = case_when(
+grepl("marine", environment) ~ "Marine (deep)",
+grepl("sediment", environment) ~ "Water sedimnent",
+grepl("freshwater", environment) ~ "Marine (surface)",
+grepl("wastewater", environment) ~ "Wastewater",
+grepl("soil", environment) ~ "Soil"
+)) %>%
+ggplot(aes(x = environment, y=abundance_norm, color = environment)) +
+geom_jitter(aes(color = environment), size = 2) +
+#geom_point(position = "jitter") +
+ggtitle("Abundance across environments") +
+#facet_wrap(vars(environment), ncol =5) +
+theme_bw() +
+theme(axis.ticks.x = element_blank(),
+legend.position = "none",
+plot.title = element_text(face = "bold"),
+panel.background = element_blank(),
+panel.grid.major = element_blank(),
+panel.grid.minor = element_blank()) +
+ylab("Normalized abundance") +
+xlab("") +
+scale_color_manual(values = wes_palette("Cavalcanti1", n = 5, type = "discrete")) +
+stat_compare_means(label = "p.signif",vjust = 2, hjust = 1) -> ab_plot
+ggsave("ab_plot.png", device = "png", width = 40, height = 20, units = "cm", dpi = "retina")
+
+```
+
