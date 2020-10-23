@@ -1,0 +1,15 @@
+import json
+import xmltodict
+
+#check your pathway
+with open("path/to/file/modelEco.xml") as xml_file:
+  data_dict = xmltodict.parse(xml_file.read())
+
+xml_file.close()
+
+json_data = json.dumps(data_dict)
+
+with open("modelEco.json", "w") as json_file:
+  json_file.write(json_data)
+
+json_file.close()
