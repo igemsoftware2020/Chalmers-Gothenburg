@@ -1,0 +1,105 @@
+---
+title: "sens_ananlysis_ss_script"
+output: html_document
+---
+
+Load libraries
+```{r}
+#install.packages("pkg-config")
+#install.packages("cairo")
+#install.packages("svglite")
+#install.packages("ggsave")
+
+library("tidyverse")
+#library("wesanderson")
+
+dummy3 <- data.frame(X = c("MHETase","PEG-DH", "PETase", "Oxidoreductase"), Z
+                     =c(log10(26.8),log10(10),log10(5.9),log10(0.0399)))
+                     
+                     
+                    
+
+dummy4 <- data.frame(X = c("MHETase","PEG-DH", "PETase","Oxidoreductase"), Z =c(log10(3.9),log10(2),log10(4.6),log10(0.007)))
+
+
+
+
+dummy3 = 
+  dummy3 %>% 
+  rename(enzyme = X)
+
+head(dummy3)
+
+dummy4 = 
+  dummy4 %>% 
+  rename(enzyme = X)
+
+head(dummy4)
+
+
+
+```
+
+```{r}
+df_sens <- read_delim("C:/Users/Niklas/OneDrive/Dokument/iGEM/Modelling/R/sens_analysis_ss_2.csv",
+    ";", escape_double = FALSE, trim_ws = TRUE)
+
+head(df_sens)
+```
+
+```{r}
+df_sens = df_sens  %>% 
+  pivot_longer(cols = -kvalue,names_to = "enzyme", values_to = "yield") %>% 
+  separate(col = enzyme, into = c("param_type","enzyme"),sep = "_")
+
+head(df_sens)
+```
+
+Plot data
+```{r}
+df_sens %>% 
+  ggplot(aes(x=log10(kvalue),y=yield,color=param_type)) +
+  geom_line() +
+  facet_wrap(vars(enzyme)) +
+  theme_bw() +
+  xlab("k-value") +
+  ylab("Molar yield (EG/(PET+PEG)")
+```
+
+Plot km and kcat separately
+```{r}
+df_sens %>%
+  filter(param_type == "kcat") %>% 
+  ggplot(aes(x=log10(kvalue),y=yield,color=param_type)) +
+  geom_line(color = "#5A725A") +
+  facet_wrap(vars(enzyme),scales = "free") +
+  theme_classic() +
+  ylim(0,1.5) +
+  xlab("log10(k_value)") +
+  ylab("Molar yield (EG/(PET+PEG)") +
+  ggtitle("k_cat values") +
+  geom_vline(data = dummy3, aes(xintercept = Z), linetype="dotted") 
+ # ggsave(filename = "sss.png", plot = sss, device = "png")
+ 
+
+#  ggsave(filename = "sens_analysis_ss_kcat.png", plot = sens_analysis_ss_kcat, device = #"png")
+  
+#sens_analysis_ss_kcat <- 
+ 
+df_sens %>%
+  filter(param_type == "km") %>% 
+  ggplot(aes(x=log10(kvalue),y=yield,color=param_type)) +
+  geom_line(color = "#5A725A") +
+  facet_wrap(vars(enzyme),scales = "free") +
+  theme_classic() +
+  ylim(0,4) +
+  xlab("log10(k_value)") +
+  ylab("Molar yield (EG/(PET+PEG)") +
+  ggtitle("k_m values") +
+  geom_vline(data = dummy4, aes(xintercept = Z),linetype="dotted") 
+  
+ 
+    
+
+
+```
