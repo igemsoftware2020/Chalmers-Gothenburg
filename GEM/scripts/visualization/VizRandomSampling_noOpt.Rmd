@@ -1,0 +1,361 @@
+---
+title: "VizFlux non optimal"
+author: "iGEM Chalmers 2020"
+output: html_notebook
+---
+
+load libraries 
+```{r}
+library(tidyverse)
+library(cowplot)
+library(ggpubr)
+library(ggsci)
+library(ggrepel)
+library(ggExtra)
+library(readxl)
+library(ComplexHeatmap)
+library(Rtsne)
+library(janitor)
+library(hrbrthemes)
+library(wesanderson)
+library(tidyHeatmap)
+select = dplyr::select
+mutate = dplyr::mutate
+```
+
+
+load data
+```{r}
+df_glu <- read_excel("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/randomSolutionsGlu_t.xlsx")
+df_pet <- read_excel("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/randomSolutionsPET_t.xlsx")
+df_pu <- read_excel("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/randomSolutionsPU_t.xlsx")
+ 
+df_kegg = read_csv("/Users/castilln/Desktop/igem/github/GEM/Data/kegg_df.csv")
+```
+
+join flux distribution from different c sources
+```{r}
+#glu + pu
+df_full = 
+ full_join(df_glu,df_pu, by = "rxns_names")
+
+#glu + pu + pet
+df_full = full_join(df_full, df_pet, by="rxns_names")
+head(df_full)
+```
+
+transform to long & parsing to make sure there are no 0 value
+```{r}
+  df_full %>% 
+  pivot_longer(cols = -rxns_names,
+               names_to = "solution",
+               values_to = "flux") %>% 
+  distinct() %>% 
+  mutate(flux = ifelse(is.na(flux),0,flux)) -> df_long
+```
+
+select unique flux distributions 
+```{r}
+df_long %>% 
+  group_by(rxns_names, flux) %>% 
+  arrange(rxns_names, flux, solution) %>% 
+  slice(1L) -> filter_sol
+
+#select vector containing unique solutions names 
+filter_sol %>% ungroup() %>%  select(solution) %>% distinct() -> filter_only_sol 
+
+#merge with out dataframe and keep unique solutions 
+df_long %>% inner_join(filter_only_sol, by = "solution") -> df_long_unique
+
+```
+
+keep solutions for which biomass is produced 
+```{r}
+nonZero_samples = 
+  df_long_unique %>% 
+  filter(rxns_names == "BIOMASS_Ec_iML1515_core_75p37M") %>% 
+  filter(flux > 0)
+ 
+head(nonZero_samples)
+```
+
+Filter out all non zero samples, add pathway information from KEGG
+```{r}
+df_long_nonzero = 
+  nonZero_samples %>% 
+  select(solution) %>% 
+  left_join(df_long_unique, by = c("solution" = "solution")) %>% 
+  left_join(df_kegg, by = c("rxns_names" = "rxn_id")) %>% 
+  group_by(solution) %>% 
+  mutate(NA_fluxes = ifelse(sum(is.na(flux)) > 0,TRUE,FALSE)) %>% 
+  ungroup() %>% 
+  filter(NA_fluxes == FALSE)
+```
+
+Convert into wide format
+```{r}
+df_wide_nonzero =
+  df_long_nonzero %>% 
+  select(-c(gene_id,pathway_id)) %>% 
+  pivot_wider(names_from = solution,
+              values_from = flux) %>% 
+  as.data.frame() 
+ 
+rownames(df_wide_nonzero) = df_wide_nonzero[,1]
+df_wide_nonzero = df_wide_nonzero[,-1]
+```
+
+### Dimnesionality reduction
+PCA
+```{r}
+pca1 = prcomp(t(df_wide_nonzero),center = TRUE)
+ 
+plotData = pca1$x[,1:2]
+plotData = cbind(solution = rownames(plotData),plotData)
+rownames(plotData) = NULL
+ 
+head(plotData)
+ 
+sample_names = plotData[,1]
+ 
+plotData %>% 
+  as_tibble() %>% 
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PU",solution) ~ "PU",
+    grepl("PET",solution) ~ "PET" 
+    )) %>% 
+  filter(!is.na(Condition)) %>% 
+  mutate(PC1 = as.double(PC1),
+         PC2 = as.double(PC2))  -> plotData_gg
+  ggplot(plotData_gg, aes(x = PC1,y = PC2, color = Condition)) +
+  geom_point() 
+  scale_y_continuous(breaks = NULL)   #to fix error
+  
+```
+
+tSNE
+```{r}
+set.seed(6) #obtain always the same plot 
+tsne1 = Rtsne(t(df_wide_nonzero),
+             dims = 2,
+             perplexity = 20,
+             theta = 0.5,
+             check_duplicates = FALSE)
+ 
+tsne1$Y
+ 
+plotData =
+  tsne1$Y %>% 
+  as_tibble() %>% 
+  mutate(solution = sample_names)
+ 
+plotData = 
+  plotData %>% 
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PET",solution) ~ "PET",
+    grepl("PU",solution) ~ "PU",
+    )) %>% 
+  mutate(V1 = as.double(V1),
+         V2 = as.double(V2))
+ 
+plotData %>% 
+  ggplot(aes(x = V1,y = V2, color = Condition, group = Condition)) +
+  geom_point(size = 2) +
+  xlab(element_blank()) +
+  ylab(element_blank()) +
+  theme_bw() +
+  #ggtitle("tSNE") +
+  stat_ellipse() +
+  theme(legend.position = "bottom",
+        aspect.ratio = 1,
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.ticks = element_blank(),
+        plot.title = element_text(face = "bold")) +
+  scale_color_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) -> tSNE_plot
+
+  ggsave("tSNE_plot.png", device = "png", width = 15, height = 15, units = "cm", dpi = "retina")
+
+```
+
+Hierarchical clustering and heatmaps
+```{r}
+# Extract nonzero fluxes
+nonZero_fluxes = 
+  df_long_nonzero %>% 
+  group_by(rxns_names) %>% 
+  summarize(zeroFlux = sum(flux) == 0) %>%
+  ungroup() %>% 
+  filter(zeroFlux == FALSE)
+ 
+# Format for Heatmap
+hm.data = df_long_nonzero_cond %>% 
+  right_join(nonZero_fluxes,by = "rxns_names") %>% 
+  select(rxns_names,solution,flux) %>% 
+  pivot_wider(names_from = solution,
+              values_from = flux) %>% 
+  arrange(rxns_names) %>% 
+  as.data.frame()
+ 
+rownames(hm.data) = hm.data[,1]
+hm.data = hm.data[,-1]
+ 
+hm.data = as.matrix(hm.data)
+ 
+# Get sample data for annotation
+
+
+sample.cond = 
+  df_long_nonzero_cond %>% 
+  right_join(nonZero_fluxes,by = "rxns_names") %>% 
+  pull(condition)
+ 
+pathway.annot = df_long_nonzero %>% 
+  right_join(nonZero_fluxes,by = "rxns_names") %>% 
+  select(rxns_names,pathway_id) %>%
+  distinct() %>% 
+  arrange(rxns_names) %>% 
+  pull(pathway_id)
+ 
+# Create annotations for heatmap
+
+#ha.col = HeatmapAnnotation(Carbon_source = sample.cond,
+                       col = list(Carbon_source = c("Glu" = "darkorange1", "PU" = "violetred", "PET" = "darkblue")))
+ 
+# Draw heatmap
+hm = Heatmap(hm.data,
+        name = "scaled-centered intesities",
+        clustering_distance_columns = "euclidean",
+        clustering_distance_rows = "euclidean",
+        show_column_names = FALSE,
+        show_row_names = FALSE,
+        top_annotation = ha.col,
+        #left_annotation = ha.row,
+        #col = col_fun,
+        column_dend_height = unit(25, "mm"),
+        row_dend_width = unit(25, "mm"),
+        show_row_dend = F,
+        show_column_dend = F)
+ 
+hm
+```
+alternative: tidyHeatmap
+Tidy heatmap
+```{r}
+df_long_nonzero_cond = 
+  df_long_nonzero %>% 
+  mutate(condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PET",solution) ~ "PET",
+    grepl("PU",solution) ~ "PU",
+    ))
+
+df_random = sample_n(df_long_nonzero_cond, 100000)
+
+Carbon_source = c("darkorange1","violetred", "darkblue")
+names(Carbon_source) = c("Glu", "PU", "PET")
+
+
+giveNAs = which(is.na(as.matrix(dist(df_random))),arr.ind=TRUE)
+
+df_random %>% 
+  group_by(condition) %>% 
+  heatmap(
+    rxns_names,
+    solution,
+    flux, 
+    transform = NULL,
+    .scale = "both",
+    palette_value = circlize::colorRamp2(c(-20, -5, 0, 5, 20), viridis::magma(5)),
+  ) %>% 
+  add_tile(condition)
+ 
+
+```
+
+```{r}
+df_long_nonzero_cond %>% 
+  mutate(solution = gsub(" ","",solution)) %>%
+ # rename("´solution´" = "solution") %>% 
+  heatmap(.row = rxns_names, .column = solution, .value = flux,
+          palette_value = circlize::colorRamp2(c(-2, -1, 0, 1, 2), viridis::magma(5))) %>% 
+  add_tile(condition) %>% 
+  add_tile(pathway_id)
+```
+
+Wilcoxon tests
+```{r, warning=F}
+options(scipen = 1)
+res_wilcox =
+  df_long_nonzero %>%
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  mutate(condition = ifelse(grepl("Glu", solution), "Glucose", "Polyurethane")) %>%
+  select(rxns_names, flux, condition) %>%
+  group_by(condition, rxns_names) %>%
+  summarise(flux = list(flux)) %>%
+  pivot_wider(names_from = condition, values_from = flux) %>%
+  group_by(rxns_names) %>%
+  mutate(
+    p_value = wilcox.test(unlist(Glucose), unlist(Polyurethane))$p.value,
+    fold_change = sign(median(unlist(Polyurethane), median(unlist(Glucose)))) * 
+      abs(median(unlist(Polyurethane)) - median(unlist(Glucose)))
+  ) %>%
+  select(rxns_names, p_value, fold_change) %>%
+  mutate(FDR = p.adjust(p_value, method = "BH")) %>%
+  filter(FDR < 0.05) %>%
+  arrange(FDR)
+```
+
+Show wilcox test results
+```{r}
+df_long_nonzero %>% 
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  select(rxns_names, pathway_id) %>% 
+  inner_join(res_wilcox, by = "rxns_names") %>% 
+  distinct() %>% 
+  arrange(FDR)
+```
+
+Filter out those with pathways
+```{r}
+df_long_nonzero %>% 
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  select(rxns_names, pathway_id) %>% 
+  inner_join(res_wilcox, by = "rxns_names") %>% 
+  distinct() %>%
+  arrange(FDR) %>% 
+  filter(!is.na(pathway_id)) %>% 
+  arrange(fold_change)  #get the ones with largest fc first 
+```
+
+
+distribution of yield by condition
+```{r}
+df_long_nonzero_cond %>% 
+  filter(rxns_names == "BIOMASS_Ec_iML1515_core_75p37M") %>%
+  mutate(yield = case_when(
+    grepl("Glu",solution) ~ (flux/1.8016),
+    grepl("PET",solution) ~ flux/(6*0.1922),
+    grepl("PU",solution) ~ flux/(3.5*0.3123)
+    )) %>% 
+  filter(flux < 60) -> yield_long_nonzero_cond
+```
+
+
+```{r}
+yield_long_nonzero_cond %>%  
+ggplot(aes(x=condition,y=flux,color = condition, fill = condition)) +
+  geom_jitter() +
+  #theme_ipsum_rc(axis = TRUE,
+    #             axis_title_face = "bold") +
+  xlab("") +
+  ylab("Yield (g C source/gDWh)") +
+  theme(legend.position = "none") +
+  scale_color_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) +
+  scale_fill_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete"))
+```
+

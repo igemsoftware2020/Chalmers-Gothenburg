@@ -1,0 +1,94 @@
+---
+title: "Production yield"
+author: "iGEM Chalmers 2020"
+output: html_notebook
+---
+
+# Load libraries
+```{r}
+library(tidyverse)
+library(dplyr)
+library(cowplot)
+library(ggpubr)
+library(ggplot2)
+library(ggsci)
+library(ggrepel)
+library(ggExtra)
+library(readxl)
+library(ComplexHeatmap)
+library(Rtsne)
+library(data.table)
+library(RColorBrewer)
+select = dplyr::select
+mutate = dplyr::mutate
+```
+
+
+# Load Data
+Load bi-linear fba flux distribution data 
+```{r}
+df_prod <- fread("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/production_gem.csv", header = TRUE)
+```
+
+plot yield succinate
+```{r}
+options(digits = 2) 
+
+#succinate
+df_prod  %>% 
+  filter(Product == "Succinate") %>% 
+  mutate(Norm_consumption = Amount * 0.31232) %>% 
+  mutate(Yield = Value/Norm_consumption) %>%  
+  rename("Condition" = "c_source")-> df_succ 
+
+
+ggplot(df_succ, aes(x = Condition, y = Yield, label=sprintf("%0.2f", round(Yield, digits = 4)))) +
+  geom_col(fill = "#5A725A") + 
+  geom_text(position = position_dodge(0.5), hjust = 0.05, size = 2.7, vjust = -0.7) +
+  theme_bw() + 
+  ggtitle("Theoretical yield for production of succinate") +
+  #scale_fill_manual(values = c("#669933", "#66CC99", "#66CC99", "#66CC99","#66CC99","#66CC99")) +
+  theme(legend.position = "none",
+        aspect.ratio = 1,
+        plot.title = element_text(face = "bold"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()) +
+  ylab("Yield (g succinate/g of C)") 
+```
+plot yield metOH
+```{r}
+options(digits = 4) 
+
+#methanol
+df_prod  %>% 
+  filter(Product == "Methanol") %>% 
+  mutate(Norm_consumption = Amount * 0.1922) %>% 
+  mutate(Yield = Value/Norm_consumption) %>%  
+  rename("Condition" = "c_source")-> df_met
+
+
+ggplot(df_met, aes(x = Condition, y = Yield, label=sprintf("%0.4f", round(Yield, digits = 10)))) +
+  geom_col(fill = "#5A725A") + 
+  annotate("text", label = "6.4*10^(-10)", x = 1,y = 0.00000002) +
+  annotate("text", label = "1.28*10^(-9)", x = 2,y = 0.000000031) +
+
+  theme_bw() + 
+  ggtitle("Theoretical yield for production of methanol") +
+  #scale_fill_manual(values = c("#669933", "#66CC99", "#66CC99", "#66CC99","#66CC99","#66CC99")) +
+  theme(legend.position = "none",
+        aspect.ratio = 1,
+        plot.title = element_text(face = "bold"),
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.title.x = element_blank(),
+        axis.ticks.y = element_blank(),
+        axis.text.y = element_blank()) +
+  ylab("Yield (g methanol/g of C)") -> metOh_yield
+
+  ggsave("metOH_yield.png", device = "png", width = 15, height = 15, units = "cm", dpi = "retina")
+
+```
+

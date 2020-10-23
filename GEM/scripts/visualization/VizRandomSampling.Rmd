@@ -1,0 +1,680 @@
+---
+title: "Visualize fluxes from random sampling"
+author: "iGEM 2020"
+output:
+  html_document:
+    df_print: kable
+    toc: true
+    toc_float: true
+---
+ 
+# Load libraries
+```{r}
+library(tidyverse)
+library(cowplot)
+library(ggpubr)
+library(ggsci)
+library(ggrepel)
+library(ggExtra)
+library(readxl)
+library(ComplexHeatmap)
+library(Rtsne)
+library(janitor)
+library(hrbrthemes)
+library(wesanderson)
+library(tidyHeatmap)
+select = dplyr::select
+mutate = dplyr::mutate
+```
+
+# Load Data
+Load pre-processed vcf data and metadata
+```{r}
+df_glu <- read_excel("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/randomSolutionsGlu.xlsx")
+df_pet <- read_excel("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/randomSolutionsPET.xlsx")
+df_pu <- read_excel("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/randomSolutionsPU.xlsx")
+ 
+df_kegg = read_csv("/Users/castilln/Desktop/igem/github/GEM/Data/kegg_df.csv")
+```
+ 
+```{r}
+df_full = 
+ full_join(df_glu,df_pu, by = "rxns_names")
+
+df_full = full_join(df_full, df_pet, by="rxns_names")
+head(df_full)
+```
+Let's try only Glu vs PU 
+```{r}
+#df_full = full_join(df_glu, df_pu, by = "rxns_names")
+```
+
+
+```{r}
+df_long =
+  df_full %>% 
+  pivot_longer(cols = -rxns_names,
+               names_to = "solution",
+               values_to = "flux") %>% 
+  distinct() %>% 
+  mutate(flux = ifelse(is.na(flux),0,flux))
+```
+
+Select unique flux distributions
+```{r}
+df_long %>% 
+  group_by(rxns_names, flux) %>% 
+  arrange(rxns_names, flux, solution) %>% 
+  slice(1L) -> filter_sol
+```
+ 
+```{r}
+filter_sol %>% ungroup() %>%  select(solution) %>% distinct() -> filter_only_sol
+```
+
+```{r}
+df_long %>% inner_join(filter_only_sol, by = "solution") -> df_long_unique
+```
+ 
+ 
+```{r}
+df_long_unique %>% 
+  filter(rxns_names == "BIOMASS_Ec_iML1515_core_75p37M")
+```
+ 
+ 
+Get samples with non-zero biomass flux
+```{r}
+nonZero_samples = 
+  df_long_unique %>% 
+  filter(rxns_names == "BIOMASS_Ec_iML1515_core_75p37M") %>% 
+  filter(flux > 0)
+ 
+head(nonZero_samples)
+```
+Filter out all non zero samples, add pathway information from KEGG
+```{r}
+df_long_nonzero = 
+  nonZero_samples %>% 
+  select(solution) %>% 
+  left_join(df_long_unique, by = c("solution" = "solution")) %>% 
+  left_join(df_kegg, by = c("rxns_names" = "rxn_id")) %>% 
+  group_by(solution) %>% 
+  mutate(NA_fluxes = ifelse(sum(is.na(flux)) > 0,TRUE,FALSE)) %>% 
+  ungroup() %>% 
+  filter(NA_fluxes == FALSE)
+```
+
+
+Convert into wide format
+```{r}
+df_wide_nonzero =
+  df_long_nonzero %>% 
+  select(-c(gene_id,pathway_id)) %>% 
+  pivot_wider(names_from = solution,
+              values_from = flux) %>% 
+  as.data.frame() 
+ 
+rownames(df_wide_nonzero) = df_wide_nonzero[,1]
+df_wide_nonzero = df_wide_nonzero[,-1]
+```
+ 
+### Dimnesionality reduction
+PCA
+```{r}
+pca1 = prcomp(t(df_wide_nonzero),center = TRUE)
+ 
+plotData = pca1$x[,1:2]
+plotData = cbind(solution = rownames(plotData),plotData)
+rownames(plotData) = NULL
+ 
+head(plotData)
+ 
+sample_names = plotData[,1]
+ 
+plotData %>% 
+  as_tibble() %>% 
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PU",solution) ~ "PU",
+    grepl("PET",solution) ~ "PET" 
+    )) %>% 
+  filter(!is.na(Condition)) %>% 
+  mutate(PC1 = as.double(PC1),
+         PC2 = as.double(PC2))  %>%
+  ggplot(aes(x = PC1,y = PC2, color = Condition)) +
+  geom_point() +
+  scale_y_continuous(breaks = NULL) + 
+  scale_x_continuous(breaks = NULL)
+```
+ 
+tSNE
+```{r}
+tsne1 = Rtsne(t(df_wide_nonzero),
+             dims = 2,
+             perplexity = 30,
+             theta = 0.5,
+             check_duplicates = FALSE)
+ 
+tsne1$Y
+ 
+plotData =
+  tsne1$Y %>% 
+  as_tibble() %>% 
+  mutate(solution = sample_names)
+ 
+plotData = 
+  plotData %>% 
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PET",solution) ~ "PET",
+    grepl("PU",solution) ~ "PU",
+    )) %>% 
+  mutate(V1 = as.double(V1),
+         V2 = as.double(V2))
+ 
+plotData %>% 
+  ggplot(aes(x = V1,y = V2, color = Condition, group = Condition)) +
+  geom_point() +
+  xlab("tSNE 1") +
+  ylab("tSNE 2") +
+  theme_bw() +
+  theme(legend.position = "bottom",
+        aspect.ratio = 1,
+        axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        plot.title = element_text(face = "bold")) +
+  scale_color_manual("Carbon source", values = c("darkorange1","deeppink4", "darkblue"))
+```
+ 
+Hierarchical clustering and heatmaps
+```{r}
+# Extract nonzero fluxes
+nonZero_fluxes = 
+  df_long_nonzero %>% 
+  group_by(rxns_names) %>% 
+  summarize(zeroFlux = sum(flux) == 0) %>%
+  ungroup() %>% 
+  filter(zeroFlux == FALSE)
+ 
+# Format for Heatmap
+hm.data = df_long_nonzero %>% 
+  right_join(nonZero_fluxes,by = "rxns_names") %>% 
+  select(rxns_names,solution,flux) %>% 
+  pivot_wider(names_from = solution,
+              values_from = flux) %>% 
+  arrange(rxns_names) %>% 
+  as.data.frame()
+ 
+rownames(hm.data) = hm.data[,1]
+hm.data = hm.data[,-1]
+ 
+hm.data = as.matrix(hm.data)
+ 
+# Get sample data for annotation
+df_long_nonzero_cond = 
+  df_long_nonzero %>% 
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PET",solution) ~ "PET",
+    grepl("PU",solution) ~ "PU",
+    ))
+
+sample.cond = 
+  df_long_nonzero_cond %>% 
+  pull(Condition)
+ 
+pathway.annot = df_long_nonzero %>% 
+  right_join(nonZero_fluxes,by = "rxns_names") %>% 
+  select(rxns_names,pathway_id) %>%
+  distinct() %>% 
+  arrange(rxns_names) %>% 
+  pull(pathway_id)
+
+
+#z-score normalization
+df_long_nonzero_cond %>% 
+  group_by(solution,Condition) %>% 
+  mutate(z_score_group = (flux - mean(flux)) / sd(flux)) %>% 
+  ungroup() -> df_long_nonzero_cond_norm
+
+hm.data = df_long_nonzero_cond_norm %>% 
+  right_join(nonZero_fluxes,by = "rxns_names") %>% 
+  select(rxns_names,solution,z_score_group) %>% 
+  pivot_wider(names_from = solution,
+              values_from = z_score_group) %>% 
+  arrange(rxns_names) %>% 
+  as.matrix()
+ 
+# Create annotations for heatmap
+ha.col = HeatmapAnnotation(Carbon_source = sample.cond,
+                       col = list(Carbon_source = c(Glucose = "darkorange1", Polyurethane = "violetred", PET = "darkblue")))
+
+my_palette <- colorRampPalette(c("yellow", "orange", "red")) (n=20) 
+breaks <- seq(min(hm.data, na.rm = T), max(hm.data, na.rm = T), length.out = 21)
+
+hm = heatmap.2(hm.data, 
+               hm.data, 
+               main = "Heatmap of fluxes on different C sources",
+               trace = "none",
+               col = my_palette,
+               breaks = breaks, 
+               dendogram = "row",
+               ColV = "NA")
+
+hm
+
+
+
+# Draw heatmap
+hm = Heatmap(hm.data,
+        jitter = TRUE,
+        name = "scaled-centered intesities",
+        #clustering_distance_rows = "euclidean", 
+        clustering_distance_columns = "euclidean",
+        show_column_names = FALSE,
+        show_row_names = FALSE,
+        #top_annotation = ha.col,
+        #left_annotation = ha.row,
+        #col = col_fun,
+        #column_dend_height = unit(25, "mm"),
+        #row_dend_width = unit(25, "mm"),
+        show_row_dend = F,
+        show_column_dend = TRUE)
+ 
+hm
+```
+
+heatmap.2
+```{r}
+
+#try to get rid of nan values
+dist_no_na <- function(hm.data) {
+    edist <- dist(hm.data)
+    edist[which(is.na(edist))] <- max(edist, na.rm=TRUE) * 1.1 
+    return(edist)
+}
+
+hm = heatmap.2(hm.data, 
+               hm.data, 
+               main = "Heatmap of fluxes on different C sources",
+               trace = "none",
+               distfun = dist_no_na(),
+               col = my_palette,
+               breaks = breaks, 
+               dendogram = "column",
+               Rowv = "NA",
+               na.color = "black")
+
+hm
+
+```
+
+
+Tidy heatmap
+```{r}
+options(expression = 800000)
+df_long_nonzero_cond_norm %>% 
+  as_tibble() %>% 
+  filter(z_score_group > 0) %>% 
+  heatmap(rxns_names, solution, z_score_group, breaks)
+```
+
+
+Wilcoxon tests
+```{r, warning=F}
+options(scipen = 1)
+res_wilcox =
+  df_long_nonzero %>%
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  mutate(Condition = ifelse(grepl("Glu", solution), "Glucose", "Polyurethane")) %>%
+  select(rxns_names, flux, Condition) %>%
+  group_by(Condition, rxns_names) %>%
+  summarise(flux = list(flux)) %>%
+  pivot_wider(names_from = Condition, values_from = flux) %>%
+  group_by(rxns_names) %>%
+  mutate(
+    p_value = wilcox.test(unlist(Glucose), unlist(Polyurethane))$p.value,
+    fold_change = sign(median(unlist(Polyurethane), median(unlist(Glucose)))) * 
+      abs(median(unlist(Polyurethane)) - median(unlist(Glucose)))
+  ) %>%
+  select(rxns_names, p_value, fold_change) %>%
+  mutate(FDR = p.adjust(p_value, method = "BH")) %>%
+  filter(FDR < 0.05) %>%
+  arrange(FDR)
+```
+ 
+Show wilcox test results
+```{r}
+df_long_nonzero %>% 
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  select(rxns_names, pathway_id) %>% 
+  inner_join(res_wilcox, by = "rxns_names") %>% 
+  distinct() %>% 
+  arrange(FDR)
+```
+Filter out those with pathways
+```{r}
+df_long_nonzero %>% 
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  select(rxns_names, pathway_id) %>% 
+  inner_join(res_wilcox, by = "rxns_names") %>% 
+  distinct() %>%
+  arrange(fold_change) %>% 
+  filter(!is.na(pathway_id))
+```
+ 
+```{r}
+rxn_to_plot = "PE161abcpp"
+ 
+df_long_nonzero %>%
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PET",solution) ~ "PET",
+    grepl("PU",solution) ~ "PU",
+    )) %>%
+  filter(rxns_names == rxn_to_plot) %>% 
+  ggplot(aes(x=Condition,y=flux,color = Condition, fill = Condition)) +
+  geom_jitter() +
+  #theme_ipsum_rc(axis = TRUE,
+    #             axis_title_face = "bold") +
+  ggtitle("PE161abcpp") +
+  xlab("") +
+  ylab("Flux (mmol/gDWh)") +
+  scale_y_continuous(breaks = NULL) +
+  theme(legend.position = "none") +
+  scale_color_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) +
+  scale_fill_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete"))
+```
+
+
+stats kw 2 sided. 
+```{r, fig.width=6,fig.height=6}
+#pathway_to_plot = "Oxidative phosphorylation" 
+#pathway_to_plot = "Glyoxylate and dicarboxylate metabolism" 
+#pathway_to_plot = "Glycine, serine and threonine metabolism"
+#pathway_to_plot = "Cysteine and methionine metabolism"
+#pathway_to_plot = "Pentose phosphate pathway"
+#pathway_to_plot = "Pyruvate metabolism"
+#pathway_to_plot = "Phenylalanine, tyrosine and tryptophan biosynthesis"
+#pathway_to_plot = "Glycolysis / Gluconeogenesis"
+pathway_to_plot = "Citrate cycle (TCA cycle)"
+
+
+df_long_nonzero %>%
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PET",solution) ~ "PET",
+    grepl("PU",solution) ~ "PU",
+    )) %>%
+  filter(pathway_id == pathway_to_plot) %>% 
+  ggplot(aes(x=Condition,y=flux,color = Condition, fill = Condition)) +
+  geom_jitter() +
+  geom_hline(yintercept = 0) +
+  facet_wrap(~rxns_names,
+             scales = "free") +
+  #theme_ipsum_rc(axis = TRUE,
+   #             axis_title_face = "bold") +
+  ggtitle("TCA Cycle") +
+  xlab("") +
+  ylab("Flux (mmol/gDWh)") +
+  scale_y_continuous(breaks = NULL) +
+  theme_bw() +
+  theme(legend.position = "bottom",
+        aspect.ratio = 0.7,
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.text.x = element_blank(), 
+        plot.title = element_text(face = "bold")) +
+  scale_color_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) +
+  scale_fill_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) +
+  stat_compare_means(label = "p.signif",vjust = 2, hjust = 1) -> p_tca
+  
+ggsave("p_tca.png", device = "png", width = 30, height = 25, units = "cm", dpi = "retina")
+
+```
+```{r}
+rxn_to_plot = "FRD3"
+ 
+df_long_nonzero %>%
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PET",solution) ~ "PET",
+    grepl("PU",solution) ~ "PU",
+    )) %>%
+  filter(rxns_names == rxn_to_plot) %>% 
+  ggplot(aes(x=Condition,y=flux,color = Condition, fill = Condition)) +
+  geom_jitter() +
+  facet_wrap(~rxns_names,
+             scales = "free") +
+  #theme_ipsum_rc(axis = TRUE,
+   #             axis_title_face = "bold") +
+  xlab("") +
+  ylab("Flux (mmol/gDWh)") +
+  theme(legend.position = "none") +
+  scale_color_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) +
+  scale_fill_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete"))
+```
+
+ 
+```{r, fig.width=10,fig.height=10}
+pathway_to_plot = "Pyruvate metabolism"
+pathway_to_plot = "Phenylalanine, tyrosine and tryptophan biosynthesis"
+rxn_to_plot = "PGK"
+ 
+df_long_nonzero %>%
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PET",solution) ~ "PET",
+    grepl("PU",solution) ~ "PU",
+    )) %>%
+  filter(pathway_id == pathway_to_plot) %>% 
+  ggplot(aes(x=Condition,y=flux,color = Condition, fill = Condition)) +
+  geom_jitter() +
+  geom_hline(yintercept = 0) +
+  facet_wrap(~rxns_names,
+             scales = "free") +
+  ggtitle("Pyruvate metabolism") +
+  xlab("") +
+  ylab("Flux (mmol/gDWh)") +
+  scale_y_continuous(breaks = NULL) +
+  theme_bw() +
+  theme(legend.position = "bottom",
+        aspect.ratio = 0.7,
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.text.x = element_blank()) +
+  scale_color_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) +
+  scale_fill_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) +
+  stat_compare_means(label = "p.signif",vjust = 2, hjust = 1) -> p_pyruvate
+  
+  ggsave("p_pyruvate.png", device = "png", width = 30, height = 25, units = "cm", dpi = "retina")
+
+```
+
+
+```{r}
+pathway_to_plot = "Porphyrin and chlorophyll metabolism"
+ 
+df_long_nonzero %>%
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PET",solution) ~ "PET",
+    grepl("PU",solution) ~ "PU",
+    )) %>%
+  filter(pathway_id == pathway_to_plot) %>% 
+  ggplot(aes(x=Condition,y=flux,color = Condition, fill = Condition)) +
+  geom_jitter() +
+  geom_hline(yintercept = 0) +
+  facet_wrap(~rxns_names,
+             scales = "free") +
+  #theme_ipsum_rc(axis = TRUE,
+                 #axis_title_face = "bold") +
+  ggtitle("Porphyrin and chlorophyll metabolism") +
+  xlab("") +
+  ylab("Flux (mmol/gDWh)") +
+  scale_y_continuous(breaks = NULL) +
+  theme_bw() +
+  theme(legend.position = "bottom",
+        aspect.ratio = 0.7,
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.text.x = element_blank(), 
+        plot.title = element_text(face = "bold")) +
+  scale_color_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) +
+  scale_fill_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) +
+  stat_compare_means(label = "p.signif",vjust = 2, hjust = 1)  -> p_porphyrin
+
+  ggsave("p_porphyrin.png", device = "png", width = 30, height = 25, units = "cm", dpi = "retina")
+
+  
+  
+```
+ 
+```{r}
+pathway_to_plot = "Pentose phosphate pathway"
+ 
+df_long_nonzero %>%
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PET",solution) ~ "PET",
+    grepl("PU",solution) ~ "PU",
+    )) %>%
+  filter(pathway_id == pathway_to_plot) %>% 
+  ggplot(aes(x=Condition,y=flux,color = Condition, fill = Condition)) +
+  geom_jitter() +
+  geom_hline(yintercept = 0) +
+  facet_wrap(~rxns_names,
+             scales = "free") +
+  #theme_ipsum_rc(axis = TRUE,
+                 #axis_title_face = "bold") +
+  ggtitle("Pentose phosphate pathway") +
+  xlab("") +
+  ylab("Flux (mmol/gDWh)") +
+  scale_y_continuous(breaks = NULL) +
+  theme(legend.position = "none") +
+  scale_color_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) +
+  scale_fill_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete"))  -> p_ppp
+
+  ggsave("p_ppp.png", device = "png", width = 30, height = 25, units = "cm", dpi = "retina")
+```
+ 
+ 
+Plot heatmap of DE fluxes
+```{r}
+# Extract nonzero fluxes
+nonZero_fluxes = 
+  df_long_nonzero %>% 
+  group_by(rxns_names) %>% 
+  summarize(zeroFlux = sum(flux) == 0) %>%
+  ungroup() %>% 
+  filter(zeroFlux == FALSE)
+ 
+diffFluxes = 
+  df_long_nonzero %>% 
+  right_join(nonZero_fluxes, by = "rxns_names") %>%
+  select(rxns_names, pathway_id) %>% 
+  inner_join(res_wilcox, by = "rxns_names") %>% 
+  distinct() %>%
+  arrange(FDR) %>%
+  filter(FDR < 0.05)
+ 
+# Format for Heatmap
+hm.data = df_long_nonzero %>% 
+  right_join(nonZero_fluxes,by = "rxns_names") %>% 
+  right_join(diffFluxes) %>% 
+  select(rxns_names,solution,flux) %>% 
+  pivot_wider(names_from = solution,
+              values_from = flux) %>% 
+  arrange(rxns_names) %>% 
+  as.data.frame()
+ 
+rownames(hm.data) = hm.data[,1]
+hm.data = hm.data[,-1]
+ 
+hm.data = as.matrix(hm.data)
+ 
+# Get sample data for annotation
+
+sample.cond =
+  plotData %>% 
+  as_tibble() %>% 
+  mutate(Condition = case_when(
+    grepl("Glu",solution) ~ "Glu",
+    grepl("PET",solution) ~ "PET",
+    grepl("PU",solution) ~ "PU",
+    )) %>% 
+    pull(Condition)
+sample.cond = 
+  df_long_nonzero_cond %>% 
+  right_join(nonZero_fluxes,by = "rxns_names") %>% 
+  right_join(diffFluxes) %>% 
+  pull(Condition)
+ 
+pathway.annot = df_long_nonzero %>% 
+  right_join(nonZero_fluxes,by = "rxns_names") %>% 
+  select(rxns_names,pathway_id) %>%
+  distinct() %>% 
+  arrange(rxns_names) %>% 
+  pull(pathway_id)
+ 
+# Create annotations for heatmap
+ha.col = HeatmapAnnotation(Carbon_source = sample.cond,
+                       col = list(Carbon_source = c(Glucose = "darkorange1", Polyurethane = "violetred", PET = "darkmagenta")))
+ 
+ 
+# Draw heatmap
+hm = Heatmap(hm.data,
+        name = "scaled-centered intesities",
+        clustering_distance_rows = "euclidean", 
+        clustering_distance_columns = "euclidean",
+        show_column_names = FALSE,
+        show_row_names = FALSE,
+        #top_annotation = ha.col,
+        #left_annotation = ha.row,
+        #col = col_fun,
+        #column_dend_height = unit(25, "mm"),
+        #row_dend_width = unit(25, "mm"),
+        show_row_dend = TRUE,
+        show_column_dend = TRUE)
+ 
+hm
+```
+ 
+ Heatmap with tidyHeatmap
+```{r}
+df_long_nonzero_cond %>% 
+  as_tibble() %>% 
+  heatmap(rxns_names, solution, flux, .scale = "column") %>% add_tile(Condition)
+```
+ 
+ 
+```{r}
+df_long_nonzero %>% 
+  right_join(nonZero_fluxes,by = "rxns_names_fluxes") %>% 
+  mutate(Condition = ifelse(grepl("Glu",solution),"Glucose","Polyurethane")) %>% 
+  filter(rxns_names_fluxes == "ENO") %>% 
+  group_by(Condition) %>% 
+  summarise(median(flux))
+ 
+df_long_nonzero %>% 
+  right_join(nonZero_fluxes,by = "rxns_names_fluxes") %>% 
+  mutate(Condition = ifelse(grepl("Glu",solution),"Glucose","Polyurethane")) %>% 
+  filter(rxns_names_fluxes == "FESD1s") %>% 
+  group_by(Condition) %>% 
+  summarise(median(flux))
+```
+
+
+
+
+ 

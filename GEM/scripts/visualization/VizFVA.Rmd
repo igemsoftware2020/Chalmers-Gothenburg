@@ -1,0 +1,91 @@
+---
+title: "FVA"
+author: "iGEM Chalmers 2020"
+output: html_notebook
+---
+
+
+
+load libraries
+```{r}
+library(tidyverse)
+library(cowplot)
+library(ggpubr)
+library(ggsci)
+library(ggrepel)
+library(ggExtra)
+library(readxl)
+library(ComplexHeatmap)
+library(Rtsne)
+library(janitor)
+library(hrbrthemes)
+library(wesanderson)
+library(tidyHeatmap)
+library(data.table)
+select = dplyr::select
+mutate = dplyr::mutate
+```
+
+
+load data
+```{r}
+df_max_glu = fread("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/maxFlux_glu.txt")
+df_max_pu = fread("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/maxFlux_pu.txt")
+df_max_pet = fread("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/maxFlux_pet.txt")
+
+df_min_glu = fread("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/minFlux_glu.txt")
+df_min_pu = fread("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/minFlux_pu.txt")
+df_min_pet = fread("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/minFlux_pet.txt")
+
+rxns_names = fread("/Users/castilln/Desktop/igem/github/GEM/scripts/scrap/rxns_names.txt", header = FALSE)
+```
+
+bind columns together
+```{r}
+df_var = cbind(rxns_names, df_max_glu, df_min_glu, df_max_pu, df_min_pu, df_max_pet, df_min_pet)
+colnames(df_var) <- c("rxn_id", "Max_glu", "Min_glu", "Max_PU", "Min_PU", "Max_PET", "Min_PET")
+```
+
+
+find variation range for each rxn
+```{r}
+
+df_var %>% 
+  mutate(range_glu = Max_glu - Min_glu,
+         range_pu = Max_PU - Min_PU,
+         range_pet = Max_PET - Min_PET) %>% 
+  select(rxn_id, range_glu, range_pu, range_pet) %>% 
+  pivot_longer(cols = -rxn_id, names_to = "range", values_to = "value") %>% 
+  mutate(Condition = case_when(
+    grepl("glu",range) ~ "Glucose",
+    grepl("pu",range) ~ "Polyurethane",
+    grepl("pet",range) ~ "PET" 
+    )) %>% 
+  filter(!value == 0) %>% 
+  filter(!grepl("EXC", rxn_id)) %>% 
+  filter(!abs(value) > 200) -> df_range ##exclude 0 fluxes
+
+  df_range %>% 
+  ggplot(aes(x = rxn_id, y = value, group = Condition, fill = Condition)) +
+    geom_col(position="dodge") +
+    ggtitle("Flux Variability Analysis") +
+    xlab("Reactions") +
+    ylab("Variability range (mmol/gDWh)") +
+    facet_wrap(vars(Condition), ncol =1) +
+    theme_bw() +
+    theme(axis.text.x = element_blank(), 
+          axis.ticks.x = element_blank(),
+          legend.position = "none",
+          plot.title = element_text(face = "bold"),
+          panel.background = element_blank()) +
+    scale_fill_manual(values = wes_palette("Cavalcanti1", n = 3, type = "discrete")) #-> fva_plot
+
+    ggsave("fva_plot.png", device = "png", width = 25, height = 15, units = "cm", dpi = "retina")
+
+```
+
+Filter out 0 fluxes and pivot wider by condition / or use gtable (gt)
+
+
+
+
