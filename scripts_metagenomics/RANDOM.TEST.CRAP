@@ -1,4 +1,0 @@
-# RANDOM TEST CRAP
-
-#merge humann2 files into one table/matrix
-$ humann2_join_tables --input $INPUT_DIR --output $TABLE
