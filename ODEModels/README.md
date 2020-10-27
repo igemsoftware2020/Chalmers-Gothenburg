@@ -22,7 +22,7 @@ The folder 'soft segment degradation' contains MATLAB script to run the degradat
 'sens_analysis_script_ss.Rmd' contains script to plot the sensitivity analysis for the soft segment in R. <br/>
 
 * Note: 
-To perform sensitivty analysis you set 1 (one) parameter = k at the time. 
+To perform sensitivty analysis you set 1 (one) parameter = k at the time, and all other parameters to a fixed value.
 
 ## Results
 To see our results and discussion, please check our [wiki page!](https://2020.igem.org/Team:Chalmers-Gothenburg)
