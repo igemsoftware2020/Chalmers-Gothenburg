@@ -13,10 +13,10 @@ For the visualization using Escher:
 * [Python3](https://www.python.org/downloads/)
 
 ## Content
-The folder 'Data' contains all the data used for our analysis and to construct the network. 
-The folder 'db queries' contains our scripts to query KEGG to obtain information that is later on used for the analysis of the network reconstruction simulation. 
-The folder 'escher' contains the data with the results from RAVEN and COBRA that were used to visualize the metabolic map. It also contains the scripts to convert the results to .json format, required upload the data on escher. 
-The folder 'parameters' contains the parametrization analysis (for more information go to the [ODE model](https://github.com/igemsoftware2020/Chalmers-Gothenburg/tree/master/ODEModels) section. 
+The folder 'Data' contains all the data used for our analysis and to construct the network.<br/> 
+The folder 'db queries' contains our scripts to query KEGG to obtain information that is later on used for the analysis of the network reconstruction simulation.<br/> 
+The folder 'escher' contains the data with the results from RAVEN and COBRA that were used to visualize the metabolic map. It also contains the scripts to convert the results to .json format, required upload the data on escher.<br/> 
+The folder 'parameters' contains the parametrization analysis (for more information go to the [ODE model](https://github.com/igemsoftware2020/Chalmers-Gothenburg/tree/master/ODEModels) section.<br/> 
 The folder 'scripts' contains the scripts to run the network reconstruction and the different simulations we performed. Inside you can also find the folder 'visualization', which contains the R script used to analyze and visualize our results in a comprehensive manner.   
 
 
