@@ -1,6 +1,6 @@
 # Kinetic models 
 
-Here, you can find the scripts to rund the *ordinary differential equation models* for degradation of the soft segment and hard segment of elastane and and *sensitivity analysis*.
+Here, you can find the scripts to run the *ordinary differential equation models* for degradation of the soft segment and hard segment of elastane and and *sensitivity analysis*.
 
 
 
