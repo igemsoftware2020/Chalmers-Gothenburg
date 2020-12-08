@@ -1,0 +1,204 @@
+---
+title: "Processing"
+output: html_notebook
+---
+
+Import package
+```{r}
+
+library(tidyverse)
+
+```
+
+Import data from studies
+```{r}
+#Gupta
+file_report_1 <- read_delim("./1_gupta_filereport_read_run_PRJNA388130_tsv.txt", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+glimpse(file_report_1)
+
+#Ransom-Jones
+file_report_2 <- read_delim("./2_mcdonald_filereport_read_run_PRJNA351238_tsv.txt", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+glimpse(file_report_2)
+
+#Pinnell
+file_report_3 <- read_delim("./3_pinell_filereport_read_run_PRJEB15404_tsv.txt", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+glimpse(file_report_3)
+
+#Bryant
+file_report_4 <- read_delim("./4_bryant_filereport_station_read_run_PRJNA318384_tsv.txt", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+glimpse(file_report_4)
+
+article_table_4 <- read_delim("./4_bryant_excel.tsv.txt", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+
+#Petrovich
+file_report_5 <- read_delim("./5_poretsky_filereport_sample_read_run_PRJNA385831_tsv.txt", 
+    "\t", escape_double = FALSE, trim_ws = TRUE)
+glimpse(file_report_5)
+```
+
+Select only necessary columns from studies (+ joining the two files from Bryant)
+```{r}
+#Gupta
+file_report_1_select <- select(file_report_1, run_accession, scientific_name, sample_alias)
+file_report_1_select
+
+#Ransom-Jones
+file_report_2_select <- select(file_report_2, run_accession, scientific_name, sample_alias)
+file_report_2_select
+
+#Pinnell
+file_report_3_select <- select(file_report_3, run_accession, sample_alias)
+file_report_3_select
+
+#Bryant
+file_report_4_select <- select(file_report_4, run_accession, scientific_name, Station)
+file_report_4_select
+
+article_table_4_select <- select(article_table_4, -(Longitude: Latitude))
+article_table_4_select
+
+meta4 <- left_join(file_report_4_select, article_table_4_select, by = "Station",
+copy=FALSE, suffix=c("file_report_4","article_table_4"))
+glimpse(meta4)
+
+#Petrovich
+file_report_5_select <- select(file_report_5, run_accession, scientific_name, Sample)
+file_report_5_select
+
+```
+Changing column names (+selecting columns of interest for Bryant)
+```{r}
+#Gupta
+colnames(file_report_1_select)[2] <- "environment"
+colnames(file_report_1_select)[1] <- "sample_id"
+colnames(file_report_1_select)[3] <- "sample_alias"
+glimpse(file_report_1_select)
+
+#Ransom-Jones
+colnames(file_report_2_select)[2] <- "environment"
+colnames(file_report_2_select)[1] <- "sample_id"
+colnames(file_report_2_select)[3] <- "sample_alias"
+glimpse(file_report_2_select)
+
+#Pinnell
+colnames(file_report_3_select)[1] <- "sample_id"
+colnames(file_report_3_select)[3] <- "sample_alias"
+glimpse(file_report_3_select)
+
+#Bryant
+colnames(meta4)[2] <- "environment"
+colnames(meta4)[1] <- "sample_id"
+colnames(meta4)[3] <- "sample_alias"
+glimpse(meta4)
+
+meta4_selected <- select(meta4, "sample_id", "environment", "sample_alias")
+glimpse(meta4_selected)
+
+#Petrovich
+colnames(file_report_5_select)[2] <- "environment"
+colnames(file_report_5_select)[1] <- "sample_id"
+colnames(file_report_5_select)[3] <- "sample_alias"
+glimpse(file_report_5_select)
+```
+Adding name of study as extra column (+environment for Pinnell)
+```{r}
+#Gupta
+meta1 <- add_column(file_report_1_select, "study" = "J. Gupta et al. (2017)", .after = "sample_alias")
+glimpse(meta1)
+
+#Ransom-Jones
+meta2 <- add_column(file_report_2_select, "study" = "E. Ransom-Jones et al. (2017)", .after = "sample_alias")
+glimpse(meta2)
+
+#Pinnell
+report3 <- add_column(file_report_3_select, "environment" = "marine metagenome", .after = "sample_id")
+
+meta3 <- add_column(report3, "study" = "L.J. Pinnell, J.W. Turner (2019)", .after = "sample_alias")
+glimpse(meta3)
+
+#Bryant
+meta4_2 <- add_column(meta4_selected, "study" = "J.A. Bryant et al. (2016)", .after = "sample_alias")
+glimpse(meta4_2)
+
+#Petrovich
+meta5_2 <- add_column(file_report_5_select, "study" = "M.L. Petrovich et al. (2019)", .after = "sample_alias")
+glimpse(meta5_2)
+```
+Join all files from the studies to a final meta file
+```{r}
+meta <- bind_rows(meta1, meta2, meta3, meta4_2, meta5_2)
+meta
+```
+
+Delete Amplicon samples:
+SRR4838360
+SRR4838361
+SRR5479799
+```{r}
+meta <- meta %>% filter(sample_id!=c("SRR4838360","SRR4838361","SRR5479799"))
+meta
+```
+
+Adding id column e.g. s01_soi_gup (number_environment_study)
+```{r}
+meta <- meta %>% 
+  mutate(id = paste0("s",sprintf("%02d", 1:nrow(meta)))) %>% 
+  mutate(id = case_when(
+    environment == "soil metagenome" ~ paste0(id,"_soilm_"),
+    environment == "wastewater metagenome" ~ paste0(id,"_waste_"),
+    environment == "marine metagenome" ~ paste0(id,"_marin_"),
+    environment == "freshwater sediment metagenome" ~ paste0(id,"_frwas_"),
+    environment == "freshwater metagenome" ~ paste0(id,"_fresh_"),
+    
+  ))
+
+
+meta <- meta %>% 
+  mutate(id = case_when(
+    study == "J. Gupta et al. (2017)" ~ paste0(id, "gup"),
+    study == "E. Ransom-Jones et al. (2017)" ~ paste0(id, "ran"),
+    study == "L.J. Pinnell, J.W. Turner (2019)" ~ paste0(id, "pin"),
+    study == "M.L. Petrovich et al. (2019)" ~ paste0(id, "pet"),
+    study == "J.A. Bryant et al. (2016)" ~ paste0(id, "bry")
+ ))
+
+
+meta
+    
+```
+Renaming environments
+```{r}
+meta <- meta %>% 
+mutate(environment = case_when(
+    environment == "soil metagenome" ~ "soil landfill, India",
+    environment == "wastewater metagenome" ~ "wastewater landfill, UK",
+    environment == "marine metagenome" ~ "marine, Gulf of Mexico",
+    environment == "freshwater sediment metagenome" ~ "marine, North Pacific Ocean",
+    environment == "freshwater metagenome" ~ "wastewater treatment site, US",
+    
+  ))
+
+meta
+```
+Changing order of columns in meta
+```{r}
+meta <- meta %>% 
+
+select(id, sample_id, sample_alias, environment, study)
+
+meta
+```
+
+Save as .rds
+```{r}
+#saveRDS(object = meta, file = "meta.rds")
+```
+
+
+
+
